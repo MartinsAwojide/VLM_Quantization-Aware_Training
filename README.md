@@ -20,3 +20,7 @@ cd custom_scripts && chmod a+x download_data.sh && ./download_data.sh
 ```
 
 - You can initiate the training process by running `train.sh`.
+
+```bash
+ chmod a+x train.sh && ./train.sh
+```
