@@ -1,2 +1,11 @@
 # add data folder
 data/
+open_clip/
+logs/
+
+# github folders
+.github/
+
+
+# files to ignore
+*.json

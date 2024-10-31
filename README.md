@@ -13,7 +13,8 @@ cd custom_scripts && chmod a+x download_data.sh && ./download_data.sh
 
 
 ## Training with OpenCLIP 
-- Once you’ve installed the dependencies for [openCLIP](https://github.com/mlfoundations/open_clip?tab=readme-ov-file#install) and structured your dataset path as follows:
+- create a conda environment
+- Install the dependencies for [openCLIP](https://github.com/mlfoundations/open_clip?tab=readme-ov-file#install) using the install_requirements script in the custom_scripts folder and structure your dataset path as follows:
 
 ```bash
  /data/mini/{}.tar 
