@@ -6,3 +6,20 @@ img2dataset --url_list mscoco.parquet --input_format "parquet"\
          --url_col "URL" --caption_col "TEXT" --output_format webdataset\
            --output_folder mscoco --processes_count 16 --thread_count 64 --image_size 256\
              --enable_wandb True
+
+
+wget https://secure.nic.cz/files/knot-resolver/knot-resolver-release.deb
+sudo dpkg -i knot-resolver-release.deb
+sudo apt update
+sudo apt install -y knot-resolver
+sudo sh -c 'echo `hostname -I` `hostname` >> /etc/hosts'
+sudo sh -c 'echo nameserver 127.0.0.1 > /etc/resolv.conf'
+sudo systemctl stop systemd-resolved
+
+
+sudo systemctl start kresd@1.service
+sudo systemctl start kresd@2.service
+sudo systemctl start kresd@3.service
+sudo systemctl start kresd@4.service
+
+dig @localhost google.com
