@@ -1,6 +1,7 @@
 #! /bin/bash
 conda install python=3.10
 conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+conda install wandb
 pip install -r requirements.txt  
 pip install -r requirements-training.txt
 pip install -r requirements-test.txt

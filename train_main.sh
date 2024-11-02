@@ -2,7 +2,6 @@
 
 python -m open_clip_train.main \
     --save-frequency 1 \
-    --zeroshot-frequency 1 \
     --train-data './data/mscoco_mini/{00000..00001}.tar' \
     --val-data './data/mscoco_mini/00002.tar' \
     --dataset-type webdataset \
@@ -13,11 +12,14 @@ python -m open_clip_train.main \
     --lr=2e-3 \
     --precision amp_bf16 \
     --wd=0.2 \
-    --epochs=1 \
+    --epochs=2 \
     --workers=2 \
+    --seed 0 \
     --model RN50\
     --report-to wandb \
     --wandb-project open_clip_trial \
     --resume "latest" \
     --ddp-static-graph \
+    --local-loss \
+    --gather-with-grad \
     
