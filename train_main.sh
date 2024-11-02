@@ -11,7 +11,7 @@ python -m open_clip_train.main \
     --dataset-resampled \
     --train-num-samples 500000 \
     --warmup 5000 \
-    --batch-size 256 \
+    --batch-size 1024 \
     --lr=2e-3 \
     --precision pure_bf16 \
     --wd=0.2 \
@@ -24,5 +24,4 @@ python -m open_clip_train.main \
     --resume "latest" \
     --ddp-static-graph \
     --delete-previous-checkpoint \
-    --gather-with-grad \
     
