@@ -5,8 +5,8 @@ python -m open_clip_train.main \
     --beta2 0.95 \
     --save-frequency 10 \
     --save-most-recent True\
-    --train-data './data/mscoco_full/{00000..000049}.tar' \
-    --val-data './data/mscoco_full/{000050..000059}.tar' \
+    --train-data './data/mscoco_full/{00000..00049}.tar' \
+    --val-data './data/mscoco_full/{00050..00059}.tar' \
     --dataset-type webdataset \
     --dataset-resampled \
     --train-num-samples 500000 \
@@ -23,6 +23,6 @@ python -m open_clip_train.main \
     --wandb-project open_clip_trial \
     --resume "latest" \
     --ddp-static-graph \
-    --local-loss \
+    --delete-previous-checkpoint \
     --gather-with-grad \
     
