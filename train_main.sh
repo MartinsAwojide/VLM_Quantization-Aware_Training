@@ -1,19 +1,22 @@
 #! /bin/bash
 
 python -m open_clip_train.main \
-    --save-frequency 1 \
+    --beta1 0.9 \
+    --beta2 0.95 \
+    --save-frequency 10 \
+    --save-most-recent True\
     --train-data './data/mscoco_full/{00000..000049}.tar' \
     --val-data './data/mscoco_full/{000050..000059}.tar' \
     --dataset-type webdataset \
     --dataset-resampled \
-    --train-num-samples 20000 \
+    --train-num-samples 500000 \
     --warmup 5000 \
-    --batch-size 32 \
+    --batch-size 256 \
     --lr=2e-3 \
     --precision pure_bf16 \
     --wd=0.2 \
     --epochs=2 \
-    --workers=2 \
+    --workers=8 \
     --seed 0 \
     --model RN50\
     --report-to wandb \
