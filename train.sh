@@ -20,4 +20,5 @@ python -m open_clip_train.main \
     --wandb-project open_clip_trial \
     --resume "latest" \
     --ddp-static-graph \
+    --delete-previous-checkpoint \
     
