@@ -2,8 +2,8 @@
 
 python -m open_clip_train.main \
     --save-frequency 1 \
-    --train-data './data/mscoco_mini/{00000..00001}.tar' \
-    --val-data './data/mscoco_mini/00002.tar' \
+    --train-data './data/mscoco_full/{00000..000049}.tar' \
+    --val-data './data/mscoco_full/{000050..000059}.tar' \
     --dataset-type webdataset \
     --dataset-resampled \
     --train-num-samples 20000 \
