@@ -11,7 +11,7 @@ python -m open_clip_train.main \
     --warmup 5000 \
     --batch-size 32 \
     --lr=2e-3 \
-    --precision amp_bf16 \
+    --precision pure_bf16 \
     --wd=0.2 \
     --epochs=1 \
     --workers=2 \

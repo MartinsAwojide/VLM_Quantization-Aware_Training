@@ -1,0 +1,13 @@
+0. Provision VM (A100) on TensorDock
+
+1. Clone Open_CLIP and install (or use pip)
+
+2. Download MSCOCO_2017 using img2dataset tool
+    - Run img2dataset_mscoco.sh
+    - Move data to data folder based on config in your train_main.sh
+
+3. Download ImageNet_val (2012) and prepare the dataset
+    - Run imagenet_val_download_prep.sh
+    - Move data to data folder based on config for imagenet-val in your train_main.sh
+
+4. Confirm settings (tags) in train_main.sh and Run
