@@ -1,4 +1,6 @@
-0. Provision VM (A100) on TensorDock
+0. Provision VM (A100) on TensorDock and install requirements
+    - install requirements using install_requirements.sh in custom_script folder
+        -- cd into custom_script folder and run install_requirements and cd .. if not in parent folder after.
 
 1. Clone Open_CLIP and install (or use pip)
 
