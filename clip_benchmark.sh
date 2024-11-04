@@ -1,5 +1,8 @@
 #! /bin/bash
 
+# install the library
+pip install clip-benchmark
+
 # download prompt template file and classnames file
 # Download this .ipynb file
 ## wget https://github.com/openai/CLIP/blob/main/notebooks/Prompt_Engineering_for_ImageNet.ipynb
