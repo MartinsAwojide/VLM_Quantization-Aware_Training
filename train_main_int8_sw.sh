@@ -21,7 +21,7 @@ python -m open_clip_train.main \
     --seed 0 \
     --model RN50\
     --report-to wandb \
-    --wandb-project open_clip_main \
+    --wandb-project open_clip_int8 \
     --resume "latest" \
     --ddp-static-graph \
     --use-bnb-linear SwitchBackLinearGlobal \
