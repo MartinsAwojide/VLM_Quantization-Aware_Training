@@ -14,9 +14,9 @@ python -m open_clip_train.main \
     --warmup 5000 \
     --batch-size 1024 \
     --lr=2e-3 \
-    --precision pure_bf16 \
+    --precision amp \
     --wd=0.2 \
-    --epochs=60 \
+    --epochs=500 \
     --workers=8 \
     --seed 0 \
     --model RN50\
@@ -26,4 +26,5 @@ python -m open_clip_train.main \
     --ddp-static-graph \
     --use-bnb-linear SwitchBackLinearGlobal \
     --delete-previous-checkpoint \
+    --wandb-notes "int8 for full coco dataset with linear unit replacement with SwitchBack units and RN50 backbone" \
     
