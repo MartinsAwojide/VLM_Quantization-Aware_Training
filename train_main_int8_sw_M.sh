@@ -12,7 +12,7 @@ python -m open_clip_train.main \
     --dataset-resampled \
     --train-num-samples 60000 \
     --warmup 5000 \
-    --batch-size 1024 \
+    --batch-size 256 \
     --lr=2e-3 \
     --precision amp \
     --wd=0.2 \
@@ -21,9 +21,10 @@ python -m open_clip_train.main \
     --seed 0 \
     --model RN50\
     --report-to wandb \
-    --wandb-project open_clip_int8 \
+    --wandb-project open_clip_int8_setup \
     --resume "latest" \
     --ddp-static-graph \
     --use-bnb-linear SwitchBackLinearGlobalMemEfficient \
     --delete-previous-checkpoint \
-    
+    --grad-checkpointing \
+    --wandb-notes "int8 with SwitchBackM and gradient checkpointing for memory mgt"
