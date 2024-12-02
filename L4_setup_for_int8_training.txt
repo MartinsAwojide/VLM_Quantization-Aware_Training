@@ -1,0 +1,34 @@
+
+0. Provision a L4 instance on AWS and install requirements
+    - Instance Details: 
+    OS Image: AMI Deep Learning PyTorch 2.5 Ubuntu 22.04 LTS
+    Instance: g6.2xlarge
+    EBS Storage Size: 120GB
+    vCPU required: 8
+
+1. Create new conda environment with Python 3.10 as the default python version
+    - First use "source activate pytorch" to activate default pytorch env on the instance
+    - Run "conda create -n "env_name" python=3.10" to create new environment
+
+2.  Install Requirements for int8
+    - install requirements using install_requirements.sh in custom_script folder
+        -- cd into custom_script folder and run install_requirements and cd .. if not in parent folder after
+    - Install recommended triton version
+        -- pip install triton==2.0.0
+    - Install bitsandbytes
+        -- pip install bitsandbytes
+
+3.  Download Train and Val data settings
+    
+    Download MSCOCO_2017 using img2dataset tool
+        - Run img2dataset_mscoco.sh
+        - Move data to data folder based on config in your training script
+
+    Download ImageNet_val (2012) and prepare the dataset
+        - Run imagenet_val_download_prep.sh
+        - Move data to data folder based on config for imagenet-val in your training script
+
+4.  Run the recommended bash script
+    - Confirm settings (tags) in train_main_int8_sw_M.sh (SwitchBack-M works better based on trial ablations.)
+
+    
