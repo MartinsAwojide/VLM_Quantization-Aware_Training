@@ -16,7 +16,7 @@ python -m open_clip_train.main \
     --lr=2e-3 \
     --precision amp \
     --wd=0.2 \
-    --epochs=500 \
+    --epochs=200 \
     --workers=8 \
     --seed 0 \
     --model RN50\
