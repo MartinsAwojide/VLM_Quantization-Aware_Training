@@ -1,0 +1,6 @@
+runs
+----------------------
+successful     6   
+terminated     2
+----------------------
+total          8

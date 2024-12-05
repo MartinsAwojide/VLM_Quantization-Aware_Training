@@ -1,0 +1,528 @@
+2024-11-03,21:19:16 | INFO | No latest resume checkpoint found in ./logs/2024_11_03-21_19_16-model_ViT-B-16-lr_0.002-b_512-j_8-p_pure_bf16/checkpoints.
+2024-11-03,21:19:16 | INFO | Running with a single process. Device cuda.
+2024-11-03,21:19:16 | INFO | Loaded ViT-B-16 model config.
+2024-11-03,21:19:17 | INFO | Model:
+2024-11-03,21:19:17 | INFO | CLIP(
+  (visual): VisionTransformer(
+    (conv1): Conv2d(3, 768, kernel_size=(16, 16), stride=(16, 16), bias=False)
+    (patch_dropout): Identity()
+    (ln_pre): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+    (transformer): Transformer(
+      (resblocks): ModuleList(
+        (0-11): 12 x ResidualAttentionBlock(
+          (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=768, out_features=768, bias=True)
+          )
+          (ls_1): Identity()
+          (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (mlp): Sequential(
+            (c_fc): Linear(in_features=768, out_features=3072, bias=True)
+            (gelu): GELU(approximate='none')
+            (c_proj): Linear(in_features=3072, out_features=768, bias=True)
+          )
+          (ls_2): Identity()
+        )
+      )
+    )
+    (ln_post): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+  )
+  (transformer): Transformer(
+    (resblocks): ModuleList(
+      (0-11): 12 x ResidualAttentionBlock(
+        (ln_1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=512, out_features=512, bias=True)
+        )
+        (ls_1): Identity()
+        (ln_2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (mlp): Sequential(
+          (c_fc): Linear(in_features=512, out_features=2048, bias=True)
+          (gelu): GELU(approximate='none')
+          (c_proj): Linear(in_features=2048, out_features=512, bias=True)
+        )
+        (ls_2): Identity()
+      )
+    )
+  )
+  (token_embedding): Embedding(49408, 512)
+  (ln_final): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+)
+2024-11-03,21:19:17 | INFO | Params:
+2024-11-03,21:19:17 | INFO |   accum_freq: 1
+2024-11-03,21:19:17 | INFO |   aug_cfg: {}
+2024-11-03,21:19:17 | INFO |   batch_size: 512
+2024-11-03,21:19:17 | INFO |   beta1: 0.9
+2024-11-03,21:19:17 | INFO |   beta2: 0.95
+2024-11-03,21:19:17 | INFO |   cache_dir: None
+2024-11-03,21:19:17 | INFO |   checkpoint_path: ./logs/2024_11_03-21_19_16-model_ViT-B-16-lr_0.002-b_512-j_8-p_pure_bf16/checkpoints
+2024-11-03,21:19:17 | INFO |   coca_caption_loss_weight: 2.0
+2024-11-03,21:19:17 | INFO |   coca_contrastive_loss_weight: 1.0
+2024-11-03,21:19:17 | INFO |   copy_codebase: False
+2024-11-03,21:19:17 | INFO |   csv_caption_key: title
+2024-11-03,21:19:17 | INFO |   csv_img_key: filepath
+2024-11-03,21:19:17 | INFO |   csv_separator: 	
+2024-11-03,21:19:17 | INFO |   dataset_resampled: True
+2024-11-03,21:19:17 | INFO |   dataset_type: webdataset
+2024-11-03,21:19:17 | INFO |   ddp_static_graph: True
+2024-11-03,21:19:17 | INFO |   debug: False
+2024-11-03,21:19:17 | INFO |   delete_previous_checkpoint: True
+2024-11-03,21:19:17 | INFO |   device: cuda
+2024-11-03,21:19:17 | INFO |   dist_backend: None
+2024-11-03,21:19:17 | INFO |   dist_url: None
+2024-11-03,21:19:17 | INFO |   distill: False
+2024-11-03,21:19:17 | INFO |   distill_model: None
+2024-11-03,21:19:17 | INFO |   distill_pretrained: None
+2024-11-03,21:19:17 | INFO |   distributed: False
+2024-11-03,21:19:17 | INFO |   epochs: 60
+2024-11-03,21:19:17 | INFO |   epochs_cooldown: None
+2024-11-03,21:19:17 | INFO |   eps: 1e-06
+2024-11-03,21:19:17 | INFO |   force_custom_text: False
+2024-11-03,21:19:17 | INFO |   force_image_size: None
+2024-11-03,21:19:17 | INFO |   force_patch_dropout: None
+2024-11-03,21:19:17 | INFO |   force_quick_gelu: False
+2024-11-03,21:19:17 | INFO |   gather_with_grad: False
+2024-11-03,21:19:17 | INFO |   grad_checkpointing: False
+2024-11-03,21:19:17 | INFO |   grad_clip_norm: None
+2024-11-03,21:19:17 | INFO |   horovod: False
+2024-11-03,21:19:17 | INFO |   image_interpolation: None
+2024-11-03,21:19:17 | INFO |   image_mean: None
+2024-11-03,21:19:17 | INFO |   image_resize_mode: None
+2024-11-03,21:19:17 | INFO |   image_std: None
+2024-11-03,21:19:17 | INFO |   imagenet_v2: None
+2024-11-03,21:19:17 | INFO |   imagenet_val: /home/user/open_clip/open_clip/val_data/val/
+2024-11-03,21:19:17 | INFO |   local_loss: False
+2024-11-03,21:19:17 | INFO |   local_rank: 0
+2024-11-03,21:19:17 | INFO |   lock_image: False
+2024-11-03,21:19:17 | INFO |   lock_image_freeze_bn_stats: False
+2024-11-03,21:19:17 | INFO |   lock_image_unlocked_groups: 0
+2024-11-03,21:19:17 | INFO |   lock_text: False
+2024-11-03,21:19:17 | INFO |   lock_text_freeze_layer_norm: False
+2024-11-03,21:19:17 | INFO |   lock_text_unlocked_layers: 0
+2024-11-03,21:19:17 | INFO |   log_every_n_steps: 100
+2024-11-03,21:19:17 | INFO |   log_level: 20
+2024-11-03,21:19:17 | INFO |   log_local: False
+2024-11-03,21:19:17 | INFO |   log_path: ./logs/2024_11_03-21_19_16-model_ViT-B-16-lr_0.002-b_512-j_8-p_pure_bf16/out.log
+2024-11-03,21:19:17 | INFO |   logs: ./logs/
+2024-11-03,21:19:17 | INFO |   lr: 0.002
+2024-11-03,21:19:17 | INFO |   lr_cooldown_end: 0.0
+2024-11-03,21:19:17 | INFO |   lr_cooldown_power: 1.0
+2024-11-03,21:19:17 | INFO |   lr_scheduler: cosine
+2024-11-03,21:19:17 | INFO |   model: ViT-B-16
+2024-11-03,21:19:17 | INFO |   name: 2024_11_03-21_19_16-model_ViT-B-16-lr_0.002-b_512-j_8-p_pure_bf16
+2024-11-03,21:19:17 | INFO |   no_set_device_rank: False
+2024-11-03,21:19:17 | INFO |   precision: pure_bf16
+2024-11-03,21:19:17 | INFO |   pretrained: 
+2024-11-03,21:19:17 | INFO |   pretrained_image: False
+2024-11-03,21:19:17 | INFO |   rank: 0
+2024-11-03,21:19:17 | INFO |   remote_sync: None
+2024-11-03,21:19:17 | INFO |   remote_sync_frequency: 300
+2024-11-03,21:19:17 | INFO |   remote_sync_protocol: s3
+2024-11-03,21:19:17 | INFO |   report_to: wandb
+2024-11-03,21:19:17 | INFO |   resume: None
+2024-11-03,21:19:17 | INFO |   save_frequency: 1
+2024-11-03,21:19:17 | INFO |   save_most_recent: True
+2024-11-03,21:19:17 | INFO |   seed: 0
+2024-11-03,21:19:17 | INFO |   siglip: False
+2024-11-03,21:19:17 | INFO |   skip_scheduler: False
+2024-11-03,21:19:17 | INFO |   tensorboard: False
+2024-11-03,21:19:17 | INFO |   tensorboard_path: 
+2024-11-03,21:19:17 | INFO |   torchcompile: False
+2024-11-03,21:19:17 | INFO |   torchscript: False
+2024-11-03,21:19:17 | INFO |   trace: False
+2024-11-03,21:19:17 | INFO |   train_data: ./mscoco/{00000..00059}.tar
+2024-11-03,21:19:17 | INFO |   train_data_upsampling_factors: None
+2024-11-03,21:19:17 | INFO |   train_num_samples: 60000
+2024-11-03,21:19:17 | INFO |   use_bn_sync: False
+2024-11-03,21:19:17 | INFO |   use_bnb_linear: None
+2024-11-03,21:19:17 | INFO |   val_data: None
+2024-11-03,21:19:17 | INFO |   val_frequency: 1
+2024-11-03,21:19:17 | INFO |   val_num_samples: None
+2024-11-03,21:19:17 | INFO |   wandb: True
+2024-11-03,21:19:17 | INFO |   wandb_notes: 
+2024-11-03,21:19:17 | INFO |   wandb_project_name: open_clip_main
+2024-11-03,21:19:17 | INFO |   warmup: 5000
+2024-11-03,21:19:17 | INFO |   wd: 0.2
+2024-11-03,21:19:17 | INFO |   workers: 8
+2024-11-03,21:19:17 | INFO |   world_size: 1
+2024-11-03,21:19:17 | INFO |   zeroshot_frequency: 1
+2024-11-03,21:19:22 | INFO | Start epoch 0
+2024-11-03,21:19:27 | INFO | Train Epoch: 0 [  512/61440 (1%)] Data (t): 3.115 Batch (t): 4.650, 110.117/s, 110.117/s/gpu LR: 0.000000 Logit Scale: 14.250 Contrastive_loss: 6.3125 (6.3125) Loss: 6.3125 (6.3125)
+2024-11-03,21:20:26 | INFO | Train Epoch: 0 [51712/61440 (84%)] Data (t): 0.373 Batch (t): 0.588, 853.420/s, 853.420/s/gpu LR: 0.000040 Logit Scale: 14.250 Contrastive_loss: 6.0625 (6.1875) Loss: 6.0625 (6.1875)
+2024-11-03,21:20:38 | INFO | Train Epoch: 0 [61440/61440 (100%)] Data (t): 0.370 Batch (t): 0.600, 867.639/s, 867.639/s/gpu LR: 0.000048 Logit Scale: 14.250 Contrastive_loss: 5.9375 (6.1042) Loss: 5.9375 (6.1042)
+2024-11-03,21:20:38 | INFO | Starting zero-shot imagenet.
+2024-11-03,21:20:38 | INFO | Building zero-shot classifier
+2024-11-03,21:20:48 | INFO | Using classifier
+2024-11-03,21:21:37 | INFO | Finished zero-shot imagenet.
+2024-11-03,21:21:37 | INFO | Eval Epoch: 1 imagenet-zeroshot-val-top1: 0.0015	imagenet-zeroshot-val-top5: 0.0081
+2024-11-03,21:21:41 | INFO | Start epoch 1
+2024-11-03,21:21:45 | INFO | Train Epoch: 1 [  512/61440 (1%)] Data (t): 3.443 Batch (t): 3.696, 138.539/s, 138.539/s/gpu LR: 0.000048 Logit Scale: 14.250 Contrastive_loss: 6.0625 (6.0625) Loss: 6.0625 (6.0625)
+2024-11-03,21:22:45 | INFO | Train Epoch: 1 [51712/61440 (84%)] Data (t): 0.385 Batch (t): 0.604, 874.798/s, 874.798/s/gpu LR: 0.000088 Logit Scale: 14.250 Contrastive_loss: 5.6875 (5.8750) Loss: 5.6875 (5.8750)
+2024-11-03,21:22:57 | INFO | Train Epoch: 1 [61440/61440 (100%)] Data (t): 0.370 Batch (t): 0.601, 866.404/s, 866.404/s/gpu LR: 0.000096 Logit Scale: 14.250 Contrastive_loss: 5.5625 (5.7708) Loss: 5.5625 (5.7708)
+2024-11-03,21:22:57 | INFO | Starting zero-shot imagenet.
+2024-11-03,21:22:57 | INFO | Building zero-shot classifier
+2024-11-03,21:23:08 | INFO | Using classifier
+2024-11-03,21:23:53 | INFO | Finished zero-shot imagenet.
+2024-11-03,21:23:53 | INFO | Eval Epoch: 2 imagenet-zeroshot-val-top1: 0.0031	imagenet-zeroshot-val-top5: 0.0129
+2024-11-03,21:23:57 | INFO | Start epoch 2
+2024-11-03,21:24:00 | INFO | Train Epoch: 2 [  512/61440 (1%)] Data (t): 2.898 Batch (t): 3.113, 164.461/s, 164.461/s/gpu LR: 0.000096 Logit Scale: 14.250 Contrastive_loss: 5.6250 (5.6250) Loss: 5.6250 (5.6250)
+2024-11-03,21:25:01 | INFO | Train Epoch: 2 [51712/61440 (84%)] Data (t): 0.381 Batch (t): 0.605, 870.625/s, 870.625/s/gpu LR: 0.000136 Logit Scale: 14.250 Contrastive_loss: 5.3750 (5.5000) Loss: 5.3750 (5.5000)
+2024-11-03,21:25:12 | INFO | Train Epoch: 2 [61440/61440 (100%)] Data (t): 0.369 Batch (t): 0.591, 883.616/s, 883.616/s/gpu LR: 0.000144 Logit Scale: 14.250 Contrastive_loss: 5.0625 (5.3542) Loss: 5.0625 (5.3542)
+2024-11-03,21:25:12 | INFO | Starting zero-shot imagenet.
+2024-11-03,21:25:12 | INFO | Building zero-shot classifier
+2024-11-03,21:25:23 | INFO | Using classifier
+2024-11-03,21:26:08 | INFO | Finished zero-shot imagenet.
+2024-11-03,21:26:08 | INFO | Eval Epoch: 3 imagenet-zeroshot-val-top1: 0.0056	imagenet-zeroshot-val-top5: 0.0204
+2024-11-03,21:26:12 | INFO | Start epoch 3
+2024-11-03,21:26:16 | INFO | Train Epoch: 3 [  512/61440 (1%)] Data (t): 2.847 Batch (t): 3.103, 165.014/s, 165.014/s/gpu LR: 0.000144 Logit Scale: 14.250 Contrastive_loss: 5.3750 (5.3750) Loss: 5.3750 (5.3750)
+2024-11-03,21:27:15 | INFO | Train Epoch: 3 [51712/61440 (84%)] Data (t): 0.377 Batch (t): 0.595, 882.126/s, 882.126/s/gpu LR: 0.000184 Logit Scale: 14.250 Contrastive_loss: 5.0000 (5.1875) Loss: 5.0000 (5.1875)
+2024-11-03,21:27:27 | INFO | Train Epoch: 3 [61440/61440 (100%)] Data (t): 0.370 Batch (t): 0.595, 870.647/s, 870.647/s/gpu LR: 0.000192 Logit Scale: 14.250 Contrastive_loss: 5.0000 (5.1250) Loss: 5.0000 (5.1250)
+2024-11-03,21:27:27 | INFO | Starting zero-shot imagenet.
+2024-11-03,21:27:27 | INFO | Building zero-shot classifier
+2024-11-03,21:27:37 | INFO | Using classifier
+2024-11-03,21:28:23 | INFO | Finished zero-shot imagenet.
+2024-11-03,21:28:23 | INFO | Eval Epoch: 4 imagenet-zeroshot-val-top1: 0.0066	imagenet-zeroshot-val-top5: 0.0258
+2024-11-03,21:28:27 | INFO | Start epoch 4
+2024-11-03,21:28:30 | INFO | Train Epoch: 4 [  512/61440 (1%)] Data (t): 3.168 Batch (t): 3.397, 150.707/s, 150.707/s/gpu LR: 0.000192 Logit Scale: 14.250 Contrastive_loss: 5.3125 (5.3125) Loss: 5.3125 (5.3125)
+2024-11-03,21:29:31 | INFO | Train Epoch: 4 [51712/61440 (84%)] Data (t): 0.382 Batch (t): 0.604, 850.158/s, 850.158/s/gpu LR: 0.000232 Logit Scale: 14.250 Contrastive_loss: 4.8125 (5.0625) Loss: 4.8125 (5.0625)
+2024-11-03,21:29:42 | INFO | Train Epoch: 4 [61440/61440 (100%)] Data (t): 0.371 Batch (t): 0.597, 874.333/s, 874.333/s/gpu LR: 0.000240 Logit Scale: 14.250 Contrastive_loss: 4.6875 (4.9375) Loss: 4.6875 (4.9375)
+2024-11-03,21:29:42 | INFO | Starting zero-shot imagenet.
+2024-11-03,21:29:42 | INFO | Building zero-shot classifier
+2024-11-03,21:29:53 | INFO | Using classifier
+2024-11-03,21:30:37 | INFO | Finished zero-shot imagenet.
+2024-11-03,21:30:37 | INFO | Eval Epoch: 5 imagenet-zeroshot-val-top1: 0.0067	imagenet-zeroshot-val-top5: 0.0280
+2024-11-03,21:30:42 | INFO | Start epoch 5
+2024-11-03,21:30:45 | INFO | Train Epoch: 5 [  512/61440 (1%)] Data (t): 3.186 Batch (t): 3.413, 150.020/s, 150.020/s/gpu LR: 0.000240 Logit Scale: 14.250 Contrastive_loss: 4.8125 (4.8125) Loss: 4.8125 (4.8125)
+2024-11-03,21:31:45 | INFO | Train Epoch: 5 [51712/61440 (84%)] Data (t): 0.379 Batch (t): 0.599, 869.922/s, 869.922/s/gpu LR: 0.000280 Logit Scale: 14.250 Contrastive_loss: 4.7500 (4.7812) Loss: 4.7500 (4.7812)
+2024-11-03,21:31:57 | INFO | Train Epoch: 5 [61440/61440 (100%)] Data (t): 0.370 Batch (t): 0.595, 870.732/s, 870.732/s/gpu LR: 0.000288 Logit Scale: 14.250 Contrastive_loss: 4.7500 (4.7708) Loss: 4.7500 (4.7708)
+2024-11-03,21:31:57 | INFO | Starting zero-shot imagenet.
+2024-11-03,21:31:57 | INFO | Building zero-shot classifier
+2024-11-03,21:32:07 | INFO | Using classifier
+2024-11-03,21:32:53 | INFO | Finished zero-shot imagenet.
+2024-11-03,21:32:53 | INFO | Eval Epoch: 6 imagenet-zeroshot-val-top1: 0.0078	imagenet-zeroshot-val-top5: 0.0291
+2024-11-03,21:32:58 | INFO | Start epoch 6
+2024-11-03,21:33:02 | INFO | Train Epoch: 6 [  512/61440 (1%)] Data (t): 3.390 Batch (t): 3.629, 141.093/s, 141.093/s/gpu LR: 0.000288 Logit Scale: 14.250 Contrastive_loss: 4.8125 (4.8125) Loss: 4.8125 (4.8125)
+2024-11-03,21:34:03 | INFO | Train Epoch: 6 [51712/61440 (84%)] Data (t): 0.388 Batch (t): 0.611, 904.608/s, 904.608/s/gpu LR: 0.000328 Logit Scale: 14.250 Contrastive_loss: 4.6875 (4.7500) Loss: 4.6875 (4.7500)
+2024-11-03,21:34:14 | INFO | Train Epoch: 6 [61440/61440 (100%)] Data (t): 0.379 Batch (t): 0.609, 865.649/s, 865.649/s/gpu LR: 0.000336 Logit Scale: 14.250 Contrastive_loss: 4.5625 (4.6875) Loss: 4.5625 (4.6875)
+2024-11-03,21:34:14 | INFO | Starting zero-shot imagenet.
+2024-11-03,21:34:14 | INFO | Building zero-shot classifier
+2024-11-03,21:34:25 | INFO | Using classifier
+2024-11-03,21:35:11 | INFO | Finished zero-shot imagenet.
+2024-11-03,21:35:11 | INFO | Eval Epoch: 7 imagenet-zeroshot-val-top1: 0.0078	imagenet-zeroshot-val-top5: 0.0305
+2024-11-03,21:35:16 | INFO | Start epoch 7
+2024-11-03,21:35:19 | INFO | Train Epoch: 7 [  512/61440 (1%)] Data (t): 2.994 Batch (t): 3.232, 158.424/s, 158.424/s/gpu LR: 0.000336 Logit Scale: 14.250 Contrastive_loss: 4.8125 (4.8125) Loss: 4.8125 (4.8125)
+2024-11-03,21:36:19 | INFO | Train Epoch: 7 [51712/61440 (84%)] Data (t): 0.384 Batch (t): 0.596, 880.163/s, 880.163/s/gpu LR: 0.000376 Logit Scale: 14.250 Contrastive_loss: 4.4375 (4.6250) Loss: 4.4375 (4.6250)
+2024-11-03,21:36:30 | INFO | Train Epoch: 7 [61440/61440 (100%)] Data (t): 0.372 Batch (t): 0.598, 856.344/s, 856.344/s/gpu LR: 0.000384 Logit Scale: 14.250 Contrastive_loss: 4.4375 (4.5625) Loss: 4.4375 (4.5625)
+2024-11-03,21:36:30 | INFO | Starting zero-shot imagenet.
+2024-11-03,21:36:30 | INFO | Building zero-shot classifier
+2024-11-03,21:36:41 | INFO | Using classifier
+2024-11-03,21:37:28 | INFO | Finished zero-shot imagenet.
+2024-11-03,21:37:28 | INFO | Eval Epoch: 8 imagenet-zeroshot-val-top1: 0.0090	imagenet-zeroshot-val-top5: 0.0300
+2024-11-03,21:37:33 | INFO | Start epoch 8
+2024-11-03,21:37:36 | INFO | Train Epoch: 8 [  512/61440 (1%)] Data (t): 3.264 Batch (t): 3.503, 146.170/s, 146.170/s/gpu LR: 0.000384 Logit Scale: 14.250 Contrastive_loss: 4.8125 (4.8125) Loss: 4.8125 (4.8125)
+2024-11-03,21:38:36 | INFO | Train Epoch: 8 [51712/61440 (84%)] Data (t): 0.377 Batch (t): 0.599, 850.175/s, 850.175/s/gpu LR: 0.000424 Logit Scale: 14.250 Contrastive_loss: 4.5625 (4.6875) Loss: 4.5625 (4.6875)
+2024-11-03,21:38:48 | INFO | Train Epoch: 8 [61440/61440 (100%)] Data (t): 0.372 Batch (t): 0.597, 875.074/s, 875.074/s/gpu LR: 0.000432 Logit Scale: 14.250 Contrastive_loss: 4.3750 (4.5833) Loss: 4.3750 (4.5833)
+2024-11-03,21:38:48 | INFO | Starting zero-shot imagenet.
+2024-11-03,21:38:48 | INFO | Building zero-shot classifier
+2024-11-03,21:38:58 | INFO | Using classifier
+2024-11-03,21:39:45 | INFO | Finished zero-shot imagenet.
+2024-11-03,21:39:45 | INFO | Eval Epoch: 9 imagenet-zeroshot-val-top1: 0.0099	imagenet-zeroshot-val-top5: 0.0348
+2024-11-03,21:39:50 | INFO | Start epoch 9
+2024-11-03,21:39:53 | INFO | Train Epoch: 9 [  512/61440 (1%)] Data (t): 3.035 Batch (t): 3.307, 154.817/s, 154.817/s/gpu LR: 0.000432 Logit Scale: 14.250 Contrastive_loss: 4.4375 (4.4375) Loss: 4.4375 (4.4375)
+2024-11-03,21:40:54 | INFO | Train Epoch: 9 [51712/61440 (84%)] Data (t): 0.385 Batch (t): 0.606, 836.090/s, 836.090/s/gpu LR: 0.000472 Logit Scale: 14.250 Contrastive_loss: 4.4062 (4.4219) Loss: 4.4062 (4.4219)
+2024-11-03,21:41:06 | INFO | Train Epoch: 9 [61440/61440 (100%)] Data (t): 0.392 Batch (t): 0.628, 793.063/s, 793.063/s/gpu LR: 0.000480 Logit Scale: 14.250 Contrastive_loss: 4.3750 (4.4062) Loss: 4.3750 (4.4062)
+2024-11-03,21:41:06 | INFO | Starting zero-shot imagenet.
+2024-11-03,21:41:06 | INFO | Building zero-shot classifier
+2024-11-03,21:41:17 | INFO | Using classifier
+2024-11-03,21:42:02 | INFO | Finished zero-shot imagenet.
+2024-11-03,21:42:02 | INFO | Eval Epoch: 10 imagenet-zeroshot-val-top1: 0.0121	imagenet-zeroshot-val-top5: 0.0381
+2024-11-03,21:42:06 | INFO | Start epoch 10
+2024-11-03,21:42:10 | INFO | Train Epoch: 10 [  512/61440 (1%)] Data (t): 3.180 Batch (t): 3.393, 150.903/s, 150.903/s/gpu LR: 0.000480 Logit Scale: 14.250 Contrastive_loss: 4.6875 (4.6875) Loss: 4.6875 (4.6875)
+2024-11-03,21:43:10 | INFO | Train Epoch: 10 [51712/61440 (84%)] Data (t): 0.377 Batch (t): 0.594, 859.975/s, 859.975/s/gpu LR: 0.000520 Logit Scale: 14.250 Contrastive_loss: 4.1875 (4.4375) Loss: 4.1875 (4.4375)
+2024-11-03,21:43:21 | INFO | Train Epoch: 10 [61440/61440 (100%)] Data (t): 0.376 Batch (t): 0.604, 855.384/s, 855.384/s/gpu LR: 0.000528 Logit Scale: 14.250 Contrastive_loss: 4.3438 (4.4062) Loss: 4.3438 (4.4062)
+2024-11-03,21:43:21 | INFO | Starting zero-shot imagenet.
+2024-11-03,21:43:21 | INFO | Building zero-shot classifier
+2024-11-03,21:43:32 | INFO | Using classifier
+2024-11-03,21:44:17 | INFO | Finished zero-shot imagenet.
+2024-11-03,21:44:17 | INFO | Eval Epoch: 11 imagenet-zeroshot-val-top1: 0.0127	imagenet-zeroshot-val-top5: 0.0406
+2024-11-03,21:44:22 | INFO | Start epoch 11
+2024-11-03,21:44:26 | INFO | Train Epoch: 11 [  512/61440 (1%)] Data (t): 3.029 Batch (t): 3.247, 157.708/s, 157.708/s/gpu LR: 0.000528 Logit Scale: 14.250 Contrastive_loss: 4.9062 (4.9062) Loss: 4.9062 (4.9062)
+2024-11-03,21:45:26 | INFO | Train Epoch: 11 [51712/61440 (84%)] Data (t): 0.379 Batch (t): 0.601, 855.193/s, 855.193/s/gpu LR: 0.000568 Logit Scale: 14.250 Contrastive_loss: 4.1562 (4.5312) Loss: 4.1562 (4.5312)
+2024-11-03,21:45:37 | INFO | Train Epoch: 11 [61440/61440 (100%)] Data (t): 0.392 Batch (t): 0.624, 812.384/s, 812.384/s/gpu LR: 0.000576 Logit Scale: 14.250 Contrastive_loss: 4.1562 (4.4062) Loss: 4.1562 (4.4062)
+2024-11-03,21:45:38 | INFO | Starting zero-shot imagenet.
+2024-11-03,21:45:38 | INFO | Building zero-shot classifier
+2024-11-03,21:45:48 | INFO | Using classifier
+2024-11-03,21:46:33 | INFO | Finished zero-shot imagenet.
+2024-11-03,21:46:33 | INFO | Eval Epoch: 12 imagenet-zeroshot-val-top1: 0.0120	imagenet-zeroshot-val-top5: 0.0392
+2024-11-03,21:46:38 | INFO | Start epoch 12
+2024-11-03,21:46:41 | INFO | Train Epoch: 12 [  512/61440 (1%)] Data (t): 2.892 Batch (t): 3.139, 163.114/s, 163.114/s/gpu LR: 0.000576 Logit Scale: 14.250 Contrastive_loss: 4.3750 (4.3750) Loss: 4.3750 (4.3750)
+2024-11-03,21:47:42 | INFO | Train Epoch: 12 [51712/61440 (84%)] Data (t): 0.386 Batch (t): 0.607, 878.739/s, 878.739/s/gpu LR: 0.000616 Logit Scale: 14.250 Contrastive_loss: 3.9062 (4.1406) Loss: 3.9062 (4.1406)
+2024-11-03,21:47:53 | INFO | Train Epoch: 12 [61440/61440 (100%)] Data (t): 0.371 Batch (t): 0.600, 867.707/s, 867.707/s/gpu LR: 0.000624 Logit Scale: 14.250 Contrastive_loss: 4.3750 (4.2188) Loss: 4.3750 (4.2188)
+2024-11-03,21:47:53 | INFO | Starting zero-shot imagenet.
+2024-11-03,21:47:53 | INFO | Building zero-shot classifier
+2024-11-03,21:48:04 | INFO | Using classifier
+2024-11-03,21:48:50 | INFO | Finished zero-shot imagenet.
+2024-11-03,21:48:50 | INFO | Eval Epoch: 13 imagenet-zeroshot-val-top1: 0.0110	imagenet-zeroshot-val-top5: 0.0372
+2024-11-03,21:48:54 | INFO | Start epoch 13
+2024-11-03,21:48:57 | INFO | Train Epoch: 13 [  512/61440 (1%)] Data (t): 2.866 Batch (t): 3.102, 165.060/s, 165.060/s/gpu LR: 0.000624 Logit Scale: 14.250 Contrastive_loss: 4.3750 (4.3750) Loss: 4.3750 (4.3750)
+2024-11-03,21:49:57 | INFO | Train Epoch: 13 [51712/61440 (84%)] Data (t): 0.377 Batch (t): 0.598, 833.941/s, 833.941/s/gpu LR: 0.000664 Logit Scale: 14.250 Contrastive_loss: 4.3125 (4.3438) Loss: 4.3125 (4.3438)
+2024-11-03,21:50:09 | INFO | Train Epoch: 13 [61440/61440 (100%)] Data (t): 0.397 Batch (t): 0.626, 863.546/s, 863.546/s/gpu LR: 0.000672 Logit Scale: 14.250 Contrastive_loss: 4.1875 (4.2917) Loss: 4.1875 (4.2917)
+2024-11-03,21:50:09 | INFO | Starting zero-shot imagenet.
+2024-11-03,21:50:09 | INFO | Building zero-shot classifier
+2024-11-03,21:50:20 | INFO | Using classifier
+2024-11-03,21:51:05 | INFO | Finished zero-shot imagenet.
+2024-11-03,21:51:05 | INFO | Eval Epoch: 14 imagenet-zeroshot-val-top1: 0.0117	imagenet-zeroshot-val-top5: 0.0364
+2024-11-03,21:51:09 | INFO | Start epoch 14
+2024-11-03,21:51:13 | INFO | Train Epoch: 14 [  512/61440 (1%)] Data (t): 3.684 Batch (t): 3.924, 130.494/s, 130.494/s/gpu LR: 0.000672 Logit Scale: 14.250 Contrastive_loss: 4.7188 (4.7188) Loss: 4.7188 (4.7188)
+2024-11-03,21:52:14 | INFO | Train Epoch: 14 [51712/61440 (84%)] Data (t): 0.385 Batch (t): 0.604, 877.991/s, 877.991/s/gpu LR: 0.000712 Logit Scale: 14.250 Contrastive_loss: 4.2188 (4.4688) Loss: 4.2188 (4.4688)
+2024-11-03,21:52:26 | INFO | Train Epoch: 14 [61440/61440 (100%)] Data (t): 0.399 Batch (t): 0.633, 790.211/s, 790.211/s/gpu LR: 0.000720 Logit Scale: 14.250 Contrastive_loss: 4.3750 (4.4375) Loss: 4.3750 (4.4375)
+2024-11-03,21:52:26 | INFO | Starting zero-shot imagenet.
+2024-11-03,21:52:26 | INFO | Building zero-shot classifier
+2024-11-03,21:52:36 | INFO | Using classifier
+2024-11-03,21:53:22 | INFO | Finished zero-shot imagenet.
+2024-11-03,21:53:22 | INFO | Eval Epoch: 15 imagenet-zeroshot-val-top1: 0.0114	imagenet-zeroshot-val-top5: 0.0368
+2024-11-03,21:53:27 | INFO | Start epoch 15
+2024-11-03,21:53:30 | INFO | Train Epoch: 15 [  512/61440 (1%)] Data (t): 3.139 Batch (t): 3.367, 152.063/s, 152.063/s/gpu LR: 0.000720 Logit Scale: 14.250 Contrastive_loss: 4.4375 (4.4375) Loss: 4.4375 (4.4375)
+2024-11-03,21:54:31 | INFO | Train Epoch: 15 [51712/61440 (84%)] Data (t): 0.382 Batch (t): 0.606, 873.064/s, 873.064/s/gpu LR: 0.000760 Logit Scale: 14.250 Contrastive_loss: 4.2500 (4.3438) Loss: 4.2500 (4.3438)
+2024-11-03,21:54:42 | INFO | Train Epoch: 15 [61440/61440 (100%)] Data (t): 0.371 Batch (t): 0.603, 860.602/s, 860.602/s/gpu LR: 0.000768 Logit Scale: 14.250 Contrastive_loss: 4.1875 (4.2917) Loss: 4.1875 (4.2917)
+2024-11-03,21:54:43 | INFO | Starting zero-shot imagenet.
+2024-11-03,21:54:43 | INFO | Building zero-shot classifier
+2024-11-03,21:54:53 | INFO | Using classifier
+2024-11-03,21:55:39 | INFO | Finished zero-shot imagenet.
+2024-11-03,21:55:39 | INFO | Eval Epoch: 16 imagenet-zeroshot-val-top1: 0.0117	imagenet-zeroshot-val-top5: 0.0392
+2024-11-03,21:55:43 | INFO | Start epoch 16
+2024-11-03,21:55:47 | INFO | Train Epoch: 16 [  512/61440 (1%)] Data (t): 3.092 Batch (t): 3.319, 154.272/s, 154.272/s/gpu LR: 0.000768 Logit Scale: 14.250 Contrastive_loss: 4.7188 (4.7188) Loss: 4.7188 (4.7188)
+2024-11-03,21:56:47 | INFO | Train Epoch: 16 [51712/61440 (84%)] Data (t): 0.385 Batch (t): 0.605, 891.216/s, 891.216/s/gpu LR: 0.000808 Logit Scale: 14.250 Contrastive_loss: 4.1875 (4.4531) Loss: 4.1875 (4.4531)
+2024-11-03,21:56:59 | INFO | Train Epoch: 16 [61440/61440 (100%)] Data (t): 0.399 Batch (t): 0.638, 800.435/s, 800.435/s/gpu LR: 0.000816 Logit Scale: 14.250 Contrastive_loss: 4.3438 (4.4167) Loss: 4.3438 (4.4167)
+2024-11-03,21:57:00 | INFO | Starting zero-shot imagenet.
+2024-11-03,21:57:00 | INFO | Building zero-shot classifier
+2024-11-03,21:57:10 | INFO | Using classifier
+2024-11-03,21:57:56 | INFO | Finished zero-shot imagenet.
+2024-11-03,21:57:56 | INFO | Eval Epoch: 17 imagenet-zeroshot-val-top1: 0.0116	imagenet-zeroshot-val-top5: 0.0397
+2024-11-03,21:58:01 | INFO | Start epoch 17
+2024-11-03,21:58:04 | INFO | Train Epoch: 17 [  512/61440 (1%)] Data (t): 2.960 Batch (t): 3.192, 160.377/s, 160.377/s/gpu LR: 0.000816 Logit Scale: 14.250 Contrastive_loss: 4.4375 (4.4375) Loss: 4.4375 (4.4375)
+2024-11-03,21:59:04 | INFO | Train Epoch: 17 [51712/61440 (84%)] Data (t): 0.381 Batch (t): 0.595, 871.468/s, 871.468/s/gpu LR: 0.000856 Logit Scale: 14.250 Contrastive_loss: 4.1250 (4.2812) Loss: 4.1250 (4.2812)
+2024-11-03,21:59:15 | INFO | Train Epoch: 17 [61440/61440 (100%)] Data (t): 0.380 Batch (t): 0.607, 865.789/s, 865.789/s/gpu LR: 0.000864 Logit Scale: 14.250 Contrastive_loss: 4.2188 (4.2604) Loss: 4.2188 (4.2604)
+2024-11-03,21:59:15 | INFO | Starting zero-shot imagenet.
+2024-11-03,21:59:15 | INFO | Building zero-shot classifier
+2024-11-03,21:59:26 | INFO | Using classifier
+2024-11-03,22:00:12 | INFO | Finished zero-shot imagenet.
+2024-11-03,22:00:12 | INFO | Eval Epoch: 18 imagenet-zeroshot-val-top1: 0.0111	imagenet-zeroshot-val-top5: 0.0371
+2024-11-03,22:00:16 | INFO | Start epoch 18
+2024-11-03,22:00:20 | INFO | Train Epoch: 18 [  512/61440 (1%)] Data (t): 2.888 Batch (t): 3.112, 164.545/s, 164.545/s/gpu LR: 0.000864 Logit Scale: 14.250 Contrastive_loss: 4.5000 (4.5000) Loss: 4.5000 (4.5000)
+2024-11-03,22:01:20 | INFO | Train Epoch: 18 [51712/61440 (84%)] Data (t): 0.382 Batch (t): 0.604, 869.401/s, 869.401/s/gpu LR: 0.000904 Logit Scale: 14.250 Contrastive_loss: 4.3125 (4.4062) Loss: 4.3125 (4.4062)
+2024-11-03,22:01:32 | INFO | Train Epoch: 18 [61440/61440 (100%)] Data (t): 0.370 Batch (t): 0.605, 871.893/s, 871.893/s/gpu LR: 0.000912 Logit Scale: 14.250 Contrastive_loss: 4.0625 (4.2917) Loss: 4.0625 (4.2917)
+2024-11-03,22:01:32 | INFO | Starting zero-shot imagenet.
+2024-11-03,22:01:32 | INFO | Building zero-shot classifier
+2024-11-03,22:01:42 | INFO | Using classifier
+2024-11-03,22:02:28 | INFO | Finished zero-shot imagenet.
+2024-11-03,22:02:28 | INFO | Eval Epoch: 19 imagenet-zeroshot-val-top1: 0.0117	imagenet-zeroshot-val-top5: 0.0383
+2024-11-03,22:02:33 | INFO | Start epoch 19
+2024-11-03,22:02:36 | INFO | Train Epoch: 19 [  512/61440 (1%)] Data (t): 2.965 Batch (t): 3.190, 160.524/s, 160.524/s/gpu LR: 0.000912 Logit Scale: 14.250 Contrastive_loss: 4.6875 (4.6875) Loss: 4.6875 (4.6875)
+2024-11-03,22:03:37 | INFO | Train Epoch: 19 [51712/61440 (84%)] Data (t): 0.392 Batch (t): 0.612, 861.491/s, 861.491/s/gpu LR: 0.000952 Logit Scale: 14.250 Contrastive_loss: 4.1250 (4.4062) Loss: 4.1250 (4.4062)
+2024-11-03,22:03:49 | INFO | Train Epoch: 19 [61440/61440 (100%)] Data (t): 0.404 Batch (t): 0.637, 863.883/s, 863.883/s/gpu LR: 0.000960 Logit Scale: 14.250 Contrastive_loss: 4.4375 (4.4167) Loss: 4.4375 (4.4167)
+2024-11-03,22:03:50 | INFO | Starting zero-shot imagenet.
+2024-11-03,22:03:50 | INFO | Building zero-shot classifier
+2024-11-03,22:04:00 | INFO | Using classifier
+2024-11-03,22:04:46 | INFO | Finished zero-shot imagenet.
+2024-11-03,22:04:46 | INFO | Eval Epoch: 20 imagenet-zeroshot-val-top1: 0.0109	imagenet-zeroshot-val-top5: 0.0370
+2024-11-03,22:04:51 | INFO | Start epoch 20
+2024-11-03,22:04:55 | INFO | Train Epoch: 20 [  512/61440 (1%)] Data (t): 3.336 Batch (t): 3.560, 143.821/s, 143.821/s/gpu LR: 0.000960 Logit Scale: 14.250 Contrastive_loss: 4.5000 (4.5000) Loss: 4.5000 (4.5000)
+2024-11-03,22:05:55 | INFO | Train Epoch: 20 [51712/61440 (84%)] Data (t): 0.380 Batch (t): 0.600, 876.579/s, 876.579/s/gpu LR: 0.001000 Logit Scale: 14.250 Contrastive_loss: 4.3125 (4.4062) Loss: 4.3125 (4.4062)
+2024-11-03,22:06:06 | INFO | Train Epoch: 20 [61440/61440 (100%)] Data (t): 0.362 Batch (t): 0.602, 860.735/s, 860.735/s/gpu LR: 0.001008 Logit Scale: 14.250 Contrastive_loss: 4.3125 (4.3750) Loss: 4.3125 (4.3750)
+2024-11-03,22:06:06 | INFO | Starting zero-shot imagenet.
+2024-11-03,22:06:06 | INFO | Building zero-shot classifier
+2024-11-03,22:06:17 | INFO | Using classifier
+2024-11-03,22:07:03 | INFO | Finished zero-shot imagenet.
+2024-11-03,22:07:03 | INFO | Eval Epoch: 21 imagenet-zeroshot-val-top1: 0.0115	imagenet-zeroshot-val-top5: 0.0384
+2024-11-03,22:07:07 | INFO | Start epoch 21
+2024-11-03,22:07:11 | INFO | Train Epoch: 21 [  512/61440 (1%)] Data (t): 3.010 Batch (t): 3.246, 157.726/s, 157.726/s/gpu LR: 0.001008 Logit Scale: 14.250 Contrastive_loss: 4.6250 (4.6250) Loss: 4.6250 (4.6250)
+2024-11-03,22:08:10 | INFO | Train Epoch: 21 [51712/61440 (84%)] Data (t): 0.379 Batch (t): 0.595, 901.122/s, 901.122/s/gpu LR: 0.001048 Logit Scale: 14.250 Contrastive_loss: 4.3750 (4.5000) Loss: 4.3750 (4.5000)
+2024-11-03,22:08:22 | INFO | Train Epoch: 21 [61440/61440 (100%)] Data (t): 0.369 Batch (t): 0.599, 872.583/s, 872.583/s/gpu LR: 0.001056 Logit Scale: 14.250 Contrastive_loss: 4.4375 (4.4792) Loss: 4.4375 (4.4792)
+2024-11-03,22:08:22 | INFO | Starting zero-shot imagenet.
+2024-11-03,22:08:22 | INFO | Building zero-shot classifier
+2024-11-03,22:08:33 | INFO | Using classifier
+2024-11-03,22:09:17 | INFO | Finished zero-shot imagenet.
+2024-11-03,22:09:17 | INFO | Eval Epoch: 22 imagenet-zeroshot-val-top1: 0.0108	imagenet-zeroshot-val-top5: 0.0367
+2024-11-03,22:09:21 | INFO | Start epoch 22
+2024-11-03,22:09:25 | INFO | Train Epoch: 22 [  512/61440 (1%)] Data (t): 3.775 Batch (t): 4.024, 127.227/s, 127.227/s/gpu LR: 0.001056 Logit Scale: 14.250 Contrastive_loss: 4.9375 (4.9375) Loss: 4.9375 (4.9375)
+2024-11-03,22:10:25 | INFO | Train Epoch: 22 [51712/61440 (84%)] Data (t): 0.376 Batch (t): 0.594, 825.768/s, 825.768/s/gpu LR: 0.001096 Logit Scale: 14.250 Contrastive_loss: 4.6250 (4.7812) Loss: 4.6250 (4.7812)
+2024-11-03,22:10:36 | INFO | Train Epoch: 22 [61440/61440 (100%)] Data (t): 0.373 Batch (t): 0.610, 858.633/s, 858.633/s/gpu LR: 0.001104 Logit Scale: 14.250 Contrastive_loss: 4.5625 (4.7083) Loss: 4.5625 (4.7083)
+2024-11-03,22:10:37 | INFO | Starting zero-shot imagenet.
+2024-11-03,22:10:37 | INFO | Building zero-shot classifier
+2024-11-03,22:10:47 | INFO | Using classifier
+2024-11-03,22:11:34 | INFO | Finished zero-shot imagenet.
+2024-11-03,22:11:34 | INFO | Eval Epoch: 23 imagenet-zeroshot-val-top1: 0.0101	imagenet-zeroshot-val-top5: 0.0362
+2024-11-03,22:11:38 | INFO | Start epoch 23
+2024-11-03,22:11:42 | INFO | Train Epoch: 23 [  512/61440 (1%)] Data (t): 3.038 Batch (t): 3.297, 155.292/s, 155.292/s/gpu LR: 0.001104 Logit Scale: 14.250 Contrastive_loss: 4.8750 (4.8750) Loss: 4.8750 (4.8750)
+2024-11-03,22:12:42 | INFO | Train Epoch: 23 [51712/61440 (84%)] Data (t): 0.385 Batch (t): 0.606, 880.423/s, 880.423/s/gpu LR: 0.001144 Logit Scale: 14.250 Contrastive_loss: 4.5000 (4.6875) Loss: 4.5000 (4.6875)
+2024-11-03,22:12:54 | INFO | Train Epoch: 23 [61440/61440 (100%)] Data (t): 0.367 Batch (t): 0.598, 861.373/s, 861.373/s/gpu LR: 0.001152 Logit Scale: 14.250 Contrastive_loss: 4.4062 (4.5938) Loss: 4.4062 (4.5938)
+2024-11-03,22:12:54 | INFO | Starting zero-shot imagenet.
+2024-11-03,22:12:54 | INFO | Building zero-shot classifier
+2024-11-03,22:13:04 | INFO | Using classifier
+2024-11-03,22:13:50 | INFO | Finished zero-shot imagenet.
+2024-11-03,22:13:50 | INFO | Eval Epoch: 24 imagenet-zeroshot-val-top1: 0.0103	imagenet-zeroshot-val-top5: 0.0333
+2024-11-03,22:13:55 | INFO | Start epoch 24
+2024-11-03,22:13:59 | INFO | Train Epoch: 24 [  512/61440 (1%)] Data (t): 2.975 Batch (t): 3.214, 159.320/s, 159.320/s/gpu LR: 0.001152 Logit Scale: 14.250 Contrastive_loss: 4.3125 (4.3125) Loss: 4.3125 (4.3125)
+2024-11-03,22:14:59 | INFO | Train Epoch: 24 [51712/61440 (84%)] Data (t): 0.382 Batch (t): 0.601, 871.534/s, 871.534/s/gpu LR: 0.001192 Logit Scale: 14.250 Contrastive_loss: 4.8750 (4.5938) Loss: 4.8750 (4.5938)
+2024-11-03,22:15:10 | INFO | Train Epoch: 24 [61440/61440 (100%)] Data (t): 0.378 Batch (t): 0.613, 859.641/s, 859.641/s/gpu LR: 0.001200 Logit Scale: 14.250 Contrastive_loss: 4.6875 (4.6250) Loss: 4.6875 (4.6250)
+2024-11-03,22:15:10 | INFO | Starting zero-shot imagenet.
+2024-11-03,22:15:10 | INFO | Building zero-shot classifier
+2024-11-03,22:15:21 | INFO | Using classifier
+2024-11-03,22:16:06 | INFO | Finished zero-shot imagenet.
+2024-11-03,22:16:06 | INFO | Eval Epoch: 25 imagenet-zeroshot-val-top1: 0.0095	imagenet-zeroshot-val-top5: 0.0335
+2024-11-03,22:16:10 | INFO | Start epoch 25
+2024-11-03,22:16:14 | INFO | Train Epoch: 25 [  512/61440 (1%)] Data (t): 3.057 Batch (t): 3.286, 155.822/s, 155.822/s/gpu LR: 0.001200 Logit Scale: 14.250 Contrastive_loss: 4.9688 (4.9688) Loss: 4.9688 (4.9688)
+2024-11-03,22:17:13 | INFO | Train Epoch: 25 [51712/61440 (84%)] Data (t): 0.382 Batch (t): 0.598, 862.375/s, 862.375/s/gpu LR: 0.001240 Logit Scale: 14.250 Contrastive_loss: 4.6562 (4.8125) Loss: 4.6562 (4.8125)
+2024-11-03,22:17:25 | INFO | Train Epoch: 25 [61440/61440 (100%)] Data (t): 0.386 Batch (t): 0.599, 863.087/s, 863.087/s/gpu LR: 0.001248 Logit Scale: 14.250 Contrastive_loss: 4.5625 (4.7292) Loss: 4.5625 (4.7292)
+2024-11-03,22:17:25 | INFO | Starting zero-shot imagenet.
+2024-11-03,22:17:25 | INFO | Building zero-shot classifier
+2024-11-03,22:17:36 | INFO | Using classifier
+2024-11-03,22:18:21 | INFO | Finished zero-shot imagenet.
+2024-11-03,22:18:21 | INFO | Eval Epoch: 26 imagenet-zeroshot-val-top1: 0.0084	imagenet-zeroshot-val-top5: 0.0301
+2024-11-03,22:18:25 | INFO | Start epoch 26
+2024-11-03,22:18:29 | INFO | Train Epoch: 26 [  512/61440 (1%)] Data (t): 2.926 Batch (t): 3.175, 161.270/s, 161.270/s/gpu LR: 0.001248 Logit Scale: 14.250 Contrastive_loss: 4.6250 (4.6250) Loss: 4.6250 (4.6250)
+2024-11-03,22:19:28 | INFO | Train Epoch: 26 [51712/61440 (84%)] Data (t): 0.378 Batch (t): 0.597, 847.887/s, 847.887/s/gpu LR: 0.001288 Logit Scale: 14.250 Contrastive_loss: 4.9062 (4.7656) Loss: 4.9062 (4.7656)
+2024-11-03,22:19:40 | INFO | Train Epoch: 26 [61440/61440 (100%)] Data (t): 0.368 Batch (t): 0.603, 849.154/s, 849.154/s/gpu LR: 0.001296 Logit Scale: 14.250 Contrastive_loss: 4.9062 (4.8125) Loss: 4.9062 (4.8125)
+2024-11-03,22:19:40 | INFO | Starting zero-shot imagenet.
+2024-11-03,22:19:40 | INFO | Building zero-shot classifier
+2024-11-03,22:19:51 | INFO | Using classifier
+2024-11-03,22:20:36 | INFO | Finished zero-shot imagenet.
+2024-11-03,22:20:36 | INFO | Eval Epoch: 27 imagenet-zeroshot-val-top1: 0.0078	imagenet-zeroshot-val-top5: 0.0280
+2024-11-03,22:20:41 | INFO | Start epoch 27
+2024-11-03,22:20:44 | INFO | Train Epoch: 27 [  512/61440 (1%)] Data (t): 3.072 Batch (t): 3.314, 154.515/s, 154.515/s/gpu LR: 0.001296 Logit Scale: 14.250 Contrastive_loss: 5.0000 (5.0000) Loss: 5.0000 (5.0000)
+2024-11-03,22:21:44 | INFO | Train Epoch: 27 [51712/61440 (84%)] Data (t): 0.384 Batch (t): 0.601, 888.480/s, 888.480/s/gpu LR: 0.001336 Logit Scale: 14.250 Contrastive_loss: 5.1875 (5.0938) Loss: 5.1875 (5.0938)
+2024-11-03,22:21:56 | INFO | Train Epoch: 27 [61440/61440 (100%)] Data (t): 0.369 Batch (t): 0.596, 872.855/s, 872.855/s/gpu LR: 0.001344 Logit Scale: 14.250 Contrastive_loss: 5.0938 (5.0938) Loss: 5.0938 (5.0938)
+2024-11-03,22:21:56 | INFO | Starting zero-shot imagenet.
+2024-11-03,22:21:56 | INFO | Building zero-shot classifier
+2024-11-03,22:22:07 | INFO | Using classifier
+2024-11-03,22:22:52 | INFO | Finished zero-shot imagenet.
+2024-11-03,22:22:52 | INFO | Eval Epoch: 28 imagenet-zeroshot-val-top1: 0.0068	imagenet-zeroshot-val-top5: 0.0226
+2024-11-03,22:22:57 | INFO | Start epoch 28
+2024-11-03,22:23:00 | INFO | Train Epoch: 28 [  512/61440 (1%)] Data (t): 2.770 Batch (t): 2.992, 171.118/s, 171.118/s/gpu LR: 0.001344 Logit Scale: 14.250 Contrastive_loss: 5.2500 (5.2500) Loss: 5.2500 (5.2500)
+2024-11-03,22:24:00 | INFO | Train Epoch: 28 [51712/61440 (84%)] Data (t): 0.383 Batch (t): 0.597, 807.675/s, 807.675/s/gpu LR: 0.001384 Logit Scale: 14.250 Contrastive_loss: 5.3438 (5.2969) Loss: 5.3438 (5.2969)
+2024-11-03,22:24:12 | INFO | Train Epoch: 28 [61440/61440 (100%)] Data (t): 0.382 Batch (t): 0.616, 791.284/s, 791.284/s/gpu LR: 0.001392 Logit Scale: 14.250 Contrastive_loss: 5.3125 (5.3021) Loss: 5.3125 (5.3021)
+2024-11-03,22:24:12 | INFO | Starting zero-shot imagenet.
+2024-11-03,22:24:12 | INFO | Building zero-shot classifier
+2024-11-03,22:24:23 | INFO | Using classifier
+2024-11-03,22:25:08 | INFO | Finished zero-shot imagenet.
+2024-11-03,22:25:08 | INFO | Eval Epoch: 29 imagenet-zeroshot-val-top1: 0.0052	imagenet-zeroshot-val-top5: 0.0205
+2024-11-03,22:25:12 | INFO | Start epoch 29
+2024-11-03,22:25:16 | INFO | Train Epoch: 29 [  512/61440 (1%)] Data (t): 3.052 Batch (t): 3.281, 156.038/s, 156.038/s/gpu LR: 0.001392 Logit Scale: 14.250 Contrastive_loss: 5.4062 (5.4062) Loss: 5.4062 (5.4062)
+2024-11-03,22:26:17 | INFO | Train Epoch: 29 [51712/61440 (84%)] Data (t): 0.387 Batch (t): 0.607, 853.142/s, 853.142/s/gpu LR: 0.001432 Logit Scale: 14.250 Contrastive_loss: 5.3750 (5.3906) Loss: 5.3750 (5.3906)
+2024-11-03,22:26:28 | INFO | Train Epoch: 29 [61440/61440 (100%)] Data (t): 0.375 Batch (t): 0.604, 861.262/s, 861.262/s/gpu LR: 0.001440 Logit Scale: 14.250 Contrastive_loss: 5.3125 (5.3646) Loss: 5.3125 (5.3646)
+2024-11-03,22:26:28 | INFO | Starting zero-shot imagenet.
+2024-11-03,22:26:28 | INFO | Building zero-shot classifier
+2024-11-03,22:26:39 | INFO | Using classifier
+2024-11-03,22:27:24 | INFO | Finished zero-shot imagenet.
+2024-11-03,22:27:24 | INFO | Eval Epoch: 30 imagenet-zeroshot-val-top1: 0.0057	imagenet-zeroshot-val-top5: 0.0219
+2024-11-03,22:27:28 | INFO | Start epoch 30
+2024-11-03,22:27:32 | INFO | Train Epoch: 30 [  512/61440 (1%)] Data (t): 3.473 Batch (t): 3.711, 137.967/s, 137.967/s/gpu LR: 0.001440 Logit Scale: 14.250 Contrastive_loss: 5.4375 (5.4375) Loss: 5.4375 (5.4375)
+2024-11-03,22:28:32 | INFO | Train Epoch: 30 [51712/61440 (84%)] Data (t): 0.380 Batch (t): 0.598, 865.193/s, 865.193/s/gpu LR: 0.001480 Logit Scale: 14.250 Contrastive_loss: 5.4375 (5.4375) Loss: 5.4375 (5.4375)
+2024-11-03,22:28:44 | INFO | Train Epoch: 30 [61440/61440 (100%)] Data (t): 0.382 Batch (t): 0.613, 876.162/s, 876.162/s/gpu LR: 0.001488 Logit Scale: 14.250 Contrastive_loss: 5.4375 (5.4375) Loss: 5.4375 (5.4375)
+2024-11-03,22:28:44 | INFO | Starting zero-shot imagenet.
+2024-11-03,22:28:44 | INFO | Building zero-shot classifier
+2024-11-03,22:28:55 | INFO | Using classifier
+2024-11-03,22:29:42 | INFO | Finished zero-shot imagenet.
+2024-11-03,22:29:42 | INFO | Eval Epoch: 31 imagenet-zeroshot-val-top1: 0.0052	imagenet-zeroshot-val-top5: 0.0193
+2024-11-03,22:29:46 | INFO | Start epoch 31
+2024-11-03,22:29:50 | INFO | Train Epoch: 31 [  512/61440 (1%)] Data (t): 3.111 Batch (t): 3.332, 153.675/s, 153.675/s/gpu LR: 0.001488 Logit Scale: 14.250 Contrastive_loss: 5.5625 (5.5625) Loss: 5.5625 (5.5625)
+2024-11-03,22:30:50 | INFO | Train Epoch: 31 [51712/61440 (84%)] Data (t): 0.387 Batch (t): 0.605, 806.705/s, 806.705/s/gpu LR: 0.001528 Logit Scale: 14.250 Contrastive_loss: 5.3438 (5.4531) Loss: 5.3438 (5.4531)
+2024-11-03,22:31:02 | INFO | Train Epoch: 31 [61440/61440 (100%)] Data (t): 0.369 Batch (t): 0.602, 843.895/s, 843.895/s/gpu LR: 0.001536 Logit Scale: 14.250 Contrastive_loss: 5.4375 (5.4479) Loss: 5.4375 (5.4479)
+2024-11-03,22:31:02 | INFO | Starting zero-shot imagenet.
+2024-11-03,22:31:02 | INFO | Building zero-shot classifier
+2024-11-03,22:31:12 | INFO | Using classifier
+2024-11-03,22:31:58 | INFO | Finished zero-shot imagenet.
+2024-11-03,22:31:58 | INFO | Eval Epoch: 32 imagenet-zeroshot-val-top1: 0.0052	imagenet-zeroshot-val-top5: 0.0200
+2024-11-03,22:32:02 | INFO | Start epoch 32
+2024-11-03,22:32:06 | INFO | Train Epoch: 32 [  512/61440 (1%)] Data (t): 3.126 Batch (t): 3.375, 151.717/s, 151.717/s/gpu LR: 0.001536 Logit Scale: 14.250 Contrastive_loss: 5.5000 (5.5000) Loss: 5.5000 (5.5000)
+2024-11-03,22:33:05 | INFO | Train Epoch: 32 [51712/61440 (84%)] Data (t): 0.380 Batch (t): 0.598, 906.642/s, 906.642/s/gpu LR: 0.001576 Logit Scale: 14.250 Contrastive_loss: 5.6875 (5.5938) Loss: 5.6875 (5.5938)
+2024-11-03,22:33:17 | INFO | Train Epoch: 32 [61440/61440 (100%)] Data (t): 0.369 Batch (t): 0.598, 881.762/s, 881.762/s/gpu LR: 0.001584 Logit Scale: 14.250 Contrastive_loss: 5.6562 (5.6146) Loss: 5.6562 (5.6146)
+2024-11-03,22:33:17 | INFO | Starting zero-shot imagenet.
+2024-11-03,22:33:17 | INFO | Building zero-shot classifier
+2024-11-03,22:33:28 | INFO | Using classifier
+2024-11-03,22:34:14 | INFO | Finished zero-shot imagenet.
+2024-11-03,22:34:14 | INFO | Eval Epoch: 33 imagenet-zeroshot-val-top1: 0.0038	imagenet-zeroshot-val-top5: 0.0170
+2024-11-03,22:34:18 | INFO | Start epoch 33
+2024-11-03,22:34:21 | INFO | Train Epoch: 33 [  512/61440 (1%)] Data (t): 2.760 Batch (t): 3.014, 169.882/s, 169.882/s/gpu LR: 0.001584 Logit Scale: 14.250 Contrastive_loss: 5.8125 (5.8125) Loss: 5.8125 (5.8125)
+2024-11-03,22:35:22 | INFO | Train Epoch: 33 [51712/61440 (84%)] Data (t): 0.382 Batch (t): 0.602, 861.768/s, 861.768/s/gpu LR: 0.001624 Logit Scale: 14.250 Contrastive_loss: 5.6875 (5.7500) Loss: 5.6875 (5.7500)
+2024-11-03,22:35:33 | INFO | Train Epoch: 33 [61440/61440 (100%)] Data (t): 0.378 Batch (t): 0.611, 872.108/s, 872.108/s/gpu LR: 0.001632 Logit Scale: 14.250 Contrastive_loss: 5.6250 (5.7083) Loss: 5.6250 (5.7083)
+2024-11-03,22:35:33 | INFO | Starting zero-shot imagenet.
+2024-11-03,22:35:33 | INFO | Building zero-shot classifier
+2024-11-03,22:35:44 | INFO | Using classifier
+2024-11-03,22:36:29 | INFO | Finished zero-shot imagenet.
+2024-11-03,22:36:29 | INFO | Eval Epoch: 34 imagenet-zeroshot-val-top1: 0.0038	imagenet-zeroshot-val-top5: 0.0181
+2024-11-03,22:36:34 | INFO | Start epoch 34
+2024-11-03,22:36:37 | INFO | Train Epoch: 34 [  512/61440 (1%)] Data (t): 2.900 Batch (t): 3.137, 163.220/s, 163.220/s/gpu LR: 0.001632 Logit Scale: 14.250 Contrastive_loss: 5.6875 (5.6875) Loss: 5.6875 (5.6875)
+2024-11-03,22:37:37 | INFO | Train Epoch: 34 [51712/61440 (84%)] Data (t): 0.379 Batch (t): 0.599, 898.423/s, 898.423/s/gpu LR: 0.001672 Logit Scale: 14.250 Contrastive_loss: 5.6250 (5.6562) Loss: 5.6250 (5.6562)
+2024-11-03,22:37:48 | INFO | Train Epoch: 34 [61440/61440 (100%)] Data (t): 0.370 Batch (t): 0.595, 869.901/s, 869.901/s/gpu LR: 0.001680 Logit Scale: 14.250 Contrastive_loss: 5.6250 (5.6458) Loss: 5.6250 (5.6458)
+2024-11-03,22:37:48 | INFO | Starting zero-shot imagenet.
+2024-11-03,22:37:48 | INFO | Building zero-shot classifier
+2024-11-03,22:37:59 | INFO | Using classifier
+2024-11-03,22:38:45 | INFO | Finished zero-shot imagenet.
+2024-11-03,22:38:45 | INFO | Eval Epoch: 35 imagenet-zeroshot-val-top1: 0.0046	imagenet-zeroshot-val-top5: 0.0187
+2024-11-03,22:38:49 | INFO | Start epoch 35
+2024-11-03,22:38:53 | INFO | Train Epoch: 35 [  512/61440 (1%)] Data (t): 3.159 Batch (t): 3.392, 150.937/s, 150.937/s/gpu LR: 0.001680 Logit Scale: 14.250 Contrastive_loss: 5.5000 (5.5000) Loss: 5.5000 (5.5000)
+2024-11-03,22:39:52 | INFO | Train Epoch: 35 [51712/61440 (84%)] Data (t): 0.381 Batch (t): 0.598, 855.468/s, 855.468/s/gpu LR: 0.001720 Logit Scale: 14.250 Contrastive_loss: 5.6250 (5.5625) Loss: 5.6250 (5.5625)
+2024-11-03,22:40:04 | INFO | Train Epoch: 35 [61440/61440 (100%)] Data (t): 0.367 Batch (t): 0.594, 866.526/s, 866.526/s/gpu LR: 0.001728 Logit Scale: 14.250 Contrastive_loss: 5.5625 (5.5625) Loss: 5.5625 (5.5625)
+2024-11-03,22:40:04 | INFO | Starting zero-shot imagenet.
+2024-11-03,22:40:04 | INFO | Building zero-shot classifier
+2024-11-03,22:40:15 | INFO | Using classifier
+2024-11-03,22:41:00 | INFO | Finished zero-shot imagenet.
+2024-11-03,22:41:00 | INFO | Eval Epoch: 36 imagenet-zeroshot-val-top1: 0.0045	imagenet-zeroshot-val-top5: 0.0175
+2024-11-03,22:41:04 | INFO | Start epoch 36
+2024-11-03,22:41:08 | INFO | Train Epoch: 36 [  512/61440 (1%)] Data (t): 3.141 Batch (t): 3.366, 152.106/s, 152.106/s/gpu LR: 0.001728 Logit Scale: 14.250 Contrastive_loss: 5.6875 (5.6875) Loss: 5.6875 (5.6875)
+2024-11-03,22:42:08 | INFO | Train Epoch: 36 [51712/61440 (84%)] Data (t): 0.384 Batch (t): 0.602, 876.174/s, 876.174/s/gpu LR: 0.001768 Logit Scale: 14.250 Contrastive_loss: 5.7188 (5.7031) Loss: 5.7188 (5.7031)
+2024-11-03,22:42:19 | INFO | Train Epoch: 36 [61440/61440 (100%)] Data (t): 0.366 Batch (t): 0.594, 869.669/s, 869.669/s/gpu LR: 0.001776 Logit Scale: 14.250 Contrastive_loss: 5.5625 (5.6562) Loss: 5.5625 (5.6562)
+2024-11-03,22:42:19 | INFO | Starting zero-shot imagenet.
+2024-11-03,22:42:19 | INFO | Building zero-shot classifier
+2024-11-03,22:42:30 | INFO | Using classifier
+2024-11-03,22:43:15 | INFO | Finished zero-shot imagenet.
+2024-11-03,22:43:15 | INFO | Eval Epoch: 37 imagenet-zeroshot-val-top1: 0.0036	imagenet-zeroshot-val-top5: 0.0153
+2024-11-03,22:43:19 | INFO | Start epoch 37
+2024-11-03,22:43:23 | INFO | Train Epoch: 37 [  512/61440 (1%)] Data (t): 3.104 Batch (t): 3.333, 153.612/s, 153.612/s/gpu LR: 0.001776 Logit Scale: 14.250 Contrastive_loss: 5.5000 (5.5000) Loss: 5.5000 (5.5000)
+2024-11-03,22:44:23 | INFO | Train Epoch: 37 [51712/61440 (84%)] Data (t): 0.378 Batch (t): 0.599, 869.179/s, 869.179/s/gpu LR: 0.001816 Logit Scale: 14.250 Contrastive_loss: 5.5938 (5.5469) Loss: 5.5938 (5.5469)
+2024-11-03,22:44:34 | INFO | Train Epoch: 37 [61440/61440 (100%)] Data (t): 0.371 Batch (t): 0.596, 857.168/s, 857.168/s/gpu LR: 0.001824 Logit Scale: 14.250 Contrastive_loss: 5.6562 (5.5833) Loss: 5.6562 (5.5833)
+2024-11-03,22:44:34 | INFO | Starting zero-shot imagenet.
+2024-11-03,22:44:34 | INFO | Building zero-shot classifier
+2024-11-03,22:44:45 | INFO | Using classifier
+2024-11-03,22:45:31 | INFO | Finished zero-shot imagenet.
+2024-11-03,22:45:31 | INFO | Eval Epoch: 38 imagenet-zeroshot-val-top1: 0.0045	imagenet-zeroshot-val-top5: 0.0170
+2024-11-03,22:45:35 | INFO | Start epoch 38
+2024-11-03,22:45:39 | INFO | Train Epoch: 38 [  512/61440 (1%)] Data (t): 3.089 Batch (t): 3.340, 153.282/s, 153.282/s/gpu LR: 0.001824 Logit Scale: 14.250 Contrastive_loss: 5.6250 (5.6250) Loss: 5.6250 (5.6250)
+2024-11-03,22:46:38 | INFO | Train Epoch: 38 [51712/61440 (84%)] Data (t): 0.380 Batch (t): 0.597, 857.077/s, 857.077/s/gpu LR: 0.001864 Logit Scale: 14.250 Contrastive_loss: 5.6250 (5.6250) Loss: 5.6250 (5.6250)
+2024-11-03,22:46:50 | INFO | Train Epoch: 38 [61440/61440 (100%)] Data (t): 0.377 Batch (t): 0.603, 873.431/s, 873.431/s/gpu LR: 0.001872 Logit Scale: 14.250 Contrastive_loss: 5.5625 (5.6042) Loss: 5.5625 (5.6042)
+2024-11-03,22:46:50 | INFO | Starting zero-shot imagenet.
+2024-11-03,22:46:50 | INFO | Building zero-shot classifier
+2024-11-03,22:47:01 | INFO | Using classifier
+2024-11-03,22:47:46 | INFO | Finished zero-shot imagenet.
+2024-11-03,22:47:46 | INFO | Eval Epoch: 39 imagenet-zeroshot-val-top1: 0.0038	imagenet-zeroshot-val-top5: 0.0172
+2024-11-03,22:47:50 | INFO | Start epoch 39
+2024-11-03,22:47:54 | INFO | Train Epoch: 39 [  512/61440 (1%)] Data (t): 3.500 Batch (t): 3.735, 137.099/s, 137.099/s/gpu LR: 0.001872 Logit Scale: 14.250 Contrastive_loss: 5.6562 (5.6562) Loss: 5.6562 (5.6562)
+2024-11-03,22:48:54 | INFO | Train Epoch: 39 [51712/61440 (84%)] Data (t): 0.381 Batch (t): 0.599, 886.833/s, 886.833/s/gpu LR: 0.001912 Logit Scale: 14.250 Contrastive_loss: 5.7500 (5.7031) Loss: 5.7500 (5.7031)
+2024-11-03,22:49:05 | INFO | Train Epoch: 39 [61440/61440 (100%)] Data (t): 0.377 Batch (t): 0.595, 853.396/s, 853.396/s/gpu LR: 0.001920 Logit Scale: 14.250 Contrastive_loss: 5.5312 (5.6458) Loss: 5.5312 (5.6458)
+2024-11-03,22:49:05 | INFO | Starting zero-shot imagenet.
+2024-11-03,22:49:05 | INFO | Building zero-shot classifier
+2024-11-03,22:49:16 | INFO | Using classifier
+2024-11-03,22:50:01 | INFO | Finished zero-shot imagenet.
+2024-11-03,22:50:01 | INFO | Eval Epoch: 40 imagenet-zeroshot-val-top1: 0.0041	imagenet-zeroshot-val-top5: 0.0176
+2024-11-03,22:50:06 | INFO | Start epoch 40
+2024-11-03,22:50:10 | INFO | Train Epoch: 40 [  512/61440 (1%)] Data (t): 3.410 Batch (t): 3.627, 141.145/s, 141.145/s/gpu LR: 0.001920 Logit Scale: 14.250 Contrastive_loss: 5.8125 (5.8125) Loss: 5.8125 (5.8125)
+2024-11-03,22:51:10 | INFO | Train Epoch: 40 [51712/61440 (84%)] Data (t): 0.380 Batch (t): 0.599, 852.186/s, 852.186/s/gpu LR: 0.001960 Logit Scale: 14.250 Contrastive_loss: 5.6250 (5.7188) Loss: 5.6250 (5.7188)
+2024-11-03,22:51:21 | INFO | Train Epoch: 40 [61440/61440 (100%)] Data (t): 0.401 Batch (t): 0.616, 856.223/s, 856.223/s/gpu LR: 0.001968 Logit Scale: 14.250 Contrastive_loss: 5.6562 (5.6979) Loss: 5.6562 (5.6979)
+2024-11-03,22:51:21 | INFO | Starting zero-shot imagenet.
+2024-11-03,22:51:21 | INFO | Building zero-shot classifier
+2024-11-03,22:51:32 | INFO | Using classifier
+2024-11-03,22:52:19 | INFO | Finished zero-shot imagenet.
+2024-11-03,22:52:19 | INFO | Eval Epoch: 41 imagenet-zeroshot-val-top1: 0.0036	imagenet-zeroshot-val-top5: 0.0149
+2024-11-03,22:52:24 | INFO | Start epoch 41
+2024-11-03,22:52:27 | INFO | Train Epoch: 41 [  512/61440 (1%)] Data (t): 3.136 Batch (t): 3.350, 152.844/s, 152.844/s/gpu LR: 0.001968 Logit Scale: 14.250 Contrastive_loss: 5.8125 (5.8125) Loss: 5.8125 (5.8125)
+2024-11-03,22:53:28 | INFO | Train Epoch: 41 [51712/61440 (84%)] Data (t): 0.387 Batch (t): 0.608, 851.527/s, 851.527/s/gpu LR: 0.002000 Logit Scale: 14.250 Contrastive_loss: 5.6250 (5.7188) Loss: 5.6250 (5.7188)
+2024-11-03,22:53:40 | INFO | Train Epoch: 41 [61440/61440 (100%)] Data (t): 0.410 Batch (t): 0.633, 808.348/s, 808.348/s/gpu LR: 0.001998 Logit Scale: 14.250 Contrastive_loss: 5.7500 (5.7292) Loss: 5.7500 (5.7292)
+2024-11-03,22:53:40 | INFO | Starting zero-shot imagenet.
+2024-11-03,22:53:40 | INFO | Building zero-shot classifier
+2024-11-03,22:53:51 | INFO | Using classifier
+2024-11-03,22:54:36 | INFO | Finished zero-shot imagenet.
+2024-11-03,22:54:36 | INFO | Eval Epoch: 42 imagenet-zeroshot-val-top1: 0.0038	imagenet-zeroshot-val-top5: 0.0154
+2024-11-03,22:54:41 | INFO | Start epoch 42
+2024-11-03,22:54:44 | INFO | Train Epoch: 42 [  512/61440 (1%)] Data (t): 2.972 Batch (t): 3.194, 160.294/s, 160.294/s/gpu LR: 0.001998 Logit Scale: 14.250 Contrastive_loss: 5.7500 (5.7500) Loss: 5.7500 (5.7500)
