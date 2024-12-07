@@ -1,0 +1,4 @@
+# Debug info for running MobileCLIP with StableAdamW and Adafactor-BigVision
+
+Action:
+# remove the -ddp-static-graph flag 
