@@ -1,0 +1,1 @@
+Size of RN101 (int8) : 1.4G

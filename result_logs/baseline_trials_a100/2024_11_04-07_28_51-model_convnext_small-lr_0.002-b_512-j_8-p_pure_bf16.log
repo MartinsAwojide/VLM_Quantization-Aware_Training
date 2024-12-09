@@ -1,0 +1,1220 @@
+2024-11-04,07:28:51 | INFO | No latest resume checkpoint found in ./logs/2024_11_04-07_28_51-model_convnext_small-lr_0.002-b_512-j_8-p_pure_bf16/checkpoints.
+2024-11-04,07:28:51 | INFO | Running with a single process. Device cuda.
+2024-11-04,07:28:51 | INFO | Loaded convnext_small model config.
+2024-11-04,07:28:53 | INFO | Model:
+2024-11-04,07:28:53 | INFO | CLIP(
+  (visual): TimmModel(
+    (trunk): ConvNeXt(
+      (stem): Sequential(
+        (0): Conv2d(3, 96, kernel_size=(4, 4), stride=(4, 4))
+        (1): LayerNorm2d((96,), eps=1e-06, elementwise_affine=True)
+      )
+      (stages): Sequential(
+        (0): ConvNeXtStage(
+          (downsample): Identity()
+          (blocks): Sequential(
+            (0): ConvNeXtBlock(
+              (conv_dw): Conv2d(96, 96, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=96)
+              (norm): LayerNorm((96,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=96, out_features=384, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=384, out_features=96, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): Identity()
+            )
+            (1): ConvNeXtBlock(
+              (conv_dw): Conv2d(96, 96, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=96)
+              (norm): LayerNorm((96,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=96, out_features=384, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=384, out_features=96, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.003)
+            )
+            (2): ConvNeXtBlock(
+              (conv_dw): Conv2d(96, 96, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=96)
+              (norm): LayerNorm((96,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=96, out_features=384, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=384, out_features=96, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.006)
+            )
+          )
+        )
+        (1): ConvNeXtStage(
+          (downsample): Sequential(
+            (0): LayerNorm2d((96,), eps=1e-06, elementwise_affine=True)
+            (1): Conv2d(96, 192, kernel_size=(2, 2), stride=(2, 2))
+          )
+          (blocks): Sequential(
+            (0): ConvNeXtBlock(
+              (conv_dw): Conv2d(192, 192, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=192)
+              (norm): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=192, out_features=768, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=768, out_features=192, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.009)
+            )
+            (1): ConvNeXtBlock(
+              (conv_dw): Conv2d(192, 192, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=192)
+              (norm): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=192, out_features=768, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=768, out_features=192, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.011)
+            )
+            (2): ConvNeXtBlock(
+              (conv_dw): Conv2d(192, 192, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=192)
+              (norm): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=192, out_features=768, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=768, out_features=192, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.014)
+            )
+          )
+        )
+        (2): ConvNeXtStage(
+          (downsample): Sequential(
+            (0): LayerNorm2d((192,), eps=1e-06, elementwise_affine=True)
+            (1): Conv2d(192, 384, kernel_size=(2, 2), stride=(2, 2))
+          )
+          (blocks): Sequential(
+            (0): ConvNeXtBlock(
+              (conv_dw): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+              (norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=384, out_features=1536, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=1536, out_features=384, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.017)
+            )
+            (1): ConvNeXtBlock(
+              (conv_dw): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+              (norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=384, out_features=1536, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=1536, out_features=384, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.020)
+            )
+            (2): ConvNeXtBlock(
+              (conv_dw): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+              (norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=384, out_features=1536, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=1536, out_features=384, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.023)
+            )
+            (3): ConvNeXtBlock(
+              (conv_dw): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+              (norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=384, out_features=1536, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=1536, out_features=384, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.026)
+            )
+            (4): ConvNeXtBlock(
+              (conv_dw): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+              (norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=384, out_features=1536, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=1536, out_features=384, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.029)
+            )
+            (5): ConvNeXtBlock(
+              (conv_dw): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+              (norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=384, out_features=1536, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=1536, out_features=384, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.031)
+            )
+            (6): ConvNeXtBlock(
+              (conv_dw): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+              (norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=384, out_features=1536, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=1536, out_features=384, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.034)
+            )
+            (7): ConvNeXtBlock(
+              (conv_dw): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+              (norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=384, out_features=1536, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=1536, out_features=384, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.037)
+            )
+            (8): ConvNeXtBlock(
+              (conv_dw): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+              (norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=384, out_features=1536, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=1536, out_features=384, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.040)
+            )
+            (9): ConvNeXtBlock(
+              (conv_dw): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+              (norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=384, out_features=1536, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=1536, out_features=384, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.043)
+            )
+            (10): ConvNeXtBlock(
+              (conv_dw): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+              (norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=384, out_features=1536, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=1536, out_features=384, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.046)
+            )
+            (11): ConvNeXtBlock(
+              (conv_dw): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+              (norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=384, out_features=1536, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=1536, out_features=384, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.049)
+            )
+            (12): ConvNeXtBlock(
+              (conv_dw): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+              (norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=384, out_features=1536, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=1536, out_features=384, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.051)
+            )
+            (13): ConvNeXtBlock(
+              (conv_dw): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+              (norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=384, out_features=1536, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=1536, out_features=384, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.054)
+            )
+            (14): ConvNeXtBlock(
+              (conv_dw): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+              (norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=384, out_features=1536, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=1536, out_features=384, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.057)
+            )
+            (15): ConvNeXtBlock(
+              (conv_dw): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+              (norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=384, out_features=1536, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=1536, out_features=384, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.060)
+            )
+            (16): ConvNeXtBlock(
+              (conv_dw): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+              (norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=384, out_features=1536, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=1536, out_features=384, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.063)
+            )
+            (17): ConvNeXtBlock(
+              (conv_dw): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+              (norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=384, out_features=1536, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=1536, out_features=384, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.066)
+            )
+            (18): ConvNeXtBlock(
+              (conv_dw): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+              (norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=384, out_features=1536, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=1536, out_features=384, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.069)
+            )
+            (19): ConvNeXtBlock(
+              (conv_dw): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+              (norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=384, out_features=1536, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=1536, out_features=384, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.071)
+            )
+            (20): ConvNeXtBlock(
+              (conv_dw): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+              (norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=384, out_features=1536, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=1536, out_features=384, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.074)
+            )
+            (21): ConvNeXtBlock(
+              (conv_dw): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+              (norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=384, out_features=1536, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=1536, out_features=384, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.077)
+            )
+            (22): ConvNeXtBlock(
+              (conv_dw): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+              (norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=384, out_features=1536, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=1536, out_features=384, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.080)
+            )
+            (23): ConvNeXtBlock(
+              (conv_dw): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+              (norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=384, out_features=1536, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=1536, out_features=384, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.083)
+            )
+            (24): ConvNeXtBlock(
+              (conv_dw): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+              (norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=384, out_features=1536, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=1536, out_features=384, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.086)
+            )
+            (25): ConvNeXtBlock(
+              (conv_dw): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+              (norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=384, out_features=1536, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=1536, out_features=384, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.089)
+            )
+            (26): ConvNeXtBlock(
+              (conv_dw): Conv2d(384, 384, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=384)
+              (norm): LayerNorm((384,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=384, out_features=1536, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=1536, out_features=384, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.091)
+            )
+          )
+        )
+        (3): ConvNeXtStage(
+          (downsample): Sequential(
+            (0): LayerNorm2d((384,), eps=1e-06, elementwise_affine=True)
+            (1): Conv2d(384, 768, kernel_size=(2, 2), stride=(2, 2))
+          )
+          (blocks): Sequential(
+            (0): ConvNeXtBlock(
+              (conv_dw): Conv2d(768, 768, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=768)
+              (norm): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=768, out_features=3072, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=3072, out_features=768, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.094)
+            )
+            (1): ConvNeXtBlock(
+              (conv_dw): Conv2d(768, 768, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=768)
+              (norm): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=768, out_features=3072, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=3072, out_features=768, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.097)
+            )
+            (2): ConvNeXtBlock(
+              (conv_dw): Conv2d(768, 768, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=768)
+              (norm): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=768, out_features=3072, bias=True)
+                (act): GELU()
+                (drop1): Dropout(p=0.0, inplace=False)
+                (norm): Identity()
+                (fc2): Linear(in_features=3072, out_features=768, bias=True)
+                (drop2): Dropout(p=0.0, inplace=False)
+              )
+              (shortcut): Identity()
+              (drop_path): DropPath(drop_prob=0.100)
+            )
+          )
+        )
+      )
+      (norm_pre): Identity()
+      (head): NormMlpClassifierHead(
+        (global_pool): SelectAdaptivePool2d(pool_type=avg, flatten=Identity())
+        (norm): LayerNorm2d((768,), eps=1e-06, elementwise_affine=True)
+        (flatten): Flatten(start_dim=1, end_dim=-1)
+        (pre_logits): Identity()
+        (drop): Dropout(p=0.0, inplace=False)
+        (fc): Identity()
+      )
+    )
+    (head): Sequential(
+      (drop): Dropout(p=0.0, inplace=False)
+      (proj): Linear(in_features=768, out_features=512, bias=False)
+    )
+  )
+  (transformer): Transformer(
+    (resblocks): ModuleList(
+      (0-11): 12 x ResidualAttentionBlock(
+        (ln_1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=512, out_features=512, bias=True)
+        )
+        (ls_1): Identity()
+        (ln_2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (mlp): Sequential(
+          (c_fc): Linear(in_features=512, out_features=2048, bias=True)
+          (gelu): GELU(approximate='none')
+          (c_proj): Linear(in_features=2048, out_features=512, bias=True)
+        )
+        (ls_2): Identity()
+      )
+    )
+  )
+  (token_embedding): Embedding(49408, 512)
+  (ln_final): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+)
+2024-11-04,07:28:53 | INFO | Params:
+2024-11-04,07:28:53 | INFO |   accum_freq: 1
+2024-11-04,07:28:53 | INFO |   aug_cfg: {}
+2024-11-04,07:28:53 | INFO |   batch_size: 512
+2024-11-04,07:28:53 | INFO |   beta1: 0.9
+2024-11-04,07:28:53 | INFO |   beta2: 0.95
+2024-11-04,07:28:53 | INFO |   cache_dir: None
+2024-11-04,07:28:53 | INFO |   checkpoint_path: ./logs/2024_11_04-07_28_51-model_convnext_small-lr_0.002-b_512-j_8-p_pure_bf16/checkpoints
+2024-11-04,07:28:53 | INFO |   coca_caption_loss_weight: 2.0
+2024-11-04,07:28:53 | INFO |   coca_contrastive_loss_weight: 1.0
+2024-11-04,07:28:53 | INFO |   copy_codebase: False
+2024-11-04,07:28:53 | INFO |   csv_caption_key: title
+2024-11-04,07:28:53 | INFO |   csv_img_key: filepath
+2024-11-04,07:28:53 | INFO |   csv_separator: 	
+2024-11-04,07:28:53 | INFO |   dataset_resampled: True
+2024-11-04,07:28:53 | INFO |   dataset_type: webdataset
+2024-11-04,07:28:53 | INFO |   ddp_static_graph: True
+2024-11-04,07:28:53 | INFO |   debug: False
+2024-11-04,07:28:53 | INFO |   delete_previous_checkpoint: True
+2024-11-04,07:28:53 | INFO |   device: cuda
+2024-11-04,07:28:53 | INFO |   dist_backend: None
+2024-11-04,07:28:53 | INFO |   dist_url: None
+2024-11-04,07:28:53 | INFO |   distill: False
+2024-11-04,07:28:53 | INFO |   distill_model: None
+2024-11-04,07:28:53 | INFO |   distill_pretrained: None
+2024-11-04,07:28:53 | INFO |   distributed: False
+2024-11-04,07:28:53 | INFO |   epochs: 60
+2024-11-04,07:28:53 | INFO |   epochs_cooldown: None
+2024-11-04,07:28:53 | INFO |   eps: 1e-08
+2024-11-04,07:28:53 | INFO |   force_custom_text: False
+2024-11-04,07:28:53 | INFO |   force_image_size: None
+2024-11-04,07:28:53 | INFO |   force_patch_dropout: None
+2024-11-04,07:28:53 | INFO |   force_quick_gelu: False
+2024-11-04,07:28:53 | INFO |   gather_with_grad: False
+2024-11-04,07:28:53 | INFO |   grad_checkpointing: False
+2024-11-04,07:28:53 | INFO |   grad_clip_norm: None
+2024-11-04,07:28:53 | INFO |   horovod: False
+2024-11-04,07:28:53 | INFO |   image_interpolation: None
+2024-11-04,07:28:53 | INFO |   image_mean: None
+2024-11-04,07:28:53 | INFO |   image_resize_mode: None
+2024-11-04,07:28:53 | INFO |   image_std: None
+2024-11-04,07:28:53 | INFO |   imagenet_v2: None
+2024-11-04,07:28:53 | INFO |   imagenet_val: /home/user/open_clip/open_clip/val_data/val/
+2024-11-04,07:28:53 | INFO |   local_loss: False
+2024-11-04,07:28:53 | INFO |   local_rank: 0
+2024-11-04,07:28:53 | INFO |   lock_image: False
+2024-11-04,07:28:53 | INFO |   lock_image_freeze_bn_stats: False
+2024-11-04,07:28:53 | INFO |   lock_image_unlocked_groups: 0
+2024-11-04,07:28:53 | INFO |   lock_text: False
+2024-11-04,07:28:53 | INFO |   lock_text_freeze_layer_norm: False
+2024-11-04,07:28:53 | INFO |   lock_text_unlocked_layers: 0
+2024-11-04,07:28:53 | INFO |   log_every_n_steps: 100
+2024-11-04,07:28:53 | INFO |   log_level: 20
+2024-11-04,07:28:53 | INFO |   log_local: False
+2024-11-04,07:28:53 | INFO |   log_path: ./logs/2024_11_04-07_28_51-model_convnext_small-lr_0.002-b_512-j_8-p_pure_bf16/out.log
+2024-11-04,07:28:53 | INFO |   logs: ./logs/
+2024-11-04,07:28:53 | INFO |   lr: 0.002
+2024-11-04,07:28:53 | INFO |   lr_cooldown_end: 0.0
+2024-11-04,07:28:53 | INFO |   lr_cooldown_power: 1.0
+2024-11-04,07:28:53 | INFO |   lr_scheduler: cosine
+2024-11-04,07:28:53 | INFO |   model: convnext_small
+2024-11-04,07:28:53 | INFO |   name: 2024_11_04-07_28_51-model_convnext_small-lr_0.002-b_512-j_8-p_pure_bf16
+2024-11-04,07:28:53 | INFO |   no_set_device_rank: False
+2024-11-04,07:28:53 | INFO |   precision: pure_bf16
+2024-11-04,07:28:53 | INFO |   pretrained: 
+2024-11-04,07:28:53 | INFO |   pretrained_image: False
+2024-11-04,07:28:53 | INFO |   rank: 0
+2024-11-04,07:28:53 | INFO |   remote_sync: None
+2024-11-04,07:28:53 | INFO |   remote_sync_frequency: 300
+2024-11-04,07:28:53 | INFO |   remote_sync_protocol: s3
+2024-11-04,07:28:53 | INFO |   report_to: wandb
+2024-11-04,07:28:53 | INFO |   resume: None
+2024-11-04,07:28:53 | INFO |   save_frequency: 1
+2024-11-04,07:28:53 | INFO |   save_most_recent: True
+2024-11-04,07:28:53 | INFO |   seed: 0
+2024-11-04,07:28:53 | INFO |   siglip: False
+2024-11-04,07:28:53 | INFO |   skip_scheduler: False
+2024-11-04,07:28:53 | INFO |   tensorboard: False
+2024-11-04,07:28:53 | INFO |   tensorboard_path: 
+2024-11-04,07:28:53 | INFO |   torchcompile: False
+2024-11-04,07:28:53 | INFO |   torchscript: False
+2024-11-04,07:28:53 | INFO |   trace: False
+2024-11-04,07:28:53 | INFO |   train_data: ./mscoco/{00000..00059}.tar
+2024-11-04,07:28:53 | INFO |   train_data_upsampling_factors: None
+2024-11-04,07:28:53 | INFO |   train_num_samples: 60000
+2024-11-04,07:28:53 | INFO |   use_bn_sync: False
+2024-11-04,07:28:53 | INFO |   use_bnb_linear: None
+2024-11-04,07:28:53 | INFO |   val_data: None
+2024-11-04,07:28:53 | INFO |   val_frequency: 1
+2024-11-04,07:28:53 | INFO |   val_num_samples: None
+2024-11-04,07:28:53 | INFO |   wandb: True
+2024-11-04,07:28:53 | INFO |   wandb_notes: 
+2024-11-04,07:28:53 | INFO |   wandb_project_name: open_clip_main
+2024-11-04,07:28:53 | INFO |   warmup: 5000
+2024-11-04,07:28:53 | INFO |   wd: 0.2
+2024-11-04,07:28:53 | INFO |   workers: 8
+2024-11-04,07:28:53 | INFO |   world_size: 1
+2024-11-04,07:28:53 | INFO |   zeroshot_frequency: 1
+2024-11-04,07:28:58 | INFO | Start epoch 0
+2024-11-04,07:29:29 | INFO | Train Epoch: 0 [  512/61440 (1%)] Data (t): 3.507 Batch (t): 30.313, 16.8903/s, 16.8903/s/gpu LR: 0.000000 Logit Scale: 14.250 Contrastive_loss: 6.3438 (6.3438) Loss: 6.3438 (6.3438)
+2024-11-04,07:30:38 | INFO | Train Epoch: 0 [51712/61440 (84%)] Data (t): 0.418 Batch (t): 0.692, 747.502/s, 747.502/s/gpu LR: 0.000040 Logit Scale: 14.250 Contrastive_loss: 6.1250 (6.2344) Loss: 6.1250 (6.2344)
+2024-11-04,07:30:52 | INFO | Train Epoch: 0 [61440/61440 (100%)] Data (t): 0.434 Batch (t): 0.710, 764.990/s, 764.990/s/gpu LR: 0.000048 Logit Scale: 14.250 Contrastive_loss: 6.0625 (6.1771) Loss: 6.0625 (6.1771)
+2024-11-04,07:30:52 | INFO | Starting zero-shot imagenet.
+2024-11-04,07:30:52 | INFO | Building zero-shot classifier
+2024-11-04,07:31:03 | INFO | Using classifier
+2024-11-04,07:31:55 | INFO | Finished zero-shot imagenet.
+2024-11-04,07:31:55 | INFO | Eval Epoch: 1 imagenet-zeroshot-val-top1: 0.0019	imagenet-zeroshot-val-top5: 0.0079
+2024-11-04,07:31:57 | INFO | Start epoch 1
+2024-11-04,07:32:01 | INFO | Train Epoch: 1 [  512/61440 (1%)] Data (t): 3.146 Batch (t): 3.443, 148.704/s, 148.704/s/gpu LR: 0.000048 Logit Scale: 14.250 Contrastive_loss: 6.1562 (6.1562) Loss: 6.1562 (6.1562)
+2024-11-04,07:33:10 | INFO | Train Epoch: 1 [51712/61440 (84%)] Data (t): 0.417 Batch (t): 0.693, 754.484/s, 754.484/s/gpu LR: 0.000088 Logit Scale: 14.250 Contrastive_loss: 5.9375 (6.0469) Loss: 5.9375 (6.0469)
+2024-11-04,07:33:23 | INFO | Train Epoch: 1 [61440/61440 (100%)] Data (t): 0.418 Batch (t): 0.699, 734.152/s, 734.152/s/gpu LR: 0.000096 Logit Scale: 14.250 Contrastive_loss: 5.8750 (5.9896) Loss: 5.8750 (5.9896)
+2024-11-04,07:33:24 | INFO | Starting zero-shot imagenet.
+2024-11-04,07:33:24 | INFO | Building zero-shot classifier
+2024-11-04,07:33:34 | INFO | Using classifier
+2024-11-04,07:34:19 | INFO | Finished zero-shot imagenet.
+2024-11-04,07:34:19 | INFO | Eval Epoch: 2 imagenet-zeroshot-val-top1: 0.0022	imagenet-zeroshot-val-top5: 0.0105
+2024-11-04,07:34:23 | INFO | Start epoch 2
+2024-11-04,07:34:26 | INFO | Train Epoch: 2 [  512/61440 (1%)] Data (t): 2.820 Batch (t): 3.125, 163.825/s, 163.825/s/gpu LR: 0.000096 Logit Scale: 14.250 Contrastive_loss: 6.0000 (6.0000) Loss: 6.0000 (6.0000)
+2024-11-04,07:35:35 | INFO | Train Epoch: 2 [51712/61440 (84%)] Data (t): 0.412 Batch (t): 0.688, 760.182/s, 760.182/s/gpu LR: 0.000136 Logit Scale: 14.250 Contrastive_loss: 5.6250 (5.8125) Loss: 5.6250 (5.8125)
+2024-11-04,07:35:48 | INFO | Train Epoch: 2 [61440/61440 (100%)] Data (t): 0.404 Batch (t): 0.679, 765.854/s, 765.854/s/gpu LR: 0.000144 Logit Scale: 14.250 Contrastive_loss: 5.6250 (5.7500) Loss: 5.6250 (5.7500)
+2024-11-04,07:35:48 | INFO | Starting zero-shot imagenet.
+2024-11-04,07:35:48 | INFO | Building zero-shot classifier
+2024-11-04,07:35:59 | INFO | Using classifier
+2024-11-04,07:36:44 | INFO | Finished zero-shot imagenet.
+2024-11-04,07:36:44 | INFO | Eval Epoch: 3 imagenet-zeroshot-val-top1: 0.0033	imagenet-zeroshot-val-top5: 0.0129
+2024-11-04,07:36:48 | INFO | Start epoch 3
+2024-11-04,07:36:51 | INFO | Train Epoch: 3 [  512/61440 (1%)] Data (t): 2.583 Batch (t): 2.871, 178.325/s, 178.325/s/gpu LR: 0.000144 Logit Scale: 14.250 Contrastive_loss: 5.8125 (5.8125) Loss: 5.8125 (5.8125)
+2024-11-04,07:38:00 | INFO | Train Epoch: 3 [51712/61440 (84%)] Data (t): 0.419 Batch (t): 0.692, 729.420/s, 729.420/s/gpu LR: 0.000184 Logit Scale: 14.250 Contrastive_loss: 5.5312 (5.6719) Loss: 5.5312 (5.6719)
+2024-11-04,07:38:14 | INFO | Train Epoch: 3 [61440/61440 (100%)] Data (t): 0.417 Batch (t): 0.696, 758.759/s, 758.759/s/gpu LR: 0.000192 Logit Scale: 14.250 Contrastive_loss: 5.5000 (5.6146) Loss: 5.5000 (5.6146)
+2024-11-04,07:38:14 | INFO | Starting zero-shot imagenet.
+2024-11-04,07:38:14 | INFO | Building zero-shot classifier
+2024-11-04,07:38:24 | INFO | Using classifier
+2024-11-04,07:39:11 | INFO | Finished zero-shot imagenet.
+2024-11-04,07:39:11 | INFO | Eval Epoch: 4 imagenet-zeroshot-val-top1: 0.0035	imagenet-zeroshot-val-top5: 0.0151
+2024-11-04,07:39:14 | INFO | Start epoch 4
+2024-11-04,07:39:18 | INFO | Train Epoch: 4 [  512/61440 (1%)] Data (t): 3.297 Batch (t): 3.592, 142.553/s, 142.553/s/gpu LR: 0.000192 Logit Scale: 14.250 Contrastive_loss: 5.7500 (5.7500) Loss: 5.7500 (5.7500)
+2024-11-04,07:40:27 | INFO | Train Epoch: 4 [51712/61440 (84%)] Data (t): 0.411 Batch (t): 0.686, 749.034/s, 749.034/s/gpu LR: 0.000232 Logit Scale: 14.250 Contrastive_loss: 5.3750 (5.5625) Loss: 5.3750 (5.5625)
+2024-11-04,07:40:40 | INFO | Train Epoch: 4 [61440/61440 (100%)] Data (t): 0.406 Batch (t): 0.680, 754.976/s, 754.976/s/gpu LR: 0.000240 Logit Scale: 14.250 Contrastive_loss: 5.4375 (5.5208) Loss: 5.4375 (5.5208)
+2024-11-04,07:40:40 | INFO | Starting zero-shot imagenet.
+2024-11-04,07:40:40 | INFO | Building zero-shot classifier
+2024-11-04,07:40:51 | INFO | Using classifier
+2024-11-04,07:41:36 | INFO | Finished zero-shot imagenet.
+2024-11-04,07:41:36 | INFO | Eval Epoch: 5 imagenet-zeroshot-val-top1: 0.0034	imagenet-zeroshot-val-top5: 0.0155
+2024-11-04,07:41:39 | INFO | Start epoch 5
+2024-11-04,07:41:43 | INFO | Train Epoch: 5 [  512/61440 (1%)] Data (t): 2.742 Batch (t): 3.039, 168.452/s, 168.452/s/gpu LR: 0.000240 Logit Scale: 14.250 Contrastive_loss: 5.4375 (5.4375) Loss: 5.4375 (5.4375)
+2024-11-04,07:42:51 | INFO | Train Epoch: 5 [51712/61440 (84%)] Data (t): 0.408 Batch (t): 0.681, 757.930/s, 757.930/s/gpu LR: 0.000280 Logit Scale: 14.250 Contrastive_loss: 5.3438 (5.3906) Loss: 5.3438 (5.3906)
+2024-11-04,07:43:04 | INFO | Train Epoch: 5 [61440/61440 (100%)] Data (t): 0.406 Batch (t): 0.680, 755.617/s, 755.617/s/gpu LR: 0.000288 Logit Scale: 14.250 Contrastive_loss: 5.2812 (5.3542) Loss: 5.2812 (5.3542)
+2024-11-04,07:43:04 | INFO | Starting zero-shot imagenet.
+2024-11-04,07:43:04 | INFO | Building zero-shot classifier
+2024-11-04,07:43:15 | INFO | Using classifier
+2024-11-04,07:44:00 | INFO | Finished zero-shot imagenet.
+2024-11-04,07:44:00 | INFO | Eval Epoch: 6 imagenet-zeroshot-val-top1: 0.0051	imagenet-zeroshot-val-top5: 0.0194
+2024-11-04,07:44:04 | INFO | Start epoch 6
+2024-11-04,07:44:07 | INFO | Train Epoch: 6 [  512/61440 (1%)] Data (t): 2.831 Batch (t): 3.114, 164.444/s, 164.444/s/gpu LR: 0.000288 Logit Scale: 14.250 Contrastive_loss: 5.3125 (5.3125) Loss: 5.3125 (5.3125)
+2024-11-04,07:45:16 | INFO | Train Epoch: 6 [51712/61440 (84%)] Data (t): 0.411 Batch (t): 0.685, 755.286/s, 755.286/s/gpu LR: 0.000328 Logit Scale: 14.250 Contrastive_loss: 5.1875 (5.2500) Loss: 5.1875 (5.2500)
+2024-11-04,07:45:29 | INFO | Train Epoch: 6 [61440/61440 (100%)] Data (t): 0.408 Batch (t): 0.680, 767.553/s, 767.553/s/gpu LR: 0.000336 Logit Scale: 14.250 Contrastive_loss: 5.2500 (5.2500) Loss: 5.2500 (5.2500)
+2024-11-04,07:45:29 | INFO | Starting zero-shot imagenet.
+2024-11-04,07:45:29 | INFO | Building zero-shot classifier
+2024-11-04,07:45:40 | INFO | Using classifier
+2024-11-04,07:46:27 | INFO | Finished zero-shot imagenet.
+2024-11-04,07:46:27 | INFO | Eval Epoch: 7 imagenet-zeroshot-val-top1: 0.0047	imagenet-zeroshot-val-top5: 0.0202
+2024-11-04,07:46:31 | INFO | Start epoch 7
+2024-11-04,07:46:35 | INFO | Train Epoch: 7 [  512/61440 (1%)] Data (t): 2.897 Batch (t): 3.181, 160.975/s, 160.975/s/gpu LR: 0.000336 Logit Scale: 14.250 Contrastive_loss: 5.3125 (5.3125) Loss: 5.3125 (5.3125)
+2024-11-04,07:47:42 | INFO | Train Epoch: 7 [51712/61440 (84%)] Data (t): 0.408 Batch (t): 0.678, 761.322/s, 761.322/s/gpu LR: 0.000376 Logit Scale: 14.250 Contrastive_loss: 5.0938 (5.2031) Loss: 5.0938 (5.2031)
+2024-11-04,07:47:55 | INFO | Train Epoch: 7 [61440/61440 (100%)] Data (t): 0.406 Batch (t): 0.677, 757.540/s, 757.540/s/gpu LR: 0.000384 Logit Scale: 14.250 Contrastive_loss: 4.9375 (5.1146) Loss: 4.9375 (5.1146)
+2024-11-04,07:47:55 | INFO | Starting zero-shot imagenet.
+2024-11-04,07:47:55 | INFO | Building zero-shot classifier
+2024-11-04,07:48:06 | INFO | Using classifier
+2024-11-04,07:48:52 | INFO | Finished zero-shot imagenet.
+2024-11-04,07:48:52 | INFO | Eval Epoch: 8 imagenet-zeroshot-val-top1: 0.0060	imagenet-zeroshot-val-top5: 0.0219
+2024-11-04,07:48:56 | INFO | Start epoch 8
+2024-11-04,07:49:00 | INFO | Train Epoch: 8 [  512/61440 (1%)] Data (t): 3.179 Batch (t): 3.462, 147.877/s, 147.877/s/gpu LR: 0.000384 Logit Scale: 14.250 Contrastive_loss: 5.1250 (5.1250) Loss: 5.1250 (5.1250)
+2024-11-04,07:50:09 | INFO | Train Epoch: 8 [51712/61440 (84%)] Data (t): 0.414 Batch (t): 0.689, 752.724/s, 752.724/s/gpu LR: 0.000424 Logit Scale: 14.250 Contrastive_loss: 5.1250 (5.1250) Loss: 5.1250 (5.1250)
+2024-11-04,07:50:22 | INFO | Train Epoch: 8 [61440/61440 (100%)] Data (t): 0.422 Batch (t): 0.702, 754.081/s, 754.081/s/gpu LR: 0.000432 Logit Scale: 14.250 Contrastive_loss: 4.9062 (5.0521) Loss: 4.9062 (5.0521)
+2024-11-04,07:50:22 | INFO | Starting zero-shot imagenet.
+2024-11-04,07:50:22 | INFO | Building zero-shot classifier
+2024-11-04,07:50:33 | INFO | Using classifier
+2024-11-04,07:51:18 | INFO | Finished zero-shot imagenet.
+2024-11-04,07:51:18 | INFO | Eval Epoch: 9 imagenet-zeroshot-val-top1: 0.0052	imagenet-zeroshot-val-top5: 0.0233
+2024-11-04,07:51:21 | INFO | Start epoch 9
+2024-11-04,07:51:25 | INFO | Train Epoch: 9 [  512/61440 (1%)] Data (t): 2.813 Batch (t): 3.109, 164.668/s, 164.668/s/gpu LR: 0.000432 Logit Scale: 14.250 Contrastive_loss: 4.9062 (4.9062) Loss: 4.9062 (4.9062)
+2024-11-04,07:52:34 | INFO | Train Epoch: 9 [51712/61440 (84%)] Data (t): 0.415 Batch (t): 0.690, 708.109/s, 708.109/s/gpu LR: 0.000472 Logit Scale: 14.250 Contrastive_loss: 4.8125 (4.8594) Loss: 4.8125 (4.8594)
+2024-11-04,07:52:47 | INFO | Train Epoch: 9 [61440/61440 (100%)] Data (t): 0.418 Batch (t): 0.695, 767.504/s, 767.504/s/gpu LR: 0.000480 Logit Scale: 14.250 Contrastive_loss: 4.7812 (4.8333) Loss: 4.7812 (4.8333)
+2024-11-04,07:52:47 | INFO | Starting zero-shot imagenet.
+2024-11-04,07:52:47 | INFO | Building zero-shot classifier
+2024-11-04,07:52:58 | INFO | Using classifier
+2024-11-04,07:53:43 | INFO | Finished zero-shot imagenet.
+2024-11-04,07:53:43 | INFO | Eval Epoch: 10 imagenet-zeroshot-val-top1: 0.0074	imagenet-zeroshot-val-top5: 0.0274
+2024-11-04,07:53:46 | INFO | Start epoch 10
+2024-11-04,07:53:50 | INFO | Train Epoch: 10 [  512/61440 (1%)] Data (t): 2.917 Batch (t): 3.226, 158.704/s, 158.704/s/gpu LR: 0.000480 Logit Scale: 14.250 Contrastive_loss: 5.0938 (5.0938) Loss: 5.0938 (5.0938)
+2024-11-04,07:54:58 | INFO | Train Epoch: 10 [51712/61440 (84%)] Data (t): 0.411 Batch (t): 0.683, 749.854/s, 749.854/s/gpu LR: 0.000520 Logit Scale: 14.250 Contrastive_loss: 4.7812 (4.9375) Loss: 4.7812 (4.9375)
+2024-11-04,07:55:11 | INFO | Train Epoch: 10 [61440/61440 (100%)] Data (t): 0.407 Batch (t): 0.678, 752.864/s, 752.864/s/gpu LR: 0.000528 Logit Scale: 14.250 Contrastive_loss: 4.6562 (4.8438) Loss: 4.6562 (4.8438)
+2024-11-04,07:55:11 | INFO | Starting zero-shot imagenet.
+2024-11-04,07:55:11 | INFO | Building zero-shot classifier
+2024-11-04,07:55:22 | INFO | Using classifier
+2024-11-04,07:56:09 | INFO | Finished zero-shot imagenet.
+2024-11-04,07:56:09 | INFO | Eval Epoch: 11 imagenet-zeroshot-val-top1: 0.0070	imagenet-zeroshot-val-top5: 0.0270
+2024-11-04,07:56:13 | INFO | Start epoch 11
+2024-11-04,07:56:17 | INFO | Train Epoch: 11 [  512/61440 (1%)] Data (t): 3.152 Batch (t): 3.439, 148.894/s, 148.894/s/gpu LR: 0.000528 Logit Scale: 14.250 Contrastive_loss: 5.0625 (5.0625) Loss: 5.0625 (5.0625)
+2024-11-04,07:57:24 | INFO | Train Epoch: 11 [51712/61440 (84%)] Data (t): 0.409 Batch (t): 0.680, 763.837/s, 763.837/s/gpu LR: 0.000568 Logit Scale: 14.250 Contrastive_loss: 4.6250 (4.8438) Loss: 4.6250 (4.8438)
+2024-11-04,07:57:37 | INFO | Train Epoch: 11 [61440/61440 (100%)] Data (t): 0.405 Batch (t): 0.680, 729.068/s, 729.068/s/gpu LR: 0.000576 Logit Scale: 14.250 Contrastive_loss: 4.6875 (4.7917) Loss: 4.6875 (4.7917)
+2024-11-04,07:57:38 | INFO | Starting zero-shot imagenet.
+2024-11-04,07:57:38 | INFO | Building zero-shot classifier
+2024-11-04,07:57:48 | INFO | Using classifier
+2024-11-04,07:58:35 | INFO | Finished zero-shot imagenet.
+2024-11-04,07:58:35 | INFO | Eval Epoch: 12 imagenet-zeroshot-val-top1: 0.0076	imagenet-zeroshot-val-top5: 0.0269
+2024-11-04,07:58:38 | INFO | Start epoch 12
+2024-11-04,07:58:42 | INFO | Train Epoch: 12 [  512/61440 (1%)] Data (t): 3.096 Batch (t): 3.395, 150.818/s, 150.818/s/gpu LR: 0.000576 Logit Scale: 14.250 Contrastive_loss: 4.6250 (4.6250) Loss: 4.6250 (4.6250)
+2024-11-04,07:59:50 | INFO | Train Epoch: 12 [51712/61440 (84%)] Data (t): 0.411 Batch (t): 0.683, 758.033/s, 758.033/s/gpu LR: 0.000616 Logit Scale: 14.250 Contrastive_loss: 4.2500 (4.4375) Loss: 4.2500 (4.4375)
+2024-11-04,08:00:03 | INFO | Train Epoch: 12 [61440/61440 (100%)] Data (t): 0.406 Batch (t): 0.678, 757.734/s, 757.734/s/gpu LR: 0.000624 Logit Scale: 14.250 Contrastive_loss: 4.4375 (4.4375) Loss: 4.4375 (4.4375)
+2024-11-04,08:00:03 | INFO | Starting zero-shot imagenet.
+2024-11-04,08:00:03 | INFO | Building zero-shot classifier
+2024-11-04,08:00:14 | INFO | Using classifier
+2024-11-04,08:00:59 | INFO | Finished zero-shot imagenet.
+2024-11-04,08:00:59 | INFO | Eval Epoch: 13 imagenet-zeroshot-val-top1: 0.0086	imagenet-zeroshot-val-top5: 0.0301
+2024-11-04,08:01:03 | INFO | Start epoch 13
+2024-11-04,08:01:07 | INFO | Train Epoch: 13 [  512/61440 (1%)] Data (t): 3.228 Batch (t): 3.520, 145.441/s, 145.441/s/gpu LR: 0.000624 Logit Scale: 14.250 Contrastive_loss: 4.5625 (4.5625) Loss: 4.5625 (4.5625)
+2024-11-04,08:02:16 | INFO | Train Epoch: 13 [51712/61440 (84%)] Data (t): 0.415 Batch (t): 0.688, 762.978/s, 762.978/s/gpu LR: 0.000664 Logit Scale: 14.250 Contrastive_loss: 4.4375 (4.5000) Loss: 4.4375 (4.5000)
+2024-11-04,08:02:29 | INFO | Train Epoch: 13 [61440/61440 (100%)] Data (t): 0.408 Batch (t): 0.679, 760.459/s, 760.459/s/gpu LR: 0.000672 Logit Scale: 14.250 Contrastive_loss: 4.2500 (4.4167) Loss: 4.2500 (4.4167)
+2024-11-04,08:02:29 | INFO | Starting zero-shot imagenet.
+2024-11-04,08:02:29 | INFO | Building zero-shot classifier
+2024-11-04,08:02:40 | INFO | Using classifier
+2024-11-04,08:03:27 | INFO | Finished zero-shot imagenet.
+2024-11-04,08:03:27 | INFO | Eval Epoch: 14 imagenet-zeroshot-val-top1: 0.0085	imagenet-zeroshot-val-top5: 0.0305
+2024-11-04,08:03:30 | INFO | Start epoch 14
+2024-11-04,08:03:34 | INFO | Train Epoch: 14 [  512/61440 (1%)] Data (t): 2.977 Batch (t): 3.296, 155.325/s, 155.325/s/gpu LR: 0.000672 Logit Scale: 14.250 Contrastive_loss: 4.8750 (4.8750) Loss: 4.8750 (4.8750)
+2024-11-04,08:04:42 | INFO | Train Epoch: 14 [51712/61440 (84%)] Data (t): 0.411 Batch (t): 0.684, 757.243/s, 757.243/s/gpu LR: 0.000712 Logit Scale: 14.250 Contrastive_loss: 4.2500 (4.5625) Loss: 4.2500 (4.5625)
+2024-11-04,08:04:55 | INFO | Train Epoch: 14 [61440/61440 (100%)] Data (t): 0.403 Batch (t): 0.685, 748.346/s, 748.346/s/gpu LR: 0.000720 Logit Scale: 14.250 Contrastive_loss: 4.4375 (4.5208) Loss: 4.4375 (4.5208)
+2024-11-04,08:04:56 | INFO | Starting zero-shot imagenet.
+2024-11-04,08:04:56 | INFO | Building zero-shot classifier
+2024-11-04,08:05:06 | INFO | Using classifier
+2024-11-04,08:05:54 | INFO | Finished zero-shot imagenet.
+2024-11-04,08:05:54 | INFO | Eval Epoch: 15 imagenet-zeroshot-val-top1: 0.0106	imagenet-zeroshot-val-top5: 0.0335
+2024-11-04,08:05:58 | INFO | Start epoch 15
+2024-11-04,08:06:01 | INFO | Train Epoch: 15 [  512/61440 (1%)] Data (t): 3.127 Batch (t): 3.429, 149.335/s, 149.335/s/gpu LR: 0.000720 Logit Scale: 14.250 Contrastive_loss: 4.5000 (4.5000) Loss: 4.5000 (4.5000)
+2024-11-04,08:07:11 | INFO | Train Epoch: 15 [51712/61440 (84%)] Data (t): 0.421 Batch (t): 0.697, 709.545/s, 709.545/s/gpu LR: 0.000760 Logit Scale: 14.250 Contrastive_loss: 4.1875 (4.3438) Loss: 4.1875 (4.3438)
+2024-11-04,08:07:24 | INFO | Train Epoch: 15 [61440/61440 (100%)] Data (t): 0.425 Batch (t): 0.703, 753.384/s, 753.384/s/gpu LR: 0.000768 Logit Scale: 14.250 Contrastive_loss: 4.1875 (4.2917) Loss: 4.1875 (4.2917)
+2024-11-04,08:07:24 | INFO | Starting zero-shot imagenet.
+2024-11-04,08:07:24 | INFO | Building zero-shot classifier
+2024-11-04,08:07:35 | INFO | Using classifier
+2024-11-04,08:08:22 | INFO | Finished zero-shot imagenet.
+2024-11-04,08:08:22 | INFO | Eval Epoch: 16 imagenet-zeroshot-val-top1: 0.0105	imagenet-zeroshot-val-top5: 0.0360
+2024-11-04,08:08:25 | INFO | Start epoch 16
+2024-11-04,08:08:29 | INFO | Train Epoch: 16 [  512/61440 (1%)] Data (t): 2.848 Batch (t): 3.144, 162.824/s, 162.824/s/gpu LR: 0.000768 Logit Scale: 14.250 Contrastive_loss: 4.5625 (4.5625) Loss: 4.5625 (4.5625)
+2024-11-04,08:09:37 | INFO | Train Epoch: 16 [51712/61440 (84%)] Data (t): 0.411 Batch (t): 0.684, 759.747/s, 759.747/s/gpu LR: 0.000808 Logit Scale: 14.250 Contrastive_loss: 4.0938 (4.3281) Loss: 4.0938 (4.3281)
+2024-11-04,08:09:50 | INFO | Train Epoch: 16 [61440/61440 (100%)] Data (t): 0.408 Batch (t): 0.681, 759.609/s, 759.609/s/gpu LR: 0.000816 Logit Scale: 14.250 Contrastive_loss: 4.1250 (4.2604) Loss: 4.1250 (4.2604)
+2024-11-04,08:09:50 | INFO | Starting zero-shot imagenet.
+2024-11-04,08:09:50 | INFO | Building zero-shot classifier
+2024-11-04,08:10:01 | INFO | Using classifier
+2024-11-04,08:10:46 | INFO | Finished zero-shot imagenet.
+2024-11-04,08:10:46 | INFO | Eval Epoch: 17 imagenet-zeroshot-val-top1: 0.0107	imagenet-zeroshot-val-top5: 0.0365
+2024-11-04,08:10:49 | INFO | Start epoch 17
+2024-11-04,08:10:53 | INFO | Train Epoch: 17 [  512/61440 (1%)] Data (t): 3.339 Batch (t): 3.627, 141.155/s, 141.155/s/gpu LR: 0.000816 Logit Scale: 14.250 Contrastive_loss: 4.1875 (4.1875) Loss: 4.1875 (4.1875)
+2024-11-04,08:12:01 | INFO | Train Epoch: 17 [51712/61440 (84%)] Data (t): 0.410 Batch (t): 0.683, 741.497/s, 741.497/s/gpu LR: 0.000856 Logit Scale: 14.250 Contrastive_loss: 4.1250 (4.1562) Loss: 4.1250 (4.1562)
+2024-11-04,08:12:15 | INFO | Train Epoch: 17 [61440/61440 (100%)] Data (t): 0.409 Batch (t): 0.691, 757.249/s, 757.249/s/gpu LR: 0.000864 Logit Scale: 14.250 Contrastive_loss: 3.9062 (4.0729) Loss: 3.9062 (4.0729)
+2024-11-04,08:12:15 | INFO | Starting zero-shot imagenet.
+2024-11-04,08:12:15 | INFO | Building zero-shot classifier
+2024-11-04,08:12:25 | INFO | Using classifier
+2024-11-04,08:13:11 | INFO | Finished zero-shot imagenet.
+2024-11-04,08:13:11 | INFO | Eval Epoch: 18 imagenet-zeroshot-val-top1: 0.0108	imagenet-zeroshot-val-top5: 0.0398
+2024-11-04,08:13:14 | INFO | Start epoch 18
+2024-11-04,08:13:18 | INFO | Train Epoch: 18 [  512/61440 (1%)] Data (t): 3.045 Batch (t): 3.355, 152.587/s, 152.587/s/gpu LR: 0.000864 Logit Scale: 14.250 Contrastive_loss: 4.3438 (4.3438) Loss: 4.3438 (4.3438)
+2024-11-04,08:14:26 | INFO | Train Epoch: 18 [51712/61440 (84%)] Data (t): 0.411 Batch (t): 0.684, 750.899/s, 750.899/s/gpu LR: 0.000904 Logit Scale: 14.250 Contrastive_loss: 3.8438 (4.0938) Loss: 3.8438 (4.0938)
+2024-11-04,08:14:39 | INFO | Train Epoch: 18 [61440/61440 (100%)] Data (t): 0.404 Batch (t): 0.685, 758.817/s, 758.817/s/gpu LR: 0.000912 Logit Scale: 14.250 Contrastive_loss: 3.6250 (3.9375) Loss: 3.6250 (3.9375)
+2024-11-04,08:14:40 | INFO | Starting zero-shot imagenet.
+2024-11-04,08:14:40 | INFO | Building zero-shot classifier
+2024-11-04,08:14:50 | INFO | Using classifier
+2024-11-04,08:15:37 | INFO | Finished zero-shot imagenet.
+2024-11-04,08:15:37 | INFO | Eval Epoch: 19 imagenet-zeroshot-val-top1: 0.0114	imagenet-zeroshot-val-top5: 0.0397
+2024-11-04,08:15:41 | INFO | Start epoch 19
+2024-11-04,08:15:45 | INFO | Train Epoch: 19 [  512/61440 (1%)] Data (t): 3.188 Batch (t): 3.483, 147.001/s, 147.001/s/gpu LR: 0.000912 Logit Scale: 14.250 Contrastive_loss: 4.5625 (4.5625) Loss: 4.5625 (4.5625)
+2024-11-04,08:16:53 | INFO | Train Epoch: 19 [51712/61440 (84%)] Data (t): 0.409 Batch (t): 0.679, 750.896/s, 750.896/s/gpu LR: 0.000952 Logit Scale: 14.250 Contrastive_loss: 3.6250 (4.0938) Loss: 3.6250 (4.0938)
+2024-11-04,08:17:05 | INFO | Train Epoch: 19 [61440/61440 (100%)] Data (t): 0.406 Batch (t): 0.679, 754.678/s, 754.678/s/gpu LR: 0.000960 Logit Scale: 14.250 Contrastive_loss: 3.7812 (3.9896) Loss: 3.7812 (3.9896)
+2024-11-04,08:17:06 | INFO | Starting zero-shot imagenet.
+2024-11-04,08:17:06 | INFO | Building zero-shot classifier
+2024-11-04,08:17:16 | INFO | Using classifier
+2024-11-04,08:18:03 | INFO | Finished zero-shot imagenet.
+2024-11-04,08:18:03 | INFO | Eval Epoch: 20 imagenet-zeroshot-val-top1: 0.0125	imagenet-zeroshot-val-top5: 0.0416
+2024-11-04,08:18:06 | INFO | Start epoch 20
+2024-11-04,08:18:10 | INFO | Train Epoch: 20 [  512/61440 (1%)] Data (t): 2.814 Batch (t): 3.103, 164.980/s, 164.980/s/gpu LR: 0.000960 Logit Scale: 14.250 Contrastive_loss: 4.0312 (4.0312) Loss: 4.0312 (4.0312)
+2024-11-04,08:19:18 | INFO | Train Epoch: 20 [51712/61440 (84%)] Data (t): 0.412 Batch (t): 0.685, 759.683/s, 759.683/s/gpu LR: 0.001000 Logit Scale: 14.250 Contrastive_loss: 3.5938 (3.8125) Loss: 3.5938 (3.8125)
+2024-11-04,08:19:32 | INFO | Train Epoch: 20 [61440/61440 (100%)] Data (t): 0.415 Batch (t): 0.690, 762.452/s, 762.452/s/gpu LR: 0.001008 Logit Scale: 14.250 Contrastive_loss: 3.6875 (3.7708) Loss: 3.6875 (3.7708)
+2024-11-04,08:19:32 | INFO | Starting zero-shot imagenet.
+2024-11-04,08:19:32 | INFO | Building zero-shot classifier
+2024-11-04,08:19:42 | INFO | Using classifier
+2024-11-04,08:20:28 | INFO | Finished zero-shot imagenet.
+2024-11-04,08:20:28 | INFO | Eval Epoch: 21 imagenet-zeroshot-val-top1: 0.0133	imagenet-zeroshot-val-top5: 0.0446
+2024-11-04,08:20:32 | INFO | Start epoch 21
+2024-11-04,08:20:36 | INFO | Train Epoch: 21 [  512/61440 (1%)] Data (t): 3.509 Batch (t): 3.786, 135.244/s, 135.244/s/gpu LR: 0.001008 Logit Scale: 14.250 Contrastive_loss: 4.1875 (4.1875) Loss: 4.1875 (4.1875)
+2024-11-04,08:21:45 | INFO | Train Epoch: 21 [51712/61440 (84%)] Data (t): 0.411 Batch (t): 0.685, 754.139/s, 754.139/s/gpu LR: 0.001048 Logit Scale: 14.250 Contrastive_loss: 3.9375 (4.0625) Loss: 3.9375 (4.0625)
+2024-11-04,08:21:58 | INFO | Train Epoch: 21 [61440/61440 (100%)] Data (t): 0.408 Batch (t): 0.685, 767.087/s, 767.087/s/gpu LR: 0.001056 Logit Scale: 14.250 Contrastive_loss: 3.5625 (3.8958) Loss: 3.5625 (3.8958)
+2024-11-04,08:21:58 | INFO | Starting zero-shot imagenet.
+2024-11-04,08:21:58 | INFO | Building zero-shot classifier
+2024-11-04,08:22:08 | INFO | Using classifier
+2024-11-04,08:22:56 | INFO | Finished zero-shot imagenet.
+2024-11-04,08:22:56 | INFO | Eval Epoch: 22 imagenet-zeroshot-val-top1: 0.0144	imagenet-zeroshot-val-top5: 0.0451
+2024-11-04,08:23:00 | INFO | Start epoch 22
+2024-11-04,08:23:03 | INFO | Train Epoch: 22 [  512/61440 (1%)] Data (t): 2.934 Batch (t): 3.223, 158.877/s, 158.877/s/gpu LR: 0.001056 Logit Scale: 14.250 Contrastive_loss: 4.3125 (4.3125) Loss: 4.3125 (4.3125)
+2024-11-04,08:24:11 | INFO | Train Epoch: 22 [51712/61440 (84%)] Data (t): 0.409 Batch (t): 0.681, 754.900/s, 754.900/s/gpu LR: 0.001096 Logit Scale: 14.250 Contrastive_loss: 3.7969 (4.0547) Loss: 3.7969 (4.0547)
+2024-11-04,08:24:24 | INFO | Train Epoch: 22 [61440/61440 (100%)] Data (t): 0.407 Batch (t): 0.680, 750.408/s, 750.408/s/gpu LR: 0.001104 Logit Scale: 14.250 Contrastive_loss: 3.8125 (3.9740) Loss: 3.8125 (3.9740)
+2024-11-04,08:24:24 | INFO | Starting zero-shot imagenet.
+2024-11-04,08:24:24 | INFO | Building zero-shot classifier
+2024-11-04,08:24:35 | INFO | Using classifier
+2024-11-04,08:25:21 | INFO | Finished zero-shot imagenet.
+2024-11-04,08:25:21 | INFO | Eval Epoch: 23 imagenet-zeroshot-val-top1: 0.0128	imagenet-zeroshot-val-top5: 0.0432
+2024-11-04,08:25:24 | INFO | Start epoch 23
+2024-11-04,08:25:28 | INFO | Train Epoch: 23 [  512/61440 (1%)] Data (t): 3.120 Batch (t): 3.403, 150.463/s, 150.463/s/gpu LR: 0.001104 Logit Scale: 14.250 Contrastive_loss: 4.3438 (4.3438) Loss: 4.3438 (4.3438)
+2024-11-04,08:26:36 | INFO | Train Epoch: 23 [51712/61440 (84%)] Data (t): 0.413 Batch (t): 0.687, 732.329/s, 732.329/s/gpu LR: 0.001144 Logit Scale: 14.250 Contrastive_loss: 3.6719 (4.0078) Loss: 3.6719 (4.0078)
+2024-11-04,08:26:49 | INFO | Train Epoch: 23 [61440/61440 (100%)] Data (t): 0.407 Batch (t): 0.684, 761.051/s, 761.051/s/gpu LR: 0.001152 Logit Scale: 14.250 Contrastive_loss: 3.4062 (3.8073) Loss: 3.4062 (3.8073)
+2024-11-04,08:26:50 | INFO | Starting zero-shot imagenet.
+2024-11-04,08:26:50 | INFO | Building zero-shot classifier
+2024-11-04,08:27:00 | INFO | Using classifier
+2024-11-04,08:27:45 | INFO | Finished zero-shot imagenet.
+2024-11-04,08:27:45 | INFO | Eval Epoch: 24 imagenet-zeroshot-val-top1: 0.0139	imagenet-zeroshot-val-top5: 0.0445
+2024-11-04,08:27:49 | INFO | Start epoch 24
+2024-11-04,08:27:52 | INFO | Train Epoch: 24 [  512/61440 (1%)] Data (t): 2.877 Batch (t): 3.164, 161.828/s, 161.828/s/gpu LR: 0.001152 Logit Scale: 14.250 Contrastive_loss: 3.1562 (3.1562) Loss: 3.1562 (3.1562)
+2024-11-04,08:29:00 | INFO | Train Epoch: 24 [51712/61440 (84%)] Data (t): 0.409 Batch (t): 0.681, 759.864/s, 759.864/s/gpu LR: 0.001192 Logit Scale: 14.250 Contrastive_loss: 3.5625 (3.3594) Loss: 3.5625 (3.3594)
+2024-11-04,08:29:13 | INFO | Train Epoch: 24 [61440/61440 (100%)] Data (t): 0.403 Batch (t): 0.678, 760.989/s, 760.989/s/gpu LR: 0.001200 Logit Scale: 14.250 Contrastive_loss: 3.5156 (3.4115) Loss: 3.5156 (3.4115)
+2024-11-04,08:29:13 | INFO | Starting zero-shot imagenet.
+2024-11-04,08:29:13 | INFO | Building zero-shot classifier
+2024-11-04,08:29:24 | INFO | Using classifier
+2024-11-04,08:30:10 | INFO | Finished zero-shot imagenet.
+2024-11-04,08:30:10 | INFO | Eval Epoch: 25 imagenet-zeroshot-val-top1: 0.0167	imagenet-zeroshot-val-top5: 0.0545
+2024-11-04,08:30:14 | INFO | Start epoch 25
+2024-11-04,08:30:17 | INFO | Train Epoch: 25 [  512/61440 (1%)] Data (t): 3.139 Batch (t): 3.421, 149.660/s, 149.660/s/gpu LR: 0.001200 Logit Scale: 14.250 Contrastive_loss: 4.2500 (4.2500) Loss: 4.2500 (4.2500)
+2024-11-04,08:31:25 | INFO | Train Epoch: 25 [51712/61440 (84%)] Data (t): 0.409 Batch (t): 0.681, 730.807/s, 730.807/s/gpu LR: 0.001240 Logit Scale: 14.250 Contrastive_loss: 3.0312 (3.6406) Loss: 3.0312 (3.6406)
+2024-11-04,08:31:38 | INFO | Train Epoch: 25 [61440/61440 (100%)] Data (t): 0.407 Batch (t): 0.681, 761.381/s, 761.381/s/gpu LR: 0.001248 Logit Scale: 14.250 Contrastive_loss: 3.2031 (3.4948) Loss: 3.2031 (3.4948)
+2024-11-04,08:31:38 | INFO | Starting zero-shot imagenet.
+2024-11-04,08:31:38 | INFO | Building zero-shot classifier
+2024-11-04,08:31:49 | INFO | Using classifier
+2024-11-04,08:32:35 | INFO | Finished zero-shot imagenet.
+2024-11-04,08:32:35 | INFO | Eval Epoch: 26 imagenet-zeroshot-val-top1: 0.0162	imagenet-zeroshot-val-top5: 0.0498
+2024-11-04,08:32:38 | INFO | Start epoch 26
+2024-11-04,08:32:42 | INFO | Train Epoch: 26 [  512/61440 (1%)] Data (t): 2.862 Batch (t): 3.163, 161.890/s, 161.890/s/gpu LR: 0.001248 Logit Scale: 14.250 Contrastive_loss: 3.5000 (3.5000) Loss: 3.5000 (3.5000)
+2024-11-04,08:33:50 | INFO | Train Epoch: 26 [51712/61440 (84%)] Data (t): 0.409 Batch (t): 0.679, 766.451/s, 766.451/s/gpu LR: 0.001288 Logit Scale: 14.250 Contrastive_loss: 3.1875 (3.3438) Loss: 3.1875 (3.3438)
+2024-11-04,08:34:03 | INFO | Train Epoch: 26 [61440/61440 (100%)] Data (t): 0.408 Batch (t): 0.680, 762.617/s, 762.617/s/gpu LR: 0.001296 Logit Scale: 14.250 Contrastive_loss: 3.2812 (3.3229) Loss: 3.2812 (3.3229)
+2024-11-04,08:34:03 | INFO | Starting zero-shot imagenet.
+2024-11-04,08:34:03 | INFO | Building zero-shot classifier
+2024-11-04,08:34:13 | INFO | Using classifier
+2024-11-04,08:34:59 | INFO | Finished zero-shot imagenet.
+2024-11-04,08:34:59 | INFO | Eval Epoch: 27 imagenet-zeroshot-val-top1: 0.0164	imagenet-zeroshot-val-top5: 0.0509
+2024-11-04,08:35:04 | INFO | Start epoch 27
+2024-11-04,08:35:07 | INFO | Train Epoch: 27 [  512/61440 (1%)] Data (t): 2.873 Batch (t): 3.155, 162.297/s, 162.297/s/gpu LR: 0.001296 Logit Scale: 14.250 Contrastive_loss: 3.4688 (3.4688) Loss: 3.4688 (3.4688)
+2024-11-04,08:36:15 | INFO | Train Epoch: 27 [51712/61440 (84%)] Data (t): 0.408 Batch (t): 0.679, 758.317/s, 758.317/s/gpu LR: 0.001336 Logit Scale: 14.250 Contrastive_loss: 3.1406 (3.3047) Loss: 3.1406 (3.3047)
+2024-11-04,08:36:28 | INFO | Train Epoch: 27 [61440/61440 (100%)] Data (t): 0.407 Batch (t): 0.678, 763.104/s, 763.104/s/gpu LR: 0.001344 Logit Scale: 14.250 Contrastive_loss: 3.4062 (3.3385) Loss: 3.4062 (3.3385)
+2024-11-04,08:36:28 | INFO | Starting zero-shot imagenet.
+2024-11-04,08:36:28 | INFO | Building zero-shot classifier
+2024-11-04,08:36:39 | INFO | Using classifier
+2024-11-04,08:37:23 | INFO | Finished zero-shot imagenet.
+2024-11-04,08:37:23 | INFO | Eval Epoch: 28 imagenet-zeroshot-val-top1: 0.0165	imagenet-zeroshot-val-top5: 0.0530
+2024-11-04,08:37:27 | INFO | Start epoch 28
+2024-11-04,08:37:31 | INFO | Train Epoch: 28 [  512/61440 (1%)] Data (t): 2.911 Batch (t): 3.184, 160.808/s, 160.808/s/gpu LR: 0.001344 Logit Scale: 14.250 Contrastive_loss: 3.3125 (3.3125) Loss: 3.3125 (3.3125)
+2024-11-04,08:38:38 | INFO | Train Epoch: 28 [51712/61440 (84%)] Data (t): 0.408 Batch (t): 0.679, 756.131/s, 756.131/s/gpu LR: 0.001384 Logit Scale: 14.250 Contrastive_loss: 3.3594 (3.3359) Loss: 3.3594 (3.3359)
+2024-11-04,08:38:51 | INFO | Train Epoch: 28 [61440/61440 (100%)] Data (t): 0.409 Batch (t): 0.681, 763.881/s, 763.881/s/gpu LR: 0.001392 Logit Scale: 14.250 Contrastive_loss: 3.2500 (3.3073) Loss: 3.2500 (3.3073)
+2024-11-04,08:38:52 | INFO | Starting zero-shot imagenet.
+2024-11-04,08:38:52 | INFO | Building zero-shot classifier
+2024-11-04,08:39:02 | INFO | Using classifier
+2024-11-04,08:39:46 | INFO | Finished zero-shot imagenet.
+2024-11-04,08:39:46 | INFO | Eval Epoch: 29 imagenet-zeroshot-val-top1: 0.0160	imagenet-zeroshot-val-top5: 0.0498
+2024-11-04,08:39:49 | INFO | Start epoch 29
+2024-11-04,08:39:53 | INFO | Train Epoch: 29 [  512/61440 (1%)] Data (t): 3.005 Batch (t): 3.286, 155.799/s, 155.799/s/gpu LR: 0.001392 Logit Scale: 14.250 Contrastive_loss: 4.0938 (4.0938) Loss: 4.0938 (4.0938)
+2024-11-04,08:41:01 | INFO | Train Epoch: 29 [51712/61440 (84%)] Data (t): 0.408 Batch (t): 0.680, 763.909/s, 763.909/s/gpu LR: 0.001432 Logit Scale: 14.250 Contrastive_loss: 3.1719 (3.6328) Loss: 3.1719 (3.6328)
+2024-11-04,08:41:14 | INFO | Train Epoch: 29 [61440/61440 (100%)] Data (t): 0.407 Batch (t): 0.680, 754.230/s, 754.230/s/gpu LR: 0.001440 Logit Scale: 14.250 Contrastive_loss: 3.0625 (3.4427) Loss: 3.0625 (3.4427)
+2024-11-04,08:41:14 | INFO | Starting zero-shot imagenet.
+2024-11-04,08:41:14 | INFO | Building zero-shot classifier
+2024-11-04,08:41:25 | INFO | Using classifier
+2024-11-04,08:42:11 | INFO | Finished zero-shot imagenet.
+2024-11-04,08:42:11 | INFO | Eval Epoch: 30 imagenet-zeroshot-val-top1: 0.0157	imagenet-zeroshot-val-top5: 0.0510
+2024-11-04,08:42:15 | INFO | Start epoch 30
+2024-11-04,08:42:19 | INFO | Train Epoch: 30 [  512/61440 (1%)] Data (t): 3.365 Batch (t): 3.649, 140.328/s, 140.328/s/gpu LR: 0.001440 Logit Scale: 14.250 Contrastive_loss: 4.3125 (4.3125) Loss: 4.3125 (4.3125)
+2024-11-04,08:43:27 | INFO | Train Epoch: 30 [51712/61440 (84%)] Data (t): 0.411 Batch (t): 0.684, 754.314/s, 754.314/s/gpu LR: 0.001480 Logit Scale: 14.250 Contrastive_loss: 3.0469 (3.6797) Loss: 3.0469 (3.6797)
+2024-11-04,08:43:40 | INFO | Train Epoch: 30 [61440/61440 (100%)] Data (t): 0.409 Batch (t): 0.681, 762.455/s, 762.455/s/gpu LR: 0.001488 Logit Scale: 14.250 Contrastive_loss: 3.3125 (3.5573) Loss: 3.3125 (3.5573)
+2024-11-04,08:43:40 | INFO | Starting zero-shot imagenet.
+2024-11-04,08:43:40 | INFO | Building zero-shot classifier
+2024-11-04,08:43:51 | INFO | Using classifier
+2024-11-04,08:44:37 | INFO | Finished zero-shot imagenet.
+2024-11-04,08:44:37 | INFO | Eval Epoch: 31 imagenet-zeroshot-val-top1: 0.0165	imagenet-zeroshot-val-top5: 0.0535
+2024-11-04,08:44:40 | INFO | Start epoch 31
+2024-11-04,08:44:44 | INFO | Train Epoch: 31 [  512/61440 (1%)] Data (t): 3.266 Batch (t): 3.554, 144.044/s, 144.044/s/gpu LR: 0.001488 Logit Scale: 14.250 Contrastive_loss: 4.3125 (4.3125) Loss: 4.3125 (4.3125)
+2024-11-04,08:45:52 | INFO | Train Epoch: 31 [51712/61440 (84%)] Data (t): 0.411 Batch (t): 0.683, 757.850/s, 757.850/s/gpu LR: 0.001528 Logit Scale: 14.250 Contrastive_loss: 3.2500 (3.7812) Loss: 3.2500 (3.7812)
+2024-11-04,08:46:05 | INFO | Train Epoch: 31 [61440/61440 (100%)] Data (t): 0.407 Batch (t): 0.681, 759.342/s, 759.342/s/gpu LR: 0.001536 Logit Scale: 14.250 Contrastive_loss: 3.0000 (3.5208) Loss: 3.0000 (3.5208)
+2024-11-04,08:46:05 | INFO | Starting zero-shot imagenet.
+2024-11-04,08:46:05 | INFO | Building zero-shot classifier
+2024-11-04,08:46:16 | INFO | Using classifier
+2024-11-04,08:47:01 | INFO | Finished zero-shot imagenet.
+2024-11-04,08:47:01 | INFO | Eval Epoch: 32 imagenet-zeroshot-val-top1: 0.0162	imagenet-zeroshot-val-top5: 0.0515
+2024-11-04,08:47:05 | INFO | Start epoch 32
+2024-11-04,08:47:09 | INFO | Train Epoch: 32 [  512/61440 (1%)] Data (t): 3.139 Batch (t): 3.421, 149.646/s, 149.646/s/gpu LR: 0.001536 Logit Scale: 14.250 Contrastive_loss: 3.8438 (3.8438) Loss: 3.8438 (3.8438)
+2024-11-04,08:48:17 | INFO | Train Epoch: 32 [51712/61440 (84%)] Data (t): 0.408 Batch (t): 0.679, 753.259/s, 753.259/s/gpu LR: 0.001576 Logit Scale: 14.250 Contrastive_loss: 3.2500 (3.5469) Loss: 3.2500 (3.5469)
+2024-11-04,08:48:30 | INFO | Train Epoch: 32 [61440/61440 (100%)] Data (t): 0.406 Batch (t): 0.680, 751.986/s, 751.986/s/gpu LR: 0.001584 Logit Scale: 14.250 Contrastive_loss: 3.1875 (3.4271) Loss: 3.1875 (3.4271)
+2024-11-04,08:48:30 | INFO | Starting zero-shot imagenet.
+2024-11-04,08:48:30 | INFO | Building zero-shot classifier
+2024-11-04,08:48:41 | INFO | Using classifier
+2024-11-04,08:49:25 | INFO | Finished zero-shot imagenet.
+2024-11-04,08:49:25 | INFO | Eval Epoch: 33 imagenet-zeroshot-val-top1: 0.0160	imagenet-zeroshot-val-top5: 0.0524
+2024-11-04,08:49:30 | INFO | Start epoch 33
+2024-11-04,08:49:33 | INFO | Train Epoch: 33 [  512/61440 (1%)] Data (t): 2.950 Batch (t): 3.228, 158.615/s, 158.615/s/gpu LR: 0.001584 Logit Scale: 14.250 Contrastive_loss: 4.1250 (4.1250) Loss: 4.1250 (4.1250)
+2024-11-04,08:50:41 | INFO | Train Epoch: 33 [51712/61440 (84%)] Data (t): 0.409 Batch (t): 0.680, 760.293/s, 760.293/s/gpu LR: 0.001624 Logit Scale: 14.250 Contrastive_loss: 3.1094 (3.6172) Loss: 3.1094 (3.6172)
+2024-11-04,08:50:54 | INFO | Train Epoch: 33 [61440/61440 (100%)] Data (t): 0.407 Batch (t): 0.680, 762.608/s, 762.608/s/gpu LR: 0.001632 Logit Scale: 14.250 Contrastive_loss: 2.7969 (3.3438) Loss: 2.7969 (3.3438)
+2024-11-04,08:50:54 | INFO | Starting zero-shot imagenet.
+2024-11-04,08:50:54 | INFO | Building zero-shot classifier
+2024-11-04,08:51:05 | INFO | Using classifier
+2024-11-04,08:51:52 | INFO | Finished zero-shot imagenet.
+2024-11-04,08:51:52 | INFO | Eval Epoch: 34 imagenet-zeroshot-val-top1: 0.0173	imagenet-zeroshot-val-top5: 0.0544
+2024-11-04,08:51:56 | INFO | Start epoch 34
+2024-11-04,08:51:59 | INFO | Train Epoch: 34 [  512/61440 (1%)] Data (t): 2.717 Batch (t): 3.015, 169.832/s, 169.832/s/gpu LR: 0.001632 Logit Scale: 14.250 Contrastive_loss: 3.8438 (3.8438) Loss: 3.8438 (3.8438)
+2024-11-04,08:53:07 | INFO | Train Epoch: 34 [51712/61440 (84%)] Data (t): 0.409 Batch (t): 0.680, 755.741/s, 755.741/s/gpu LR: 0.001672 Logit Scale: 14.250 Contrastive_loss: 3.2656 (3.5547) Loss: 3.2656 (3.5547)
+2024-11-04,08:53:20 | INFO | Train Epoch: 34 [61440/61440 (100%)] Data (t): 0.407 Batch (t): 0.680, 766.900/s, 766.900/s/gpu LR: 0.001680 Logit Scale: 14.250 Contrastive_loss: 2.8594 (3.3229) Loss: 2.8594 (3.3229)
+2024-11-04,08:53:20 | INFO | Starting zero-shot imagenet.
+2024-11-04,08:53:20 | INFO | Building zero-shot classifier
+2024-11-04,08:53:31 | INFO | Using classifier
+2024-11-04,08:54:15 | INFO | Finished zero-shot imagenet.
+2024-11-04,08:54:15 | INFO | Eval Epoch: 35 imagenet-zeroshot-val-top1: 0.0167	imagenet-zeroshot-val-top5: 0.0550
+2024-11-04,08:54:18 | INFO | Start epoch 35
+2024-11-04,08:54:22 | INFO | Train Epoch: 35 [  512/61440 (1%)] Data (t): 3.050 Batch (t): 3.337, 153.431/s, 153.431/s/gpu LR: 0.001680 Logit Scale: 14.250 Contrastive_loss: 3.8906 (3.8906) Loss: 3.8906 (3.8906)
+2024-11-04,08:55:30 | INFO | Train Epoch: 35 [51712/61440 (84%)] Data (t): 0.408 Batch (t): 0.680, 759.555/s, 759.555/s/gpu LR: 0.001720 Logit Scale: 14.250 Contrastive_loss: 3.2656 (3.5781) Loss: 3.2656 (3.5781)
+2024-11-04,08:55:43 | INFO | Train Epoch: 35 [61440/61440 (100%)] Data (t): 0.408 Batch (t): 0.681, 762.022/s, 762.022/s/gpu LR: 0.001728 Logit Scale: 14.250 Contrastive_loss: 3.1875 (3.4479) Loss: 3.1875 (3.4479)
+2024-11-04,08:55:43 | INFO | Starting zero-shot imagenet.
+2024-11-04,08:55:43 | INFO | Building zero-shot classifier
+2024-11-04,08:55:54 | INFO | Using classifier
+2024-11-04,08:56:38 | INFO | Finished zero-shot imagenet.
+2024-11-04,08:56:38 | INFO | Eval Epoch: 36 imagenet-zeroshot-val-top1: 0.0171	imagenet-zeroshot-val-top5: 0.0527
+2024-11-04,08:56:42 | INFO | Start epoch 36
+2024-11-04,08:56:46 | INFO | Train Epoch: 36 [  512/61440 (1%)] Data (t): 2.812 Batch (t): 3.111, 164.587/s, 164.587/s/gpu LR: 0.001728 Logit Scale: 14.250 Contrastive_loss: 3.3438 (3.3438) Loss: 3.3438 (3.3438)
+2024-11-04,08:57:54 | INFO | Train Epoch: 36 [51712/61440 (84%)] Data (t): 0.408 Batch (t): 0.680, 761.796/s, 761.796/s/gpu LR: 0.001768 Logit Scale: 14.250 Contrastive_loss: 3.0625 (3.2031) Loss: 3.0625 (3.2031)
+2024-11-04,08:58:06 | INFO | Train Epoch: 36 [61440/61440 (100%)] Data (t): 0.404 Batch (t): 0.678, 759.642/s, 759.642/s/gpu LR: 0.001776 Logit Scale: 14.250 Contrastive_loss: 3.1562 (3.1875) Loss: 3.1562 (3.1875)
+2024-11-04,08:58:07 | INFO | Starting zero-shot imagenet.
+2024-11-04,08:58:07 | INFO | Building zero-shot classifier
+2024-11-04,08:58:17 | INFO | Using classifier
+2024-11-04,08:59:01 | INFO | Finished zero-shot imagenet.
+2024-11-04,08:59:01 | INFO | Eval Epoch: 37 imagenet-zeroshot-val-top1: 0.0166	imagenet-zeroshot-val-top5: 0.0542
+2024-11-04,08:59:04 | INFO | Start epoch 37
+2024-11-04,08:59:08 | INFO | Train Epoch: 37 [  512/61440 (1%)] Data (t): 2.902 Batch (t): 3.207, 159.643/s, 159.643/s/gpu LR: 0.001776 Logit Scale: 14.250 Contrastive_loss: 3.5000 (3.5000) Loss: 3.5000 (3.5000)
+2024-11-04,09:00:16 | INFO | Train Epoch: 37 [51712/61440 (84%)] Data (t): 0.409 Batch (t): 0.680, 749.002/s, 749.002/s/gpu LR: 0.001816 Logit Scale: 14.250 Contrastive_loss: 2.7812 (3.1406) Loss: 2.7812 (3.1406)
+2024-11-04,09:00:29 | INFO | Train Epoch: 37 [61440/61440 (100%)] Data (t): 0.411 Batch (t): 0.686, 755.763/s, 755.763/s/gpu LR: 0.001824 Logit Scale: 14.250 Contrastive_loss: 2.8438 (3.0417) Loss: 2.8438 (3.0417)
+2024-11-04,09:00:29 | INFO | Starting zero-shot imagenet.
+2024-11-04,09:00:29 | INFO | Building zero-shot classifier
+2024-11-04,09:00:39 | INFO | Using classifier
+2024-11-04,09:01:23 | INFO | Finished zero-shot imagenet.
+2024-11-04,09:01:23 | INFO | Eval Epoch: 38 imagenet-zeroshot-val-top1: 0.0174	imagenet-zeroshot-val-top5: 0.0555
+2024-11-04,09:01:27 | INFO | Start epoch 38
+2024-11-04,09:01:31 | INFO | Train Epoch: 38 [  512/61440 (1%)] Data (t): 2.944 Batch (t): 3.230, 158.522/s, 158.522/s/gpu LR: 0.001824 Logit Scale: 14.250 Contrastive_loss: 3.2812 (3.2812) Loss: 3.2812 (3.2812)
+2024-11-04,09:02:39 | INFO | Train Epoch: 38 [51712/61440 (84%)] Data (t): 0.408 Batch (t): 0.679, 751.975/s, 751.975/s/gpu LR: 0.001864 Logit Scale: 14.250 Contrastive_loss: 3.2500 (3.2656) Loss: 3.2500 (3.2656)
+2024-11-04,09:02:52 | INFO | Train Epoch: 38 [61440/61440 (100%)] Data (t): 0.407 Batch (t): 0.680, 753.741/s, 753.741/s/gpu LR: 0.001872 Logit Scale: 14.250 Contrastive_loss: 2.7656 (3.0990) Loss: 2.7656 (3.0990)
+2024-11-04,09:02:52 | INFO | Starting zero-shot imagenet.
+2024-11-04,09:02:52 | INFO | Building zero-shot classifier
+2024-11-04,09:03:03 | INFO | Using classifier
+2024-11-04,09:03:48 | INFO | Finished zero-shot imagenet.
+2024-11-04,09:03:48 | INFO | Eval Epoch: 39 imagenet-zeroshot-val-top1: 0.0181	imagenet-zeroshot-val-top5: 0.0580
+2024-11-04,09:03:52 | INFO | Start epoch 39
+2024-11-04,09:03:55 | INFO | Train Epoch: 39 [  512/61440 (1%)] Data (t): 2.970 Batch (t): 3.253, 157.372/s, 157.372/s/gpu LR: 0.001872 Logit Scale: 14.250 Contrastive_loss: 3.4688 (3.4688) Loss: 3.4688 (3.4688)
+2024-11-04,09:05:04 | INFO | Train Epoch: 39 [51712/61440 (84%)] Data (t): 0.411 Batch (t): 0.682, 761.391/s, 761.391/s/gpu LR: 0.001912 Logit Scale: 14.250 Contrastive_loss: 2.9844 (3.2266) Loss: 2.9844 (3.2266)
+2024-11-04,09:05:17 | INFO | Train Epoch: 39 [61440/61440 (100%)] Data (t): 0.409 Batch (t): 0.679, 757.098/s, 757.098/s/gpu LR: 0.001920 Logit Scale: 14.250 Contrastive_loss: 2.7500 (3.0677) Loss: 2.7500 (3.0677)
+2024-11-04,09:05:17 | INFO | Starting zero-shot imagenet.
+2024-11-04,09:05:17 | INFO | Building zero-shot classifier
+2024-11-04,09:05:27 | INFO | Using classifier
+2024-11-04,09:06:12 | INFO | Finished zero-shot imagenet.
+2024-11-04,09:06:12 | INFO | Eval Epoch: 40 imagenet-zeroshot-val-top1: 0.0190	imagenet-zeroshot-val-top5: 0.0579
+2024-11-04,09:06:15 | INFO | Start epoch 40
+2024-11-04,09:06:19 | INFO | Train Epoch: 40 [  512/61440 (1%)] Data (t): 3.174 Batch (t): 3.449, 148.431/s, 148.431/s/gpu LR: 0.001920 Logit Scale: 14.250 Contrastive_loss: 4.1250 (4.1250) Loss: 4.1250 (4.1250)
+2024-11-04,09:07:28 | INFO | Train Epoch: 40 [51712/61440 (84%)] Data (t): 0.416 Batch (t): 0.689, 759.763/s, 759.763/s/gpu LR: 0.001960 Logit Scale: 14.250 Contrastive_loss: 2.9688 (3.5469) Loss: 2.9688 (3.5469)
+2024-11-04,09:07:41 | INFO | Train Epoch: 40 [61440/61440 (100%)] Data (t): 0.407 Batch (t): 0.681, 757.404/s, 757.404/s/gpu LR: 0.001968 Logit Scale: 14.250 Contrastive_loss: 3.0625 (3.3854) Loss: 3.0625 (3.3854)
+2024-11-04,09:07:41 | INFO | Starting zero-shot imagenet.
+2024-11-04,09:07:41 | INFO | Building zero-shot classifier
+2024-11-04,09:07:52 | INFO | Using classifier
+2024-11-04,09:08:36 | INFO | Finished zero-shot imagenet.
+2024-11-04,09:08:36 | INFO | Eval Epoch: 41 imagenet-zeroshot-val-top1: 0.0190	imagenet-zeroshot-val-top5: 0.0589
+2024-11-04,09:08:40 | INFO | Start epoch 41
+2024-11-04,09:08:43 | INFO | Train Epoch: 41 [  512/61440 (1%)] Data (t): 3.145 Batch (t): 3.418, 149.806/s, 149.806/s/gpu LR: 0.001968 Logit Scale: 14.250 Contrastive_loss: 3.5156 (3.5156) Loss: 3.5156 (3.5156)
+2024-11-04,09:09:52 | INFO | Train Epoch: 41 [51712/61440 (84%)] Data (t): 0.414 Batch (t): 0.687, 754.711/s, 754.711/s/gpu LR: 0.002000 Logit Scale: 14.250 Contrastive_loss: 2.6094 (3.0625) Loss: 2.6094 (3.0625)
+2024-11-04,09:10:05 | INFO | Train Epoch: 41 [61440/61440 (100%)] Data (t): 0.404 Batch (t): 0.681, 756.398/s, 756.398/s/gpu LR: 0.001998 Logit Scale: 14.250 Contrastive_loss: 3.0312 (3.0521) Loss: 3.0312 (3.0521)
+2024-11-04,09:10:05 | INFO | Starting zero-shot imagenet.
+2024-11-04,09:10:05 | INFO | Building zero-shot classifier
+2024-11-04,09:10:16 | INFO | Using classifier
+2024-11-04,09:11:02 | INFO | Finished zero-shot imagenet.
+2024-11-04,09:11:02 | INFO | Eval Epoch: 42 imagenet-zeroshot-val-top1: 0.0191	imagenet-zeroshot-val-top5: 0.0591
+2024-11-04,09:11:06 | INFO | Start epoch 42
+2024-11-04,09:11:10 | INFO | Train Epoch: 42 [  512/61440 (1%)] Data (t): 3.138 Batch (t): 3.455, 148.176/s, 148.176/s/gpu LR: 0.001998 Logit Scale: 14.250 Contrastive_loss: 3.7656 (3.7656) Loss: 3.7656 (3.7656)
+2024-11-04,09:12:18 | INFO | Train Epoch: 42 [51712/61440 (84%)] Data (t): 0.407 Batch (t): 0.679, 752.969/s, 752.969/s/gpu LR: 0.001980 Logit Scale: 14.250 Contrastive_loss: 3.0469 (3.4062) Loss: 3.0469 (3.4062)
+2024-11-04,09:12:30 | INFO | Train Epoch: 42 [61440/61440 (100%)] Data (t): 0.404 Batch (t): 0.679, 759.128/s, 759.128/s/gpu LR: 0.001974 Logit Scale: 14.250 Contrastive_loss: 2.5625 (3.1250) Loss: 2.5625 (3.1250)
+2024-11-04,09:12:31 | INFO | Starting zero-shot imagenet.
+2024-11-04,09:12:31 | INFO | Building zero-shot classifier
+2024-11-04,09:12:41 | INFO | Using classifier
+2024-11-04,09:13:25 | INFO | Finished zero-shot imagenet.
+2024-11-04,09:13:25 | INFO | Eval Epoch: 43 imagenet-zeroshot-val-top1: 0.0196	imagenet-zeroshot-val-top5: 0.0586
+2024-11-04,09:13:29 | INFO | Start epoch 43
+2024-11-04,09:13:32 | INFO | Train Epoch: 43 [  512/61440 (1%)] Data (t): 3.064 Batch (t): 3.366, 152.113/s, 152.113/s/gpu LR: 0.001974 Logit Scale: 14.250 Contrastive_loss: 3.8750 (3.8750) Loss: 3.8750 (3.8750)
+2024-11-04,09:14:40 | INFO | Train Epoch: 43 [51712/61440 (84%)] Data (t): 0.408 Batch (t): 0.681, 760.503/s, 760.503/s/gpu LR: 0.001932 Logit Scale: 14.250 Contrastive_loss: 3.3125 (3.5938) Loss: 3.3125 (3.5938)
+2024-11-04,09:14:53 | INFO | Train Epoch: 43 [61440/61440 (100%)] Data (t): 0.406 Batch (t): 0.678, 768.113/s, 768.113/s/gpu LR: 0.001922 Logit Scale: 14.250 Contrastive_loss: 3.0938 (3.4271) Loss: 3.0938 (3.4271)
+2024-11-04,09:14:53 | INFO | Starting zero-shot imagenet.
+2024-11-04,09:14:53 | INFO | Building zero-shot classifier
+2024-11-04,09:15:04 | INFO | Using classifier
+2024-11-04,09:15:51 | INFO | Finished zero-shot imagenet.
+2024-11-04,09:15:51 | INFO | Eval Epoch: 44 imagenet-zeroshot-val-top1: 0.0188	imagenet-zeroshot-val-top5: 0.0612
+2024-11-04,09:15:54 | INFO | Start epoch 44
+2024-11-04,09:15:58 | INFO | Train Epoch: 44 [  512/61440 (1%)] Data (t): 3.166 Batch (t): 3.446, 148.599/s, 148.599/s/gpu LR: 0.001921 Logit Scale: 14.250 Contrastive_loss: 3.2500 (3.2500) Loss: 3.2500 (3.2500)
+2024-11-04,09:17:07 | INFO | Train Epoch: 44 [51712/61440 (84%)] Data (t): 0.416 Batch (t): 0.689, 756.397/s, 756.397/s/gpu LR: 0.001856 Logit Scale: 14.250 Contrastive_loss: 3.1250 (3.1875) Loss: 3.1250 (3.1875)
+2024-11-04,09:17:20 | INFO | Train Epoch: 44 [61440/61440 (100%)] Data (t): 0.423 Batch (t): 0.705, 704.050/s, 704.050/s/gpu LR: 0.001842 Logit Scale: 14.250 Contrastive_loss: 2.9375 (3.1042) Loss: 2.9375 (3.1042)
+2024-11-04,09:17:20 | INFO | Starting zero-shot imagenet.
+2024-11-04,09:17:20 | INFO | Building zero-shot classifier
+2024-11-04,09:17:31 | INFO | Using classifier
+2024-11-04,09:18:19 | INFO | Finished zero-shot imagenet.
+2024-11-04,09:18:19 | INFO | Eval Epoch: 45 imagenet-zeroshot-val-top1: 0.0179	imagenet-zeroshot-val-top5: 0.0573
+2024-11-04,09:18:22 | INFO | Start epoch 45
+2024-11-04,09:18:26 | INFO | Train Epoch: 45 [  512/61440 (1%)] Data (t): 2.925 Batch (t): 3.209, 159.533/s, 159.533/s/gpu LR: 0.001841 Logit Scale: 14.250 Contrastive_loss: 3.3594 (3.3594) Loss: 3.3594 (3.3594)
+2024-11-04,09:19:34 | INFO | Train Epoch: 45 [51712/61440 (84%)] Data (t): 0.409 Batch (t): 0.679, 759.218/s, 759.218/s/gpu LR: 0.001756 Logit Scale: 14.250 Contrastive_loss: 2.5938 (2.9766) Loss: 2.5938 (2.9766)
+2024-11-04,09:19:47 | INFO | Train Epoch: 45 [61440/61440 (100%)] Data (t): 0.406 Batch (t): 0.679, 754.540/s, 754.540/s/gpu LR: 0.001738 Logit Scale: 14.250 Contrastive_loss: 2.8594 (2.9375) Loss: 2.8594 (2.9375)
+2024-11-04,09:19:47 | INFO | Starting zero-shot imagenet.
+2024-11-04,09:19:47 | INFO | Building zero-shot classifier
+2024-11-04,09:19:57 | INFO | Using classifier
+2024-11-04,09:20:44 | INFO | Finished zero-shot imagenet.
+2024-11-04,09:20:44 | INFO | Eval Epoch: 46 imagenet-zeroshot-val-top1: 0.0185	imagenet-zeroshot-val-top5: 0.0603
+2024-11-04,09:20:47 | INFO | Start epoch 46
+2024-11-04,09:20:51 | INFO | Train Epoch: 46 [  512/61440 (1%)] Data (t): 3.175 Batch (t): 3.476, 147.278/s, 147.278/s/gpu LR: 0.001737 Logit Scale: 14.250 Contrastive_loss: 3.7344 (3.7344) Loss: 3.7344 (3.7344)
+2024-11-04,09:21:59 | INFO | Train Epoch: 46 [51712/61440 (84%)] Data (t): 0.409 Batch (t): 0.681, 755.754/s, 755.754/s/gpu LR: 0.001633 Logit Scale: 14.250 Contrastive_loss: 2.7188 (3.2266) Loss: 2.7188 (3.2266)
+2024-11-04,09:22:12 | INFO | Train Epoch: 46 [61440/61440 (100%)] Data (t): 0.409 Batch (t): 0.680, 756.212/s, 756.212/s/gpu LR: 0.001612 Logit Scale: 14.250 Contrastive_loss: 2.8750 (3.1094) Loss: 2.8750 (3.1094)
+2024-11-04,09:22:12 | INFO | Starting zero-shot imagenet.
+2024-11-04,09:22:12 | INFO | Building zero-shot classifier
+2024-11-04,09:22:23 | INFO | Using classifier
+2024-11-04,09:23:09 | INFO | Finished zero-shot imagenet.
+2024-11-04,09:23:09 | INFO | Eval Epoch: 47 imagenet-zeroshot-val-top1: 0.0184	imagenet-zeroshot-val-top5: 0.0581
+2024-11-04,09:23:12 | INFO | Start epoch 47
+2024-11-04,09:23:15 | INFO | Train Epoch: 47 [  512/61440 (1%)] Data (t): 2.928 Batch (t): 3.214, 159.313/s, 159.313/s/gpu LR: 0.001611 Logit Scale: 14.250 Contrastive_loss: 3.2656 (3.2656) Loss: 3.2656 (3.2656)
+2024-11-04,09:24:25 | INFO | Train Epoch: 47 [51712/61440 (84%)] Data (t): 0.416 Batch (t): 0.691, 760.463/s, 760.463/s/gpu LR: 0.001492 Logit Scale: 14.250 Contrastive_loss: 2.8750 (3.0703) Loss: 2.8750 (3.0703)
+2024-11-04,09:24:38 | INFO | Train Epoch: 47 [61440/61440 (100%)] Data (t): 0.407 Batch (t): 0.686, 757.003/s, 757.003/s/gpu LR: 0.001468 Logit Scale: 14.250 Contrastive_loss: 2.3750 (2.8385) Loss: 2.3750 (2.8385)
+2024-11-04,09:24:38 | INFO | Starting zero-shot imagenet.
+2024-11-04,09:24:38 | INFO | Building zero-shot classifier
+2024-11-04,09:24:48 | INFO | Using classifier
+2024-11-04,09:25:33 | INFO | Finished zero-shot imagenet.
+2024-11-04,09:25:33 | INFO | Eval Epoch: 48 imagenet-zeroshot-val-top1: 0.0181	imagenet-zeroshot-val-top5: 0.0582
+2024-11-04,09:25:36 | INFO | Start epoch 48
+2024-11-04,09:25:40 | INFO | Train Epoch: 48 [  512/61440 (1%)] Data (t): 3.187 Batch (t): 3.487, 146.840/s, 146.840/s/gpu LR: 0.001467 Logit Scale: 14.250 Contrastive_loss: 3.2188 (3.2188) Loss: 3.2188 (3.2188)
+2024-11-04,09:26:48 | INFO | Train Epoch: 48 [51712/61440 (84%)] Data (t): 0.412 Batch (t): 0.683, 754.264/s, 754.264/s/gpu LR: 0.001336 Logit Scale: 14.250 Contrastive_loss: 2.8906 (3.0547) Loss: 2.8906 (3.0547)
+2024-11-04,09:27:01 | INFO | Train Epoch: 48 [61440/61440 (100%)] Data (t): 0.409 Batch (t): 0.681, 761.879/s, 761.879/s/gpu LR: 0.001310 Logit Scale: 14.250 Contrastive_loss: 2.6875 (2.9323) Loss: 2.6875 (2.9323)
+2024-11-04,09:27:01 | INFO | Starting zero-shot imagenet.
+2024-11-04,09:27:01 | INFO | Building zero-shot classifier
+2024-11-04,09:27:12 | INFO | Using classifier
+2024-11-04,09:27:57 | INFO | Finished zero-shot imagenet.
+2024-11-04,09:27:57 | INFO | Eval Epoch: 49 imagenet-zeroshot-val-top1: 0.0168	imagenet-zeroshot-val-top5: 0.0569
+2024-11-04,09:28:00 | INFO | Start epoch 49
+2024-11-04,09:28:04 | INFO | Train Epoch: 49 [  512/61440 (1%)] Data (t): 3.425 Batch (t): 3.712, 137.938/s, 137.938/s/gpu LR: 0.001309 Logit Scale: 14.250 Contrastive_loss: 2.8125 (2.8125) Loss: 2.8125 (2.8125)
+2024-11-04,09:29:12 | INFO | Train Epoch: 49 [51712/61440 (84%)] Data (t): 0.411 Batch (t): 0.683, 751.536/s, 751.536/s/gpu LR: 0.001171 Logit Scale: 14.250 Contrastive_loss: 2.5938 (2.7031) Loss: 2.5938 (2.7031)
+2024-11-04,09:29:25 | INFO | Train Epoch: 49 [61440/61440 (100%)] Data (t): 0.407 Batch (t): 0.680, 755.821/s, 755.821/s/gpu LR: 0.001144 Logit Scale: 14.250 Contrastive_loss: 2.7188 (2.7083) Loss: 2.7188 (2.7083)
+2024-11-04,09:29:25 | INFO | Starting zero-shot imagenet.
+2024-11-04,09:29:25 | INFO | Building zero-shot classifier
+2024-11-04,09:29:36 | INFO | Using classifier
+2024-11-04,09:30:21 | INFO | Finished zero-shot imagenet.
+2024-11-04,09:30:21 | INFO | Eval Epoch: 50 imagenet-zeroshot-val-top1: 0.0194	imagenet-zeroshot-val-top5: 0.0617
+2024-11-04,09:30:25 | INFO | Start epoch 50
+2024-11-04,09:30:28 | INFO | Train Epoch: 50 [  512/61440 (1%)] Data (t): 2.904 Batch (t): 3.195, 160.274/s, 160.274/s/gpu LR: 0.001142 Logit Scale: 14.250 Contrastive_loss: 3.3125 (3.3125) Loss: 3.3125 (3.3125)
+2024-11-04,09:31:37 | INFO | Train Epoch: 50 [51712/61440 (84%)] Data (t): 0.413 Batch (t): 0.686, 706.263/s, 706.263/s/gpu LR: 0.001000 Logit Scale: 14.250 Contrastive_loss: 2.1875 (2.7500) Loss: 2.1875 (2.7500)
+2024-11-04,09:31:50 | INFO | Train Epoch: 50 [61440/61440 (100%)] Data (t): 0.410 Batch (t): 0.684, 754.625/s, 754.625/s/gpu LR: 0.000973 Logit Scale: 14.250 Contrastive_loss: 2.5625 (2.6875) Loss: 2.5625 (2.6875)
+2024-11-04,09:31:50 | INFO | Starting zero-shot imagenet.
+2024-11-04,09:31:50 | INFO | Building zero-shot classifier
+2024-11-04,09:32:01 | INFO | Using classifier
+2024-11-04,09:32:49 | INFO | Finished zero-shot imagenet.
+2024-11-04,09:32:49 | INFO | Eval Epoch: 51 imagenet-zeroshot-val-top1: 0.0203	imagenet-zeroshot-val-top5: 0.0634
+2024-11-04,09:32:53 | INFO | Start epoch 51
+2024-11-04,09:32:56 | INFO | Train Epoch: 51 [  512/61440 (1%)] Data (t): 2.818 Batch (t): 3.106, 164.847/s, 164.847/s/gpu LR: 0.000971 Logit Scale: 14.250 Contrastive_loss: 3.2812 (3.2812) Loss: 3.2812 (3.2812)
+2024-11-04,09:34:05 | INFO | Train Epoch: 51 [51712/61440 (84%)] Data (t): 0.409 Batch (t): 0.683, 756.797/s, 756.797/s/gpu LR: 0.000829 Logit Scale: 14.250 Contrastive_loss: 2.4531 (2.8672) Loss: 2.4531 (2.8672)
+2024-11-04,09:34:18 | INFO | Train Epoch: 51 [61440/61440 (100%)] Data (t): 0.409 Batch (t): 0.682, 759.751/s, 759.751/s/gpu LR: 0.000803 Logit Scale: 14.250 Contrastive_loss: 2.2656 (2.6667) Loss: 2.2656 (2.6667)
+2024-11-04,09:34:18 | INFO | Starting zero-shot imagenet.
+2024-11-04,09:34:18 | INFO | Building zero-shot classifier
+2024-11-04,09:34:28 | INFO | Using classifier
+2024-11-04,09:35:14 | INFO | Finished zero-shot imagenet.
+2024-11-04,09:35:14 | INFO | Eval Epoch: 52 imagenet-zeroshot-val-top1: 0.0203	imagenet-zeroshot-val-top5: 0.0641
+2024-11-04,09:35:17 | INFO | Start epoch 52
+2024-11-04,09:35:21 | INFO | Train Epoch: 52 [  512/61440 (1%)] Data (t): 3.300 Batch (t): 3.574, 143.269/s, 143.269/s/gpu LR: 0.000801 Logit Scale: 14.250 Contrastive_loss: 2.9062 (2.9062) Loss: 2.9062 (2.9062)
+2024-11-04,09:36:29 | INFO | Train Epoch: 52 [51712/61440 (84%)] Data (t): 0.411 Batch (t): 0.682, 763.560/s, 763.560/s/gpu LR: 0.000664 Logit Scale: 14.250 Contrastive_loss: 2.4062 (2.6562) Loss: 2.4062 (2.6562)
+2024-11-04,09:36:42 | INFO | Train Epoch: 52 [61440/61440 (100%)] Data (t): 0.409 Batch (t): 0.681, 761.469/s, 761.469/s/gpu LR: 0.000639 Logit Scale: 14.250 Contrastive_loss: 2.5625 (2.6250) Loss: 2.5625 (2.6250)
+2024-11-04,09:36:42 | INFO | Starting zero-shot imagenet.
+2024-11-04,09:36:42 | INFO | Building zero-shot classifier
+2024-11-04,09:36:53 | INFO | Using classifier
+2024-11-04,09:37:39 | INFO | Finished zero-shot imagenet.
+2024-11-04,09:37:39 | INFO | Eval Epoch: 53 imagenet-zeroshot-val-top1: 0.0214	imagenet-zeroshot-val-top5: 0.0674
+2024-11-04,09:37:43 | INFO | Start epoch 53
+2024-11-04,09:37:46 | INFO | Train Epoch: 53 [  512/61440 (1%)] Data (t): 2.661 Batch (t): 2.956, 173.233/s, 173.233/s/gpu LR: 0.000637 Logit Scale: 14.250 Contrastive_loss: 2.7031 (2.7031) Loss: 2.7031 (2.7031)
+2024-11-04,09:38:54 | INFO | Train Epoch: 53 [51712/61440 (84%)] Data (t): 0.409 Batch (t): 0.680, 757.948/s, 757.948/s/gpu LR: 0.000508 Logit Scale: 14.250 Contrastive_loss: 2.2812 (2.4922) Loss: 2.2812 (2.4922)
+2024-11-04,09:39:07 | INFO | Train Epoch: 53 [61440/61440 (100%)] Data (t): 0.406 Batch (t): 0.679, 762.062/s, 762.062/s/gpu LR: 0.000485 Logit Scale: 14.250 Contrastive_loss: 2.1250 (2.3698) Loss: 2.1250 (2.3698)
+2024-11-04,09:39:07 | INFO | Starting zero-shot imagenet.
+2024-11-04,09:39:07 | INFO | Building zero-shot classifier
+2024-11-04,09:39:18 | INFO | Using classifier
+2024-11-04,09:40:02 | INFO | Finished zero-shot imagenet.
+2024-11-04,09:40:02 | INFO | Eval Epoch: 54 imagenet-zeroshot-val-top1: 0.0213	imagenet-zeroshot-val-top5: 0.0664
+2024-11-04,09:40:05 | INFO | Start epoch 54
+2024-11-04,09:40:09 | INFO | Train Epoch: 54 [  512/61440 (1%)] Data (t): 2.864 Batch (t): 3.139, 163.120/s, 163.120/s/gpu LR: 0.000484 Logit Scale: 14.250 Contrastive_loss: 2.2500 (2.2500) Loss: 2.2500 (2.2500)
+2024-11-04,09:41:18 | INFO | Train Epoch: 54 [51712/61440 (84%)] Data (t): 0.414 Batch (t): 0.688, 752.800/s, 752.800/s/gpu LR: 0.000367 Logit Scale: 14.250 Contrastive_loss: 2.0938 (2.1719) Loss: 2.0938 (2.1719)
+2024-11-04,09:41:31 | INFO | Train Epoch: 54 [61440/61440 (100%)] Data (t): 0.409 Batch (t): 0.681, 762.687/s, 762.687/s/gpu LR: 0.000346 Logit Scale: 14.250 Contrastive_loss: 2.2500 (2.1979) Loss: 2.2500 (2.1979)
+2024-11-04,09:41:31 | INFO | Starting zero-shot imagenet.
+2024-11-04,09:41:31 | INFO | Building zero-shot classifier
+2024-11-04,09:41:42 | INFO | Using classifier
+2024-11-04,09:42:29 | INFO | Finished zero-shot imagenet.
+2024-11-04,09:42:29 | INFO | Eval Epoch: 55 imagenet-zeroshot-val-top1: 0.0210	imagenet-zeroshot-val-top5: 0.0657
+2024-11-04,09:42:32 | INFO | Start epoch 55
+2024-11-04,09:42:36 | INFO | Train Epoch: 55 [  512/61440 (1%)] Data (t): 2.909 Batch (t): 3.190, 160.517/s, 160.517/s/gpu LR: 0.000345 Logit Scale: 14.250 Contrastive_loss: 2.4219 (2.4219) Loss: 2.4219 (2.4219)
+2024-11-04,09:43:44 | INFO | Train Epoch: 55 [51712/61440 (84%)] Data (t): 0.410 Batch (t): 0.681, 764.351/s, 764.351/s/gpu LR: 0.000244 Logit Scale: 14.250 Contrastive_loss: 1.9844 (2.2031) Loss: 1.9844 (2.2031)
+2024-11-04,09:43:57 | INFO | Train Epoch: 55 [61440/61440 (100%)] Data (t): 0.410 Batch (t): 0.680, 763.420/s, 763.420/s/gpu LR: 0.000227 Logit Scale: 14.250 Contrastive_loss: 2.1875 (2.1979) Loss: 2.1875 (2.1979)
+2024-11-04,09:43:57 | INFO | Starting zero-shot imagenet.
+2024-11-04,09:43:57 | INFO | Building zero-shot classifier
+2024-11-04,09:44:07 | INFO | Using classifier
+2024-11-04,09:44:52 | INFO | Finished zero-shot imagenet.
+2024-11-04,09:44:52 | INFO | Eval Epoch: 56 imagenet-zeroshot-val-top1: 0.0219	imagenet-zeroshot-val-top5: 0.0679
+2024-11-04,09:44:55 | INFO | Start epoch 56
+2024-11-04,09:44:59 | INFO | Train Epoch: 56 [  512/61440 (1%)] Data (t): 2.972 Batch (t): 3.260, 157.075/s, 157.075/s/gpu LR: 0.000226 Logit Scale: 14.250 Contrastive_loss: 2.3125 (2.3125) Loss: 2.3125 (2.3125)
+2024-11-04,09:46:07 | INFO | Train Epoch: 56 [51712/61440 (84%)] Data (t): 0.410 Batch (t): 0.682, 751.942/s, 751.942/s/gpu LR: 0.000144 Logit Scale: 14.250 Contrastive_loss: 1.9531 (2.1328) Loss: 1.9531 (2.1328)
+2024-11-04,09:46:20 | INFO | Train Epoch: 56 [61440/61440 (100%)] Data (t): 0.406 Batch (t): 0.682, 765.210/s, 765.210/s/gpu LR: 0.000130 Logit Scale: 14.250 Contrastive_loss: 1.8203 (2.0286) Loss: 1.8203 (2.0286)
+2024-11-04,09:46:20 | INFO | Starting zero-shot imagenet.
+2024-11-04,09:46:20 | INFO | Building zero-shot classifier
+2024-11-04,09:46:31 | INFO | Using classifier
+2024-11-04,09:47:16 | INFO | Finished zero-shot imagenet.
+2024-11-04,09:47:16 | INFO | Eval Epoch: 57 imagenet-zeroshot-val-top1: 0.0212	imagenet-zeroshot-val-top5: 0.0685
+2024-11-04,09:47:20 | INFO | Start epoch 57
+2024-11-04,09:47:24 | INFO | Train Epoch: 57 [  512/61440 (1%)] Data (t): 3.046 Batch (t): 3.337, 153.446/s, 153.446/s/gpu LR: 0.000129 Logit Scale: 14.250 Contrastive_loss: 2.6250 (2.6250) Loss: 2.6250 (2.6250)
+2024-11-04,09:48:32 | INFO | Train Epoch: 57 [51712/61440 (84%)] Data (t): 0.410 Batch (t): 0.682, 742.727/s, 742.727/s/gpu LR: 0.000068 Logit Scale: 14.250 Contrastive_loss: 1.9219 (2.2734) Loss: 1.9219 (2.2734)
+2024-11-04,09:48:45 | INFO | Train Epoch: 57 [61440/61440 (100%)] Data (t): 0.408 Batch (t): 0.680, 763.897/s, 763.897/s/gpu LR: 0.000059 Logit Scale: 14.250 Contrastive_loss: 1.9375 (2.1615) Loss: 1.9375 (2.1615)
+2024-11-04,09:48:45 | INFO | Starting zero-shot imagenet.
+2024-11-04,09:48:45 | INFO | Building zero-shot classifier
+2024-11-04,09:48:56 | INFO | Using classifier
+2024-11-04,09:49:39 | INFO | Finished zero-shot imagenet.
+2024-11-04,09:49:39 | INFO | Eval Epoch: 58 imagenet-zeroshot-val-top1: 0.0216	imagenet-zeroshot-val-top5: 0.0684
+2024-11-04,09:49:43 | INFO | Start epoch 58
+2024-11-04,09:49:46 | INFO | Train Epoch: 58 [  512/61440 (1%)] Data (t): 3.005 Batch (t): 3.301, 155.115/s, 155.115/s/gpu LR: 0.000058 Logit Scale: 14.250 Contrastive_loss: 2.6250 (2.6250) Loss: 2.6250 (2.6250)
+2024-11-04,09:50:54 | INFO | Train Epoch: 58 [51712/61440 (84%)] Data (t): 0.407 Batch (t): 0.679, 759.321/s, 759.321/s/gpu LR: 0.000020 Logit Scale: 14.250 Contrastive_loss: 2.4062 (2.5156) Loss: 2.4062 (2.5156)
+2024-11-04,09:51:07 | INFO | Train Epoch: 58 [61440/61440 (100%)] Data (t): 0.408 Batch (t): 0.679, 761.034/s, 761.034/s/gpu LR: 0.000015 Logit Scale: 14.250 Contrastive_loss: 1.8984 (2.3099) Loss: 1.8984 (2.3099)
+2024-11-04,09:51:07 | INFO | Starting zero-shot imagenet.
+2024-11-04,09:51:07 | INFO | Building zero-shot classifier
+2024-11-04,09:51:18 | INFO | Using classifier
+2024-11-04,09:52:03 | INFO | Finished zero-shot imagenet.
+2024-11-04,09:52:03 | INFO | Eval Epoch: 59 imagenet-zeroshot-val-top1: 0.0216	imagenet-zeroshot-val-top5: 0.0686
+2024-11-04,09:52:06 | INFO | Start epoch 59
+2024-11-04,09:52:10 | INFO | Train Epoch: 59 [  512/61440 (1%)] Data (t): 3.097 Batch (t): 3.377, 151.620/s, 151.620/s/gpu LR: 0.000015 Logit Scale: 14.250 Contrastive_loss: 2.0938 (2.0938) Loss: 2.0938 (2.0938)
+2024-11-04,09:53:18 | INFO | Train Epoch: 59 [51712/61440 (84%)] Data (t): 0.409 Batch (t): 0.681, 718.223/s, 718.223/s/gpu LR: 0.000000 Logit Scale: 14.250 Contrastive_loss: 1.9844 (2.0391) Loss: 1.9844 (2.0391)
+2024-11-04,09:53:31 | INFO | Train Epoch: 59 [61440/61440 (100%)] Data (t): 0.411 Batch (t): 0.689, 760.374/s, 760.374/s/gpu LR: 0.000000 Logit Scale: 14.250 Contrastive_loss: 2.5156 (2.1979) Loss: 2.5156 (2.1979)
+2024-11-04,09:53:31 | INFO | Starting zero-shot imagenet.
+2024-11-04,09:53:31 | INFO | Building zero-shot classifier
+2024-11-04,09:53:42 | INFO | Using classifier
+2024-11-04,09:54:27 | INFO | Finished zero-shot imagenet.
+2024-11-04,09:54:27 | INFO | Eval Epoch: 60 imagenet-zeroshot-val-top1: 0.0215	imagenet-zeroshot-val-top5: 0.0686

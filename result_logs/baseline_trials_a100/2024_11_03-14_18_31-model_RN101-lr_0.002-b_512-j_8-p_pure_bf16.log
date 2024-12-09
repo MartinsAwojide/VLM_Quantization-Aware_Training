@@ -1,0 +1,1106 @@
+2024-11-03,14:18:31 | INFO | No latest resume checkpoint found in ./logs/2024_11_03-14_18_31-model_RN101-lr_0.002-b_512-j_8-p_pure_bf16/checkpoints.
+2024-11-03,14:18:31 | INFO | Running with a single process. Device cuda.
+2024-11-03,14:18:31 | INFO | Loaded RN101 model config.
+2024-11-03,14:18:33 | INFO | Model:
+2024-11-03,14:18:33 | INFO | CLIP(
+  (visual): ModifiedResNet(
+    (conv1): Conv2d(3, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+    (bn1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act1): ReLU(inplace=True)
+    (conv2): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn2): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act2): ReLU(inplace=True)
+    (conv3): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn3): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act3): ReLU(inplace=True)
+    (avgpool): AvgPool2d(kernel_size=2, stride=2, padding=0)
+    (layer1): Sequential(
+      (0): Bottleneck(
+        (conv1): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): Identity()
+        (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+        (downsample): Sequential(
+          (-1): AvgPool2d(kernel_size=1, stride=1, padding=0)
+          (0): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): Bottleneck(
+        (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): Identity()
+        (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+      )
+      (2): Bottleneck(
+        (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): Identity()
+        (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+      )
+    )
+    (layer2): Sequential(
+      (0): Bottleneck(
+        (conv1): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): AvgPool2d(kernel_size=2, stride=2, padding=0)
+        (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+        (downsample): Sequential(
+          (-1): AvgPool2d(kernel_size=2, stride=2, padding=0)
+          (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): Bottleneck(
+        (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): Identity()
+        (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+      )
+      (2): Bottleneck(
+        (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): Identity()
+        (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+      )
+      (3): Bottleneck(
+        (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): Identity()
+        (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+      )
+    )
+    (layer3): Sequential(
+      (0): Bottleneck(
+        (conv1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): AvgPool2d(kernel_size=2, stride=2, padding=0)
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+        (downsample): Sequential(
+          (-1): AvgPool2d(kernel_size=2, stride=2, padding=0)
+          (0): Conv2d(512, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): Identity()
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+      )
+      (2): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): Identity()
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+      )
+      (3): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): Identity()
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+      )
+      (4): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): Identity()
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+      )
+      (5): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): Identity()
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+      )
+      (6): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): Identity()
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+      )
+      (7): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): Identity()
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+      )
+      (8): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): Identity()
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+      )
+      (9): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): Identity()
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+      )
+      (10): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): Identity()
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+      )
+      (11): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): Identity()
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+      )
+      (12): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): Identity()
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+      )
+      (13): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): Identity()
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+      )
+      (14): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): Identity()
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+      )
+      (15): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): Identity()
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+      )
+      (16): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): Identity()
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+      )
+      (17): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): Identity()
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+      )
+      (18): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): Identity()
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+      )
+      (19): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): Identity()
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+      )
+      (20): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): Identity()
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+      )
+      (21): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): Identity()
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+      )
+      (22): Bottleneck(
+        (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): Identity()
+        (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+      )
+    )
+    (layer4): Sequential(
+      (0): Bottleneck(
+        (conv1): Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): AvgPool2d(kernel_size=2, stride=2, padding=0)
+        (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+        (downsample): Sequential(
+          (-1): AvgPool2d(kernel_size=2, stride=2, padding=0)
+          (0): Conv2d(1024, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): Bottleneck(
+        (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): Identity()
+        (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+      )
+      (2): Bottleneck(
+        (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act1): ReLU(inplace=True)
+        (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act2): ReLU(inplace=True)
+        (avgpool): Identity()
+        (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (act3): ReLU(inplace=True)
+      )
+    )
+    (attnpool): AttentionPool2d(
+      (k_proj): Linear(in_features=2048, out_features=2048, bias=True)
+      (q_proj): Linear(in_features=2048, out_features=2048, bias=True)
+      (v_proj): Linear(in_features=2048, out_features=2048, bias=True)
+      (c_proj): Linear(in_features=2048, out_features=512, bias=True)
+    )
+  )
+  (transformer): Transformer(
+    (resblocks): ModuleList(
+      (0-11): 12 x ResidualAttentionBlock(
+        (ln_1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=512, out_features=512, bias=True)
+        )
+        (ls_1): Identity()
+        (ln_2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (mlp): Sequential(
+          (c_fc): Linear(in_features=512, out_features=2048, bias=True)
+          (gelu): GELU(approximate='none')
+          (c_proj): Linear(in_features=2048, out_features=512, bias=True)
+        )
+        (ls_2): Identity()
+      )
+    )
+  )
+  (token_embedding): Embedding(49408, 512)
+  (ln_final): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+)
+2024-11-03,14:18:33 | INFO | Params:
+2024-11-03,14:18:33 | INFO |   accum_freq: 1
+2024-11-03,14:18:33 | INFO |   aug_cfg: {}
+2024-11-03,14:18:33 | INFO |   batch_size: 512
+2024-11-03,14:18:33 | INFO |   beta1: 0.9
+2024-11-03,14:18:33 | INFO |   beta2: 0.95
+2024-11-03,14:18:33 | INFO |   cache_dir: None
+2024-11-03,14:18:33 | INFO |   checkpoint_path: ./logs/2024_11_03-14_18_31-model_RN101-lr_0.002-b_512-j_8-p_pure_bf16/checkpoints
+2024-11-03,14:18:33 | INFO |   coca_caption_loss_weight: 2.0
+2024-11-03,14:18:33 | INFO |   coca_contrastive_loss_weight: 1.0
+2024-11-03,14:18:33 | INFO |   copy_codebase: False
+2024-11-03,14:18:33 | INFO |   csv_caption_key: title
+2024-11-03,14:18:33 | INFO |   csv_img_key: filepath
+2024-11-03,14:18:33 | INFO |   csv_separator: 	
+2024-11-03,14:18:33 | INFO |   dataset_resampled: True
+2024-11-03,14:18:33 | INFO |   dataset_type: webdataset
+2024-11-03,14:18:33 | INFO |   ddp_static_graph: True
+2024-11-03,14:18:33 | INFO |   debug: False
+2024-11-03,14:18:33 | INFO |   delete_previous_checkpoint: True
+2024-11-03,14:18:33 | INFO |   device: cuda
+2024-11-03,14:18:33 | INFO |   dist_backend: None
+2024-11-03,14:18:33 | INFO |   dist_url: None
+2024-11-03,14:18:33 | INFO |   distill: False
+2024-11-03,14:18:33 | INFO |   distill_model: None
+2024-11-03,14:18:33 | INFO |   distill_pretrained: None
+2024-11-03,14:18:33 | INFO |   distributed: False
+2024-11-03,14:18:33 | INFO |   epochs: 60
+2024-11-03,14:18:33 | INFO |   epochs_cooldown: None
+2024-11-03,14:18:33 | INFO |   eps: 1e-08
+2024-11-03,14:18:33 | INFO |   force_custom_text: False
+2024-11-03,14:18:33 | INFO |   force_image_size: None
+2024-11-03,14:18:33 | INFO |   force_patch_dropout: None
+2024-11-03,14:18:33 | INFO |   force_quick_gelu: False
+2024-11-03,14:18:33 | INFO |   gather_with_grad: False
+2024-11-03,14:18:33 | INFO |   grad_checkpointing: False
+2024-11-03,14:18:33 | INFO |   grad_clip_norm: None
+2024-11-03,14:18:33 | INFO |   horovod: False
+2024-11-03,14:18:33 | INFO |   image_interpolation: None
+2024-11-03,14:18:33 | INFO |   image_mean: None
+2024-11-03,14:18:33 | INFO |   image_resize_mode: None
+2024-11-03,14:18:33 | INFO |   image_std: None
+2024-11-03,14:18:33 | INFO |   imagenet_v2: None
+2024-11-03,14:18:33 | INFO |   imagenet_val: /home/user/open_clip/open_clip/val_data/val/
+2024-11-03,14:18:33 | INFO |   local_loss: False
+2024-11-03,14:18:33 | INFO |   local_rank: 0
+2024-11-03,14:18:33 | INFO |   lock_image: False
+2024-11-03,14:18:33 | INFO |   lock_image_freeze_bn_stats: False
+2024-11-03,14:18:33 | INFO |   lock_image_unlocked_groups: 0
+2024-11-03,14:18:33 | INFO |   lock_text: False
+2024-11-03,14:18:33 | INFO |   lock_text_freeze_layer_norm: False
+2024-11-03,14:18:33 | INFO |   lock_text_unlocked_layers: 0
+2024-11-03,14:18:33 | INFO |   log_every_n_steps: 100
+2024-11-03,14:18:33 | INFO |   log_level: 20
+2024-11-03,14:18:33 | INFO |   log_local: False
+2024-11-03,14:18:33 | INFO |   log_path: ./logs/2024_11_03-14_18_31-model_RN101-lr_0.002-b_512-j_8-p_pure_bf16/out.log
+2024-11-03,14:18:33 | INFO |   logs: ./logs/
+2024-11-03,14:18:33 | INFO |   lr: 0.002
+2024-11-03,14:18:33 | INFO |   lr_cooldown_end: 0.0
+2024-11-03,14:18:33 | INFO |   lr_cooldown_power: 1.0
+2024-11-03,14:18:33 | INFO |   lr_scheduler: cosine
+2024-11-03,14:18:33 | INFO |   model: RN101
+2024-11-03,14:18:33 | INFO |   name: 2024_11_03-14_18_31-model_RN101-lr_0.002-b_512-j_8-p_pure_bf16
+2024-11-03,14:18:33 | INFO |   no_set_device_rank: False
+2024-11-03,14:18:33 | INFO |   precision: pure_bf16
+2024-11-03,14:18:33 | INFO |   pretrained: 
+2024-11-03,14:18:33 | INFO |   pretrained_image: False
+2024-11-03,14:18:33 | INFO |   rank: 0
+2024-11-03,14:18:33 | INFO |   remote_sync: None
+2024-11-03,14:18:33 | INFO |   remote_sync_frequency: 300
+2024-11-03,14:18:33 | INFO |   remote_sync_protocol: s3
+2024-11-03,14:18:33 | INFO |   report_to: wandb
+2024-11-03,14:18:33 | INFO |   resume: None
+2024-11-03,14:18:33 | INFO |   save_frequency: 1
+2024-11-03,14:18:33 | INFO |   save_most_recent: True
+2024-11-03,14:18:33 | INFO |   seed: 0
+2024-11-03,14:18:33 | INFO |   siglip: False
+2024-11-03,14:18:33 | INFO |   skip_scheduler: False
+2024-11-03,14:18:33 | INFO |   tensorboard: False
+2024-11-03,14:18:33 | INFO |   tensorboard_path: 
+2024-11-03,14:18:33 | INFO |   torchcompile: False
+2024-11-03,14:18:33 | INFO |   torchscript: False
+2024-11-03,14:18:33 | INFO |   trace: False
+2024-11-03,14:18:33 | INFO |   train_data: ./mscoco/{00000..00059}.tar
+2024-11-03,14:18:33 | INFO |   train_data_upsampling_factors: None
+2024-11-03,14:18:33 | INFO |   train_num_samples: 60000
+2024-11-03,14:18:33 | INFO |   use_bn_sync: False
+2024-11-03,14:18:33 | INFO |   use_bnb_linear: None
+2024-11-03,14:18:33 | INFO |   val_data: None
+2024-11-03,14:18:33 | INFO |   val_frequency: 1
+2024-11-03,14:18:33 | INFO |   val_num_samples: None
+2024-11-03,14:18:33 | INFO |   wandb: True
+2024-11-03,14:18:33 | INFO |   wandb_notes: 
+2024-11-03,14:18:33 | INFO |   wandb_project_name: open_clip_main
+2024-11-03,14:18:33 | INFO |   warmup: 5000
+2024-11-03,14:18:33 | INFO |   wd: 0.2
+2024-11-03,14:18:33 | INFO |   workers: 8
+2024-11-03,14:18:33 | INFO |   world_size: 1
+2024-11-03,14:18:33 | INFO |   zeroshot_frequency: 1
+2024-11-03,14:18:38 | INFO | Start epoch 0
+2024-11-03,14:18:46 | INFO | Train Epoch: 0 [  512/61440 (1%)] Data (t): 3.518 Batch (t): 8.332, 61.4528/s, 61.4528/s/gpu LR: 0.000000 Logit Scale: 14.250 Contrastive_loss: 6.2812 (6.2812) Loss: 6.2812 (6.2812)
+2024-11-03,14:20:13 | INFO | Train Epoch: 0 [51712/61440 (84%)] Data (t): 0.483 Batch (t): 0.866, 574.714/s, 574.714/s/gpu LR: 0.000040 Logit Scale: 14.250 Contrastive_loss: 5.9375 (6.1094) Loss: 5.9375 (6.1094)
+2024-11-03,14:20:30 | INFO | Train Epoch: 0 [61440/61440 (100%)] Data (t): 0.497 Batch (t): 0.879, 575.258/s, 575.258/s/gpu LR: 0.000048 Logit Scale: 14.250 Contrastive_loss: 5.7812 (6.0000) Loss: 5.7812 (6.0000)
+2024-11-03,14:20:30 | INFO | Starting zero-shot imagenet.
+2024-11-03,14:20:30 | INFO | Building zero-shot classifier
+2024-11-03,14:20:41 | INFO | Using classifier
+2024-11-03,14:21:30 | INFO | Finished zero-shot imagenet.
+2024-11-03,14:21:30 | INFO | Eval Epoch: 1 imagenet-zeroshot-val-top1: 0.0028	imagenet-zeroshot-val-top5: 0.0095
+2024-11-03,14:21:33 | INFO | Start epoch 1
+2024-11-03,14:21:36 | INFO | Train Epoch: 1 [  512/61440 (1%)] Data (t): 2.872 Batch (t): 3.273, 156.430/s, 156.430/s/gpu LR: 0.000048 Logit Scale: 14.250 Contrastive_loss: 5.9062 (5.9062) Loss: 5.9062 (5.9062)
+2024-11-03,14:23:02 | INFO | Train Epoch: 1 [51712/61440 (84%)] Data (t): 0.475 Batch (t): 0.857, 605.403/s, 605.403/s/gpu LR: 0.000088 Logit Scale: 14.250 Contrastive_loss: 5.3125 (5.6094) Loss: 5.3125 (5.6094)
+2024-11-03,14:23:18 | INFO | Train Epoch: 1 [61440/61440 (100%)] Data (t): 0.472 Batch (t): 0.852, 606.013/s, 606.013/s/gpu LR: 0.000096 Logit Scale: 14.250 Contrastive_loss: 5.1562 (5.4583) Loss: 5.1562 (5.4583)
+2024-11-03,14:23:18 | INFO | Starting zero-shot imagenet.
+2024-11-03,14:23:18 | INFO | Building zero-shot classifier
+2024-11-03,14:23:29 | INFO | Using classifier
+2024-11-03,14:24:15 | INFO | Finished zero-shot imagenet.
+2024-11-03,14:24:15 | INFO | Eval Epoch: 2 imagenet-zeroshot-val-top1: 0.0052	imagenet-zeroshot-val-top5: 0.0181
+2024-11-03,14:24:18 | INFO | Start epoch 2
+2024-11-03,14:24:22 | INFO | Train Epoch: 2 [  512/61440 (1%)] Data (t): 2.996 Batch (t): 3.390, 151.034/s, 151.034/s/gpu LR: 0.000096 Logit Scale: 14.250 Contrastive_loss: 5.1875 (5.1875) Loss: 5.1875 (5.1875)
+2024-11-03,14:25:48 | INFO | Train Epoch: 2 [51712/61440 (84%)] Data (t): 0.476 Batch (t): 0.858, 594.956/s, 594.956/s/gpu LR: 0.000136 Logit Scale: 14.250 Contrastive_loss: 4.8125 (5.0000) Loss: 4.8125 (5.0000)
+2024-11-03,14:26:04 | INFO | Train Epoch: 2 [61440/61440 (100%)] Data (t): 0.477 Batch (t): 0.857, 604.135/s, 604.135/s/gpu LR: 0.000144 Logit Scale: 14.250 Contrastive_loss: 4.6875 (4.8958) Loss: 4.6875 (4.8958)
+2024-11-03,14:26:04 | INFO | Starting zero-shot imagenet.
+2024-11-03,14:26:04 | INFO | Building zero-shot classifier
+2024-11-03,14:26:15 | INFO | Using classifier
+2024-11-03,14:27:02 | INFO | Finished zero-shot imagenet.
+2024-11-03,14:27:02 | INFO | Eval Epoch: 3 imagenet-zeroshot-val-top1: 0.0078	imagenet-zeroshot-val-top5: 0.0249
+2024-11-03,14:27:06 | INFO | Start epoch 3
+2024-11-03,14:27:10 | INFO | Train Epoch: 3 [  512/61440 (1%)] Data (t): 2.762 Batch (t): 3.180, 161.026/s, 161.026/s/gpu LR: 0.000144 Logit Scale: 14.250 Contrastive_loss: 5.1875 (5.1875) Loss: 5.1875 (5.1875)
+2024-11-03,14:28:35 | INFO | Train Epoch: 3 [51712/61440 (84%)] Data (t): 0.478 Batch (t): 0.860, 603.135/s, 603.135/s/gpu LR: 0.000184 Logit Scale: 14.250 Contrastive_loss: 4.3125 (4.7500) Loss: 4.3125 (4.7500)
+2024-11-03,14:28:52 | INFO | Train Epoch: 3 [61440/61440 (100%)] Data (t): 0.489 Batch (t): 0.871, 569.313/s, 569.313/s/gpu LR: 0.000192 Logit Scale: 14.250 Contrastive_loss: 4.3125 (4.6042) Loss: 4.3125 (4.6042)
+2024-11-03,14:28:52 | INFO | Starting zero-shot imagenet.
+2024-11-03,14:28:52 | INFO | Building zero-shot classifier
+2024-11-03,14:29:03 | INFO | Using classifier
+2024-11-03,14:29:52 | INFO | Finished zero-shot imagenet.
+2024-11-03,14:29:52 | INFO | Eval Epoch: 4 imagenet-zeroshot-val-top1: 0.0103	imagenet-zeroshot-val-top5: 0.0320
+2024-11-03,14:29:55 | INFO | Start epoch 4
+2024-11-03,14:29:59 | INFO | Train Epoch: 4 [  512/61440 (1%)] Data (t): 2.832 Batch (t): 3.216, 159.228/s, 159.228/s/gpu LR: 0.000192 Logit Scale: 14.250 Contrastive_loss: 4.8750 (4.8750) Loss: 4.8750 (4.8750)
+2024-11-03,14:31:26 | INFO | Train Epoch: 4 [51712/61440 (84%)] Data (t): 0.486 Batch (t): 0.868, 589.748/s, 589.748/s/gpu LR: 0.000232 Logit Scale: 14.250 Contrastive_loss: 4.1562 (4.5156) Loss: 4.1562 (4.5156)
+2024-11-03,14:31:43 | INFO | Train Epoch: 4 [61440/61440 (100%)] Data (t): 0.514 Batch (t): 0.897, 566.731/s, 566.731/s/gpu LR: 0.000240 Logit Scale: 14.250 Contrastive_loss: 4.1250 (4.3854) Loss: 4.1250 (4.3854)
+2024-11-03,14:31:43 | INFO | Starting zero-shot imagenet.
+2024-11-03,14:31:43 | INFO | Building zero-shot classifier
+2024-11-03,14:31:53 | INFO | Using classifier
+2024-11-03,14:32:39 | INFO | Finished zero-shot imagenet.
+2024-11-03,14:32:39 | INFO | Eval Epoch: 5 imagenet-zeroshot-val-top1: 0.0119	imagenet-zeroshot-val-top5: 0.0386
+2024-11-03,14:32:43 | INFO | Start epoch 5
+2024-11-03,14:32:47 | INFO | Train Epoch: 5 [  512/61440 (1%)] Data (t): 2.809 Batch (t): 3.198, 160.095/s, 160.095/s/gpu LR: 0.000240 Logit Scale: 14.250 Contrastive_loss: 4.2500 (4.2500) Loss: 4.2500 (4.2500)
+2024-11-03,14:34:13 | INFO | Train Epoch: 5 [51712/61440 (84%)] Data (t): 0.482 Batch (t): 0.866, 576.035/s, 576.035/s/gpu LR: 0.000280 Logit Scale: 14.250 Contrastive_loss: 3.8438 (4.0469) Loss: 3.8438 (4.0469)
+2024-11-03,14:34:30 | INFO | Train Epoch: 5 [61440/61440 (100%)] Data (t): 0.477 Batch (t): 0.857, 605.026/s, 605.026/s/gpu LR: 0.000288 Logit Scale: 14.250 Contrastive_loss: 4.0000 (4.0312) Loss: 4.0000 (4.0312)
+2024-11-03,14:34:30 | INFO | Starting zero-shot imagenet.
+2024-11-03,14:34:30 | INFO | Building zero-shot classifier
+2024-11-03,14:34:41 | INFO | Using classifier
+2024-11-03,14:35:26 | INFO | Finished zero-shot imagenet.
+2024-11-03,14:35:26 | INFO | Eval Epoch: 6 imagenet-zeroshot-val-top1: 0.0102	imagenet-zeroshot-val-top5: 0.0366
+2024-11-03,14:35:31 | INFO | Start epoch 6
+2024-11-03,14:35:35 | INFO | Train Epoch: 6 [  512/61440 (1%)] Data (t): 3.426 Batch (t): 3.827, 133.790/s, 133.790/s/gpu LR: 0.000288 Logit Scale: 14.250 Contrastive_loss: 4.4375 (4.4375) Loss: 4.4375 (4.4375)
+2024-11-03,14:37:01 | INFO | Train Epoch: 6 [51712/61440 (84%)] Data (t): 0.480 Batch (t): 0.862, 599.493/s, 599.493/s/gpu LR: 0.000328 Logit Scale: 14.250 Contrastive_loss: 3.8125 (4.1250) Loss: 3.8125 (4.1250)
+2024-11-03,14:37:18 | INFO | Train Epoch: 6 [61440/61440 (100%)] Data (t): 0.495 Batch (t): 0.878, 597.896/s, 597.896/s/gpu LR: 0.000336 Logit Scale: 14.250 Contrastive_loss: 3.8750 (4.0417) Loss: 3.8750 (4.0417)
+2024-11-03,14:37:18 | INFO | Starting zero-shot imagenet.
+2024-11-03,14:37:18 | INFO | Building zero-shot classifier
+2024-11-03,14:37:29 | INFO | Using classifier
+2024-11-03,14:38:16 | INFO | Finished zero-shot imagenet.
+2024-11-03,14:38:16 | INFO | Eval Epoch: 7 imagenet-zeroshot-val-top1: 0.0110	imagenet-zeroshot-val-top5: 0.0348
+2024-11-03,14:38:20 | INFO | Start epoch 7
+2024-11-03,14:38:24 | INFO | Train Epoch: 7 [  512/61440 (1%)] Data (t): 2.870 Batch (t): 3.268, 156.673/s, 156.673/s/gpu LR: 0.000336 Logit Scale: 14.250 Contrastive_loss: 3.9375 (3.9375) Loss: 3.9375 (3.9375)
+2024-11-03,14:39:50 | INFO | Train Epoch: 7 [51712/61440 (84%)] Data (t): 0.475 Batch (t): 0.855, 605.333/s, 605.333/s/gpu LR: 0.000376 Logit Scale: 14.250 Contrastive_loss: 3.4375 (3.6875) Loss: 3.4375 (3.6875)
+2024-11-03,14:40:06 | INFO | Train Epoch: 7 [61440/61440 (100%)] Data (t): 0.473 Batch (t): 0.852, 605.906/s, 605.906/s/gpu LR: 0.000384 Logit Scale: 14.250 Contrastive_loss: 3.5938 (3.6562) Loss: 3.5938 (3.6562)
+2024-11-03,14:40:06 | INFO | Starting zero-shot imagenet.
+2024-11-03,14:40:06 | INFO | Building zero-shot classifier
+2024-11-03,14:40:17 | INFO | Using classifier
+2024-11-03,14:41:02 | INFO | Finished zero-shot imagenet.
+2024-11-03,14:41:02 | INFO | Eval Epoch: 8 imagenet-zeroshot-val-top1: 0.0118	imagenet-zeroshot-val-top5: 0.0373
+2024-11-03,14:41:07 | INFO | Start epoch 8
+2024-11-03,14:41:10 | INFO | Train Epoch: 8 [  512/61440 (1%)] Data (t): 2.954 Batch (t): 3.339, 153.360/s, 153.360/s/gpu LR: 0.000384 Logit Scale: 14.250 Contrastive_loss: 4.4062 (4.4062) Loss: 4.4062 (4.4062)
+2024-11-03,14:42:37 | INFO | Train Epoch: 8 [51712/61440 (84%)] Data (t): 0.485 Batch (t): 0.867, 590.523/s, 590.523/s/gpu LR: 0.000424 Logit Scale: 14.250 Contrastive_loss: 3.6250 (4.0156) Loss: 3.6250 (4.0156)
+2024-11-03,14:42:54 | INFO | Train Epoch: 8 [61440/61440 (100%)] Data (t): 0.505 Batch (t): 0.887, 571.370/s, 571.370/s/gpu LR: 0.000432 Logit Scale: 14.250 Contrastive_loss: 3.4688 (3.8333) Loss: 3.4688 (3.8333)
+2024-11-03,14:42:54 | INFO | Starting zero-shot imagenet.
+2024-11-03,14:42:54 | INFO | Building zero-shot classifier
+2024-11-03,14:43:05 | INFO | Using classifier
+2024-11-03,14:43:50 | INFO | Finished zero-shot imagenet.
+2024-11-03,14:43:50 | INFO | Eval Epoch: 9 imagenet-zeroshot-val-top1: 0.0130	imagenet-zeroshot-val-top5: 0.0425
+2024-11-03,14:43:53 | INFO | Start epoch 9
+2024-11-03,14:43:57 | INFO | Train Epoch: 9 [  512/61440 (1%)] Data (t): 2.972 Batch (t): 3.361, 152.348/s, 152.348/s/gpu LR: 0.000432 Logit Scale: 14.250 Contrastive_loss: 3.6094 (3.6094) Loss: 3.6094 (3.6094)
+2024-11-03,14:45:23 | INFO | Train Epoch: 9 [51712/61440 (84%)] Data (t): 0.481 Batch (t): 0.863, 605.001/s, 605.001/s/gpu LR: 0.000472 Logit Scale: 14.250 Contrastive_loss: 3.6562 (3.6328) Loss: 3.6562 (3.6328)
+2024-11-03,14:45:39 | INFO | Train Epoch: 9 [61440/61440 (100%)] Data (t): 0.482 Batch (t): 0.864, 598.120/s, 598.120/s/gpu LR: 0.000480 Logit Scale: 14.250 Contrastive_loss: 3.3906 (3.5521) Loss: 3.3906 (3.5521)
+2024-11-03,14:45:40 | INFO | Starting zero-shot imagenet.
+2024-11-03,14:45:40 | INFO | Building zero-shot classifier
+2024-11-03,14:45:50 | INFO | Using classifier
+2024-11-03,14:46:35 | INFO | Finished zero-shot imagenet.
+2024-11-03,14:46:35 | INFO | Eval Epoch: 10 imagenet-zeroshot-val-top1: 0.0148	imagenet-zeroshot-val-top5: 0.0474
+2024-11-03,14:46:39 | INFO | Start epoch 10
+2024-11-03,14:46:43 | INFO | Train Epoch: 10 [  512/61440 (1%)] Data (t): 2.825 Batch (t): 3.209, 159.532/s, 159.532/s/gpu LR: 0.000480 Logit Scale: 14.250 Contrastive_loss: 4.2188 (4.2188) Loss: 4.2188 (4.2188)
+2024-11-03,14:48:08 | INFO | Train Epoch: 10 [51712/61440 (84%)] Data (t): 0.477 Batch (t): 0.857, 588.097/s, 588.097/s/gpu LR: 0.000520 Logit Scale: 14.250 Contrastive_loss: 3.2812 (3.7500) Loss: 3.2812 (3.7500)
+2024-11-03,14:48:25 | INFO | Train Epoch: 10 [61440/61440 (100%)] Data (t): 0.502 Batch (t): 0.884, 568.332/s, 568.332/s/gpu LR: 0.000528 Logit Scale: 14.250 Contrastive_loss: 3.3750 (3.6250) Loss: 3.3750 (3.6250)
+2024-11-03,14:48:25 | INFO | Starting zero-shot imagenet.
+2024-11-03,14:48:25 | INFO | Building zero-shot classifier
+2024-11-03,14:48:36 | INFO | Using classifier
+2024-11-03,14:49:24 | INFO | Finished zero-shot imagenet.
+2024-11-03,14:49:24 | INFO | Eval Epoch: 11 imagenet-zeroshot-val-top1: 0.0127	imagenet-zeroshot-val-top5: 0.0443
+2024-11-03,14:49:28 | INFO | Start epoch 11
+2024-11-03,14:49:32 | INFO | Train Epoch: 11 [  512/61440 (1%)] Data (t): 3.127 Batch (t): 3.537, 144.773/s, 144.773/s/gpu LR: 0.000528 Logit Scale: 14.250 Contrastive_loss: 4.3438 (4.3438) Loss: 4.3438 (4.3438)
+2024-11-03,14:50:58 | INFO | Train Epoch: 11 [51712/61440 (84%)] Data (t): 0.476 Batch (t): 0.856, 583.471/s, 583.471/s/gpu LR: 0.000568 Logit Scale: 14.250 Contrastive_loss: 3.0781 (3.7109) Loss: 3.0781 (3.7109)
+2024-11-03,14:51:14 | INFO | Train Epoch: 11 [61440/61440 (100%)] Data (t): 0.484 Batch (t): 0.866, 603.324/s, 603.324/s/gpu LR: 0.000576 Logit Scale: 14.250 Contrastive_loss: 3.4375 (3.6198) Loss: 3.4375 (3.6198)
+2024-11-03,14:51:14 | INFO | Starting zero-shot imagenet.
+2024-11-03,14:51:14 | INFO | Building zero-shot classifier
+2024-11-03,14:51:25 | INFO | Using classifier
+2024-11-03,14:52:12 | INFO | Finished zero-shot imagenet.
+2024-11-03,14:52:12 | INFO | Eval Epoch: 12 imagenet-zeroshot-val-top1: 0.0145	imagenet-zeroshot-val-top5: 0.0489
+2024-11-03,14:52:15 | INFO | Start epoch 12
+2024-11-03,14:52:19 | INFO | Train Epoch: 12 [  512/61440 (1%)] Data (t): 2.725 Batch (t): 3.140, 163.071/s, 163.071/s/gpu LR: 0.000576 Logit Scale: 14.250 Contrastive_loss: 3.4062 (3.4062) Loss: 3.4062 (3.4062)
+2024-11-03,14:53:44 | INFO | Train Epoch: 12 [51712/61440 (84%)] Data (t): 0.477 Batch (t): 0.858, 601.741/s, 601.741/s/gpu LR: 0.000616 Logit Scale: 14.250 Contrastive_loss: 3.0156 (3.2109) Loss: 3.0156 (3.2109)
+2024-11-03,14:54:01 | INFO | Train Epoch: 12 [61440/61440 (100%)] Data (t): 0.474 Batch (t): 0.853, 603.016/s, 603.016/s/gpu LR: 0.000624 Logit Scale: 14.250 Contrastive_loss: 3.3594 (3.2604) Loss: 3.3594 (3.2604)
+2024-11-03,14:54:01 | INFO | Starting zero-shot imagenet.
+2024-11-03,14:54:01 | INFO | Building zero-shot classifier
+2024-11-03,14:54:12 | INFO | Using classifier
+2024-11-03,14:54:57 | INFO | Finished zero-shot imagenet.
+2024-11-03,14:54:57 | INFO | Eval Epoch: 13 imagenet-zeroshot-val-top1: 0.0139	imagenet-zeroshot-val-top5: 0.0433
+2024-11-03,14:55:02 | INFO | Start epoch 13
+2024-11-03,14:55:05 | INFO | Train Epoch: 13 [  512/61440 (1%)] Data (t): 2.682 Batch (t): 3.082, 166.106/s, 166.106/s/gpu LR: 0.000624 Logit Scale: 14.250 Contrastive_loss: 3.4688 (3.4688) Loss: 3.4688 (3.4688)
+2024-11-03,14:56:31 | INFO | Train Epoch: 13 [51712/61440 (84%)] Data (t): 0.479 Batch (t): 0.861, 602.239/s, 602.239/s/gpu LR: 0.000664 Logit Scale: 14.250 Contrastive_loss: 3.1250 (3.2969) Loss: 3.1250 (3.2969)
+2024-11-03,14:56:48 | INFO | Train Epoch: 13 [61440/61440 (100%)] Data (t): 0.477 Batch (t): 0.859, 603.092/s, 603.092/s/gpu LR: 0.000672 Logit Scale: 14.250 Contrastive_loss: 2.9531 (3.1823) Loss: 2.9531 (3.1823)
+2024-11-03,14:56:48 | INFO | Starting zero-shot imagenet.
+2024-11-03,14:56:48 | INFO | Building zero-shot classifier
+2024-11-03,14:56:58 | INFO | Using classifier
+2024-11-03,14:57:46 | INFO | Finished zero-shot imagenet.
+2024-11-03,14:57:46 | INFO | Eval Epoch: 14 imagenet-zeroshot-val-top1: 0.0155	imagenet-zeroshot-val-top5: 0.0479
+2024-11-03,14:57:50 | INFO | Start epoch 14
+2024-11-03,14:57:54 | INFO | Train Epoch: 14 [  512/61440 (1%)] Data (t): 2.983 Batch (t): 3.377, 151.600/s, 151.600/s/gpu LR: 0.000672 Logit Scale: 14.250 Contrastive_loss: 3.8125 (3.8125) Loss: 3.8125 (3.8125)
+2024-11-03,14:59:19 | INFO | Train Epoch: 14 [51712/61440 (84%)] Data (t): 0.476 Batch (t): 0.857, 600.874/s, 600.874/s/gpu LR: 0.000712 Logit Scale: 14.250 Contrastive_loss: 3.0781 (3.4453) Loss: 3.0781 (3.4453)
+2024-11-03,14:59:36 | INFO | Train Epoch: 14 [61440/61440 (100%)] Data (t): 0.480 Batch (t): 0.862, 602.873/s, 602.873/s/gpu LR: 0.000720 Logit Scale: 14.250 Contrastive_loss: 3.0469 (3.3125) Loss: 3.0469 (3.3125)
+2024-11-03,14:59:36 | INFO | Starting zero-shot imagenet.
+2024-11-03,14:59:36 | INFO | Building zero-shot classifier
+2024-11-03,14:59:47 | INFO | Using classifier
+2024-11-03,15:00:32 | INFO | Finished zero-shot imagenet.
+2024-11-03,15:00:32 | INFO | Eval Epoch: 15 imagenet-zeroshot-val-top1: 0.0154	imagenet-zeroshot-val-top5: 0.0510
+2024-11-03,15:00:36 | INFO | Start epoch 15
+2024-11-03,15:00:40 | INFO | Train Epoch: 15 [  512/61440 (1%)] Data (t): 2.909 Batch (t): 3.312, 154.605/s, 154.605/s/gpu LR: 0.000720 Logit Scale: 14.250 Contrastive_loss: 3.1562 (3.1562) Loss: 3.1562 (3.1562)
+2024-11-03,15:02:05 | INFO | Train Epoch: 15 [51712/61440 (84%)] Data (t): 0.478 Batch (t): 0.859, 605.468/s, 605.468/s/gpu LR: 0.000760 Logit Scale: 14.250 Contrastive_loss: 3.0625 (3.1094) Loss: 3.0625 (3.1094)
+2024-11-03,15:02:22 | INFO | Train Epoch: 15 [61440/61440 (100%)] Data (t): 0.474 Batch (t): 0.852, 604.581/s, 604.581/s/gpu LR: 0.000768 Logit Scale: 14.250 Contrastive_loss: 3.1250 (3.1146) Loss: 3.1250 (3.1146)
+2024-11-03,15:02:22 | INFO | Starting zero-shot imagenet.
+2024-11-03,15:02:22 | INFO | Building zero-shot classifier
+2024-11-03,15:02:32 | INFO | Using classifier
+2024-11-03,15:03:18 | INFO | Finished zero-shot imagenet.
+2024-11-03,15:03:18 | INFO | Eval Epoch: 16 imagenet-zeroshot-val-top1: 0.0145	imagenet-zeroshot-val-top5: 0.0504
+2024-11-03,15:03:22 | INFO | Start epoch 16
+2024-11-03,15:03:26 | INFO | Train Epoch: 16 [  512/61440 (1%)] Data (t): 2.641 Batch (t): 3.030, 168.989/s, 168.989/s/gpu LR: 0.000768 Logit Scale: 14.250 Contrastive_loss: 3.9062 (3.9062) Loss: 3.9062 (3.9062)
+2024-11-03,15:04:51 | INFO | Train Epoch: 16 [51712/61440 (84%)] Data (t): 0.477 Batch (t): 0.857, 602.470/s, 602.470/s/gpu LR: 0.000808 Logit Scale: 14.250 Contrastive_loss: 2.5625 (3.2344) Loss: 2.5625 (3.2344)
+2024-11-03,15:05:08 | INFO | Train Epoch: 16 [61440/61440 (100%)] Data (t): 0.474 Batch (t): 0.853, 602.719/s, 602.719/s/gpu LR: 0.000816 Logit Scale: 14.250 Contrastive_loss: 3.0312 (3.1667) Loss: 3.0312 (3.1667)
+2024-11-03,15:05:08 | INFO | Starting zero-shot imagenet.
+2024-11-03,15:05:08 | INFO | Building zero-shot classifier
+2024-11-03,15:05:19 | INFO | Using classifier
+2024-11-03,15:06:06 | INFO | Finished zero-shot imagenet.
+2024-11-03,15:06:06 | INFO | Eval Epoch: 17 imagenet-zeroshot-val-top1: 0.0155	imagenet-zeroshot-val-top5: 0.0515
+2024-11-03,15:06:09 | INFO | Start epoch 17
+2024-11-03,15:06:13 | INFO | Train Epoch: 17 [  512/61440 (1%)] Data (t): 3.003 Batch (t): 3.392, 150.964/s, 150.964/s/gpu LR: 0.000816 Logit Scale: 14.250 Contrastive_loss: 3.0625 (3.0625) Loss: 3.0625 (3.0625)
+2024-11-03,15:07:39 | INFO | Train Epoch: 17 [51712/61440 (84%)] Data (t): 0.476 Batch (t): 0.857, 601.062/s, 601.062/s/gpu LR: 0.000856 Logit Scale: 14.250 Contrastive_loss: 2.8125 (2.9375) Loss: 2.8125 (2.9375)
+2024-11-03,15:07:55 | INFO | Train Epoch: 17 [61440/61440 (100%)] Data (t): 0.475 Batch (t): 0.855, 592.549/s, 592.549/s/gpu LR: 0.000864 Logit Scale: 14.250 Contrastive_loss: 2.8750 (2.9167) Loss: 2.8750 (2.9167)
+2024-11-03,15:07:55 | INFO | Starting zero-shot imagenet.
+2024-11-03,15:07:55 | INFO | Building zero-shot classifier
+2024-11-03,15:08:06 | INFO | Using classifier
+2024-11-03,15:08:52 | INFO | Finished zero-shot imagenet.
+2024-11-03,15:08:52 | INFO | Eval Epoch: 18 imagenet-zeroshot-val-top1: 0.0169	imagenet-zeroshot-val-top5: 0.0555
+2024-11-03,15:08:56 | INFO | Start epoch 18
+2024-11-03,15:09:00 | INFO | Train Epoch: 18 [  512/61440 (1%)] Data (t): 2.735 Batch (t): 3.133, 163.404/s, 163.404/s/gpu LR: 0.000864 Logit Scale: 14.250 Contrastive_loss: 3.6562 (3.6562) Loss: 3.6562 (3.6562)
+2024-11-03,15:10:25 | INFO | Train Epoch: 18 [51712/61440 (84%)] Data (t): 0.476 Batch (t): 0.856, 601.920/s, 601.920/s/gpu LR: 0.000904 Logit Scale: 14.250 Contrastive_loss: 2.8281 (3.2422) Loss: 2.8281 (3.2422)
+2024-11-03,15:10:42 | INFO | Train Epoch: 18 [61440/61440 (100%)] Data (t): 0.474 Batch (t): 0.853, 602.784/s, 602.784/s/gpu LR: 0.000912 Logit Scale: 14.250 Contrastive_loss: 2.4844 (2.9896) Loss: 2.4844 (2.9896)
+2024-11-03,15:10:42 | INFO | Starting zero-shot imagenet.
+2024-11-03,15:10:42 | INFO | Building zero-shot classifier
+2024-11-03,15:10:52 | INFO | Using classifier
+2024-11-03,15:11:41 | INFO | Finished zero-shot imagenet.
+2024-11-03,15:11:41 | INFO | Eval Epoch: 19 imagenet-zeroshot-val-top1: 0.0207	imagenet-zeroshot-val-top5: 0.0671
+2024-11-03,15:11:45 | INFO | Start epoch 19
+2024-11-03,15:11:49 | INFO | Train Epoch: 19 [  512/61440 (1%)] Data (t): 3.366 Batch (t): 3.754, 136.380/s, 136.380/s/gpu LR: 0.000912 Logit Scale: 14.250 Contrastive_loss: 3.5312 (3.5312) Loss: 3.5312 (3.5312)
+2024-11-03,15:13:15 | INFO | Train Epoch: 19 [51712/61440 (84%)] Data (t): 0.479 Batch (t): 0.861, 604.601/s, 604.601/s/gpu LR: 0.000952 Logit Scale: 14.250 Contrastive_loss: 2.6562 (3.0938) Loss: 2.6562 (3.0938)
+2024-11-03,15:13:32 | INFO | Train Epoch: 19 [61440/61440 (100%)] Data (t): 0.481 Batch (t): 0.862, 598.957/s, 598.957/s/gpu LR: 0.000960 Logit Scale: 14.250 Contrastive_loss: 2.5625 (2.9167) Loss: 2.5625 (2.9167)
+2024-11-03,15:13:32 | INFO | Starting zero-shot imagenet.
+2024-11-03,15:13:32 | INFO | Building zero-shot classifier
+2024-11-03,15:13:43 | INFO | Using classifier
+2024-11-03,15:14:30 | INFO | Finished zero-shot imagenet.
+2024-11-03,15:14:30 | INFO | Eval Epoch: 20 imagenet-zeroshot-val-top1: 0.0170	imagenet-zeroshot-val-top5: 0.0605
+2024-11-03,15:14:34 | INFO | Start epoch 20
+2024-11-03,15:14:38 | INFO | Train Epoch: 20 [  512/61440 (1%)] Data (t): 2.879 Batch (t): 3.275, 156.329/s, 156.329/s/gpu LR: 0.000960 Logit Scale: 14.250 Contrastive_loss: 3.1250 (3.1250) Loss: 3.1250 (3.1250)
+2024-11-03,15:16:04 | INFO | Train Epoch: 20 [51712/61440 (84%)] Data (t): 0.482 Batch (t): 0.864, 601.098/s, 601.098/s/gpu LR: 0.001000 Logit Scale: 14.250 Contrastive_loss: 2.4375 (2.7812) Loss: 2.4375 (2.7812)
+2024-11-03,15:16:20 | INFO | Train Epoch: 20 [61440/61440 (100%)] Data (t): 0.475 Batch (t): 0.855, 600.886/s, 600.886/s/gpu LR: 0.001008 Logit Scale: 14.250 Contrastive_loss: 2.5781 (2.7135) Loss: 2.5781 (2.7135)
+2024-11-03,15:16:21 | INFO | Starting zero-shot imagenet.
+2024-11-03,15:16:21 | INFO | Building zero-shot classifier
+2024-11-03,15:16:31 | INFO | Using classifier
+2024-11-03,15:17:19 | INFO | Finished zero-shot imagenet.
+2024-11-03,15:17:19 | INFO | Eval Epoch: 21 imagenet-zeroshot-val-top1: 0.0217	imagenet-zeroshot-val-top5: 0.0650
+2024-11-03,15:17:23 | INFO | Start epoch 21
+2024-11-03,15:17:27 | INFO | Train Epoch: 21 [  512/61440 (1%)] Data (t): 3.341 Batch (t): 3.729, 137.288/s, 137.288/s/gpu LR: 0.001008 Logit Scale: 14.250 Contrastive_loss: 3.1875 (3.1875) Loss: 3.1875 (3.1875)
+2024-11-03,15:18:54 | INFO | Train Epoch: 21 [51712/61440 (84%)] Data (t): 0.480 Batch (t): 0.862, 585.556/s, 585.556/s/gpu LR: 0.001048 Logit Scale: 14.250 Contrastive_loss: 2.6562 (2.9219) Loss: 2.6562 (2.9219)
+2024-11-03,15:19:10 | INFO | Train Epoch: 21 [61440/61440 (100%)] Data (t): 0.499 Batch (t): 0.881, 570.299/s, 570.299/s/gpu LR: 0.001056 Logit Scale: 14.250 Contrastive_loss: 2.6094 (2.8177) Loss: 2.6094 (2.8177)
+2024-11-03,15:19:10 | INFO | Starting zero-shot imagenet.
+2024-11-03,15:19:10 | INFO | Building zero-shot classifier
+2024-11-03,15:19:21 | INFO | Using classifier
+2024-11-03,15:20:07 | INFO | Finished zero-shot imagenet.
+2024-11-03,15:20:07 | INFO | Eval Epoch: 22 imagenet-zeroshot-val-top1: 0.0208	imagenet-zeroshot-val-top5: 0.0638
+2024-11-03,15:20:11 | INFO | Start epoch 22
+2024-11-03,15:20:15 | INFO | Train Epoch: 22 [  512/61440 (1%)] Data (t): 3.326 Batch (t): 3.718, 137.710/s, 137.710/s/gpu LR: 0.001056 Logit Scale: 14.250 Contrastive_loss: 3.6875 (3.6875) Loss: 3.6875 (3.6875)
+2024-11-03,15:21:42 | INFO | Train Epoch: 22 [51712/61440 (84%)] Data (t): 0.482 Batch (t): 0.864, 594.734/s, 594.734/s/gpu LR: 0.001096 Logit Scale: 14.250 Contrastive_loss: 2.4688 (3.0781) Loss: 2.4688 (3.0781)
+2024-11-03,15:21:58 | INFO | Train Epoch: 22 [61440/61440 (100%)] Data (t): 0.492 Batch (t): 0.876, 598.004/s, 598.004/s/gpu LR: 0.001104 Logit Scale: 14.250 Contrastive_loss: 2.5469 (2.9010) Loss: 2.5469 (2.9010)
+2024-11-03,15:21:58 | INFO | Starting zero-shot imagenet.
+2024-11-03,15:21:58 | INFO | Building zero-shot classifier
+2024-11-03,15:22:09 | INFO | Using classifier
+2024-11-03,15:22:57 | INFO | Finished zero-shot imagenet.
+2024-11-03,15:22:57 | INFO | Eval Epoch: 23 imagenet-zeroshot-val-top1: 0.0228	imagenet-zeroshot-val-top5: 0.0711
+2024-11-03,15:23:01 | INFO | Start epoch 23
+2024-11-03,15:23:05 | INFO | Train Epoch: 23 [  512/61440 (1%)] Data (t): 3.384 Batch (t): 3.782, 135.380/s, 135.380/s/gpu LR: 0.001104 Logit Scale: 14.250 Contrastive_loss: 3.5938 (3.5938) Loss: 3.5938 (3.5938)
+2024-11-03,15:24:31 | INFO | Train Epoch: 23 [51712/61440 (84%)] Data (t): 0.477 Batch (t): 0.857, 604.857/s, 604.857/s/gpu LR: 0.001144 Logit Scale: 14.250 Contrastive_loss: 2.4844 (3.0391) Loss: 2.4844 (3.0391)
+2024-11-03,15:24:47 | INFO | Train Epoch: 23 [61440/61440 (100%)] Data (t): 0.475 Batch (t): 0.858, 598.175/s, 598.175/s/gpu LR: 0.001152 Logit Scale: 14.250 Contrastive_loss: 2.2656 (2.7812) Loss: 2.2656 (2.7812)
+2024-11-03,15:24:47 | INFO | Starting zero-shot imagenet.
+2024-11-03,15:24:47 | INFO | Building zero-shot classifier
+2024-11-03,15:24:58 | INFO | Using classifier
+2024-11-03,15:25:45 | INFO | Finished zero-shot imagenet.
+2024-11-03,15:25:45 | INFO | Eval Epoch: 24 imagenet-zeroshot-val-top1: 0.0232	imagenet-zeroshot-val-top5: 0.0738
+2024-11-03,15:25:49 | INFO | Start epoch 24
+2024-11-03,15:25:52 | INFO | Train Epoch: 24 [  512/61440 (1%)] Data (t): 2.732 Batch (t): 3.150, 162.538/s, 162.538/s/gpu LR: 0.001152 Logit Scale: 14.250 Contrastive_loss: 2.0312 (2.0312) Loss: 2.0312 (2.0312)
+2024-11-03,15:27:18 | INFO | Train Epoch: 24 [51712/61440 (84%)] Data (t): 0.476 Batch (t): 0.855, 602.775/s, 602.775/s/gpu LR: 0.001192 Logit Scale: 14.250 Contrastive_loss: 2.5469 (2.2891) Loss: 2.5469 (2.2891)
+2024-11-03,15:27:34 | INFO | Train Epoch: 24 [61440/61440 (100%)] Data (t): 0.473 Batch (t): 0.854, 602.825/s, 602.825/s/gpu LR: 0.001200 Logit Scale: 14.250 Contrastive_loss: 2.5312 (2.3698) Loss: 2.5312 (2.3698)
+2024-11-03,15:27:34 | INFO | Starting zero-shot imagenet.
+2024-11-03,15:27:34 | INFO | Building zero-shot classifier
+2024-11-03,15:27:45 | INFO | Using classifier
+2024-11-03,15:28:31 | INFO | Finished zero-shot imagenet.
+2024-11-03,15:28:31 | INFO | Eval Epoch: 25 imagenet-zeroshot-val-top1: 0.0235	imagenet-zeroshot-val-top5: 0.0709
+2024-11-03,15:28:36 | INFO | Start epoch 25
+2024-11-03,15:28:40 | INFO | Train Epoch: 25 [  512/61440 (1%)] Data (t): 3.327 Batch (t): 3.725, 137.459/s, 137.459/s/gpu LR: 0.001200 Logit Scale: 14.250 Contrastive_loss: 3.3125 (3.3125) Loss: 3.3125 (3.3125)
+2024-11-03,15:30:06 | INFO | Train Epoch: 25 [51712/61440 (84%)] Data (t): 0.480 Batch (t): 0.861, 587.182/s, 587.182/s/gpu LR: 0.001240 Logit Scale: 14.250 Contrastive_loss: 1.9922 (2.6523) Loss: 1.9922 (2.6523)
+2024-11-03,15:30:23 | INFO | Train Epoch: 25 [61440/61440 (100%)] Data (t): 0.509 Batch (t): 0.892, 595.798/s, 595.798/s/gpu LR: 0.001248 Logit Scale: 14.250 Contrastive_loss: 2.1719 (2.4922) Loss: 2.1719 (2.4922)
+2024-11-03,15:30:23 | INFO | Starting zero-shot imagenet.
+2024-11-03,15:30:23 | INFO | Building zero-shot classifier
+2024-11-03,15:30:34 | INFO | Using classifier
+2024-11-03,15:31:22 | INFO | Finished zero-shot imagenet.
+2024-11-03,15:31:22 | INFO | Eval Epoch: 26 imagenet-zeroshot-val-top1: 0.0206	imagenet-zeroshot-val-top5: 0.0664
+2024-11-03,15:31:26 | INFO | Start epoch 26
+2024-11-03,15:31:30 | INFO | Train Epoch: 26 [  512/61440 (1%)] Data (t): 2.953 Batch (t): 3.339, 153.320/s, 153.320/s/gpu LR: 0.001248 Logit Scale: 14.250 Contrastive_loss: 2.6250 (2.6250) Loss: 2.6250 (2.6250)
+2024-11-03,15:32:55 | INFO | Train Epoch: 26 [51712/61440 (84%)] Data (t): 0.475 Batch (t): 0.856, 604.435/s, 604.435/s/gpu LR: 0.001288 Logit Scale: 14.250 Contrastive_loss: 2.1250 (2.3750) Loss: 2.1250 (2.3750)
+2024-11-03,15:33:11 | INFO | Train Epoch: 26 [61440/61440 (100%)] Data (t): 0.476 Batch (t): 0.855, 598.959/s, 598.959/s/gpu LR: 0.001296 Logit Scale: 14.250 Contrastive_loss: 2.3594 (2.3698) Loss: 2.3594 (2.3698)
+2024-11-03,15:33:11 | INFO | Starting zero-shot imagenet.
+2024-11-03,15:33:11 | INFO | Building zero-shot classifier
+2024-11-03,15:33:22 | INFO | Using classifier
+2024-11-03,15:34:09 | INFO | Finished zero-shot imagenet.
+2024-11-03,15:34:09 | INFO | Eval Epoch: 27 imagenet-zeroshot-val-top1: 0.0225	imagenet-zeroshot-val-top5: 0.0691
+2024-11-03,15:34:12 | INFO | Start epoch 27
+2024-11-03,15:34:16 | INFO | Train Epoch: 27 [  512/61440 (1%)] Data (t): 2.915 Batch (t): 3.323, 154.059/s, 154.059/s/gpu LR: 0.001296 Logit Scale: 14.250 Contrastive_loss: 2.6562 (2.6562) Loss: 2.6562 (2.6562)
+2024-11-03,15:35:42 | INFO | Train Epoch: 27 [51712/61440 (84%)] Data (t): 0.475 Batch (t): 0.855, 604.677/s, 604.677/s/gpu LR: 0.001336 Logit Scale: 14.250 Contrastive_loss: 2.1406 (2.3984) Loss: 2.1406 (2.3984)
+2024-11-03,15:35:58 | INFO | Train Epoch: 27 [61440/61440 (100%)] Data (t): 0.490 Batch (t): 0.871, 602.291/s, 602.291/s/gpu LR: 0.001344 Logit Scale: 14.250 Contrastive_loss: 2.5000 (2.4323) Loss: 2.5000 (2.4323)
+2024-11-03,15:35:58 | INFO | Starting zero-shot imagenet.
+2024-11-03,15:35:58 | INFO | Building zero-shot classifier
+2024-11-03,15:36:09 | INFO | Using classifier
+2024-11-03,15:36:55 | INFO | Finished zero-shot imagenet.
+2024-11-03,15:36:55 | INFO | Eval Epoch: 28 imagenet-zeroshot-val-top1: 0.0274	imagenet-zeroshot-val-top5: 0.0784
+2024-11-03,15:37:01 | INFO | Start epoch 28
+2024-11-03,15:37:04 | INFO | Train Epoch: 28 [  512/61440 (1%)] Data (t): 2.892 Batch (t): 3.289, 155.680/s, 155.680/s/gpu LR: 0.001344 Logit Scale: 14.250 Contrastive_loss: 2.4375 (2.4375) Loss: 2.4375 (2.4375)
+2024-11-03,15:38:31 | INFO | Train Epoch: 28 [51712/61440 (84%)] Data (t): 0.484 Batch (t): 0.866, 600.889/s, 600.889/s/gpu LR: 0.001384 Logit Scale: 14.250 Contrastive_loss: 2.3750 (2.4062) Loss: 2.3750 (2.4062)
+2024-11-03,15:38:47 | INFO | Train Epoch: 28 [61440/61440 (100%)] Data (t): 0.482 Batch (t): 0.864, 602.107/s, 602.107/s/gpu LR: 0.001392 Logit Scale: 14.250 Contrastive_loss: 2.2500 (2.3542) Loss: 2.2500 (2.3542)
+2024-11-03,15:38:48 | INFO | Starting zero-shot imagenet.
+2024-11-03,15:38:48 | INFO | Building zero-shot classifier
+2024-11-03,15:38:58 | INFO | Using classifier
+2024-11-03,15:39:43 | INFO | Finished zero-shot imagenet.
+2024-11-03,15:39:43 | INFO | Eval Epoch: 29 imagenet-zeroshot-val-top1: 0.0254	imagenet-zeroshot-val-top5: 0.0751
+2024-11-03,15:39:47 | INFO | Start epoch 29
+2024-11-03,15:39:51 | INFO | Train Epoch: 29 [  512/61440 (1%)] Data (t): 2.750 Batch (t): 3.149, 162.588/s, 162.588/s/gpu LR: 0.001392 Logit Scale: 14.250 Contrastive_loss: 3.0938 (3.0938) Loss: 3.0938 (3.0938)
+2024-11-03,15:41:17 | INFO | Train Epoch: 29 [51712/61440 (84%)] Data (t): 0.477 Batch (t): 0.858, 602.979/s, 602.979/s/gpu LR: 0.001432 Logit Scale: 14.250 Contrastive_loss: 2.2500 (2.6719) Loss: 2.2500 (2.6719)
+2024-11-03,15:41:33 | INFO | Train Epoch: 29 [61440/61440 (100%)] Data (t): 0.476 Batch (t): 0.855, 602.777/s, 602.777/s/gpu LR: 0.001440 Logit Scale: 14.250 Contrastive_loss: 2.2031 (2.5156) Loss: 2.2031 (2.5156)
+2024-11-03,15:41:33 | INFO | Starting zero-shot imagenet.
+2024-11-03,15:41:33 | INFO | Building zero-shot classifier
+2024-11-03,15:41:44 | INFO | Using classifier
+2024-11-03,15:42:32 | INFO | Finished zero-shot imagenet.
+2024-11-03,15:42:32 | INFO | Eval Epoch: 30 imagenet-zeroshot-val-top1: 0.0255	imagenet-zeroshot-val-top5: 0.0786
+2024-11-03,15:42:36 | INFO | Start epoch 30
+2024-11-03,15:42:40 | INFO | Train Epoch: 30 [  512/61440 (1%)] Data (t): 2.850 Batch (t): 3.249, 157.565/s, 157.565/s/gpu LR: 0.001440 Logit Scale: 14.250 Contrastive_loss: 3.2500 (3.2500) Loss: 3.2500 (3.2500)
+2024-11-03,15:44:06 | INFO | Train Epoch: 30 [51712/61440 (84%)] Data (t): 0.479 Batch (t): 0.860, 604.087/s, 604.087/s/gpu LR: 0.001480 Logit Scale: 14.250 Contrastive_loss: 2.2188 (2.7344) Loss: 2.2188 (2.7344)
+2024-11-03,15:44:23 | INFO | Train Epoch: 30 [61440/61440 (100%)] Data (t): 0.493 Batch (t): 0.876, 594.312/s, 594.312/s/gpu LR: 0.001488 Logit Scale: 14.250 Contrastive_loss: 2.3906 (2.6198) Loss: 2.3906 (2.6198)
+2024-11-03,15:44:23 | INFO | Starting zero-shot imagenet.
+2024-11-03,15:44:23 | INFO | Building zero-shot classifier
+2024-11-03,15:44:33 | INFO | Using classifier
+2024-11-03,15:45:20 | INFO | Finished zero-shot imagenet.
+2024-11-03,15:45:20 | INFO | Eval Epoch: 31 imagenet-zeroshot-val-top1: 0.0248	imagenet-zeroshot-val-top5: 0.0768
+2024-11-03,15:45:25 | INFO | Start epoch 31
+2024-11-03,15:45:29 | INFO | Train Epoch: 31 [  512/61440 (1%)] Data (t): 3.277 Batch (t): 3.666, 139.659/s, 139.659/s/gpu LR: 0.001488 Logit Scale: 14.250 Contrastive_loss: 3.3438 (3.3438) Loss: 3.3438 (3.3438)
+2024-11-03,15:46:55 | INFO | Train Epoch: 31 [51712/61440 (84%)] Data (t): 0.480 Batch (t): 0.861, 603.602/s, 603.602/s/gpu LR: 0.001528 Logit Scale: 14.250 Contrastive_loss: 2.5000 (2.9219) Loss: 2.5000 (2.9219)
+2024-11-03,15:47:12 | INFO | Train Epoch: 31 [61440/61440 (100%)] Data (t): 0.479 Batch (t): 0.861, 599.860/s, 599.860/s/gpu LR: 0.001536 Logit Scale: 14.250 Contrastive_loss: 2.1875 (2.6771) Loss: 2.1875 (2.6771)
+2024-11-03,15:47:12 | INFO | Starting zero-shot imagenet.
+2024-11-03,15:47:12 | INFO | Building zero-shot classifier
+2024-11-03,15:47:22 | INFO | Using classifier
+2024-11-03,15:48:09 | INFO | Finished zero-shot imagenet.
+2024-11-03,15:48:09 | INFO | Eval Epoch: 32 imagenet-zeroshot-val-top1: 0.0269	imagenet-zeroshot-val-top5: 0.0803
+2024-11-03,15:48:13 | INFO | Start epoch 32
+2024-11-03,15:48:17 | INFO | Train Epoch: 32 [  512/61440 (1%)] Data (t): 3.099 Batch (t): 3.512, 145.773/s, 145.773/s/gpu LR: 0.001536 Logit Scale: 14.250 Contrastive_loss: 3.0312 (3.0312) Loss: 3.0312 (3.0312)
+2024-11-03,15:49:42 | INFO | Train Epoch: 32 [51712/61440 (84%)] Data (t): 0.475 Batch (t): 0.855, 604.619/s, 604.619/s/gpu LR: 0.001576 Logit Scale: 14.250 Contrastive_loss: 2.4844 (2.7578) Loss: 2.4844 (2.7578)
+2024-11-03,15:49:58 | INFO | Train Epoch: 32 [61440/61440 (100%)] Data (t): 0.477 Batch (t): 0.858, 600.320/s, 600.320/s/gpu LR: 0.001584 Logit Scale: 14.250 Contrastive_loss: 2.3125 (2.6094) Loss: 2.3125 (2.6094)
+2024-11-03,15:49:58 | INFO | Starting zero-shot imagenet.
+2024-11-03,15:49:58 | INFO | Building zero-shot classifier
+2024-11-03,15:50:09 | INFO | Using classifier
+2024-11-03,15:50:57 | INFO | Finished zero-shot imagenet.
+2024-11-03,15:50:57 | INFO | Eval Epoch: 33 imagenet-zeroshot-val-top1: 0.0266	imagenet-zeroshot-val-top5: 0.0824
+2024-11-03,15:51:02 | INFO | Start epoch 33
+2024-11-03,15:51:05 | INFO | Train Epoch: 33 [  512/61440 (1%)] Data (t): 2.806 Batch (t): 3.191, 160.437/s, 160.437/s/gpu LR: 0.001584 Logit Scale: 14.250 Contrastive_loss: 3.3125 (3.3125) Loss: 3.3125 (3.3125)
+2024-11-03,15:52:31 | INFO | Train Epoch: 33 [51712/61440 (84%)] Data (t): 0.473 Batch (t): 0.853, 603.354/s, 603.354/s/gpu LR: 0.001624 Logit Scale: 14.250 Contrastive_loss: 2.2812 (2.7969) Loss: 2.2812 (2.7969)
+2024-11-03,15:52:47 | INFO | Train Epoch: 33 [61440/61440 (100%)] Data (t): 0.474 Batch (t): 0.853, 602.873/s, 602.873/s/gpu LR: 0.001632 Logit Scale: 14.250 Contrastive_loss: 2.0938 (2.5625) Loss: 2.0938 (2.5625)
+2024-11-03,15:52:47 | INFO | Starting zero-shot imagenet.
+2024-11-03,15:52:47 | INFO | Building zero-shot classifier
+2024-11-03,15:52:58 | INFO | Using classifier
+2024-11-03,15:53:44 | INFO | Finished zero-shot imagenet.
+2024-11-03,15:53:44 | INFO | Eval Epoch: 34 imagenet-zeroshot-val-top1: 0.0232	imagenet-zeroshot-val-top5: 0.0720
+2024-11-03,15:53:47 | INFO | Start epoch 34
+2024-11-03,15:53:51 | INFO | Train Epoch: 34 [  512/61440 (1%)] Data (t): 2.928 Batch (t): 3.323, 154.059/s, 154.059/s/gpu LR: 0.001632 Logit Scale: 14.250 Contrastive_loss: 3.1250 (3.1250) Loss: 3.1250 (3.1250)
+2024-11-03,15:55:17 | INFO | Train Epoch: 34 [51712/61440 (84%)] Data (t): 0.475 Batch (t): 0.855, 606.016/s, 606.016/s/gpu LR: 0.001672 Logit Scale: 14.250 Contrastive_loss: 2.1562 (2.6406) Loss: 2.1562 (2.6406)
+2024-11-03,15:55:33 | INFO | Train Epoch: 34 [61440/61440 (100%)] Data (t): 0.481 Batch (t): 0.862, 602.344/s, 602.344/s/gpu LR: 0.001680 Logit Scale: 14.250 Contrastive_loss: 2.0781 (2.4531) Loss: 2.0781 (2.4531)
+2024-11-03,15:55:33 | INFO | Starting zero-shot imagenet.
+2024-11-03,15:55:33 | INFO | Building zero-shot classifier
+2024-11-03,15:55:44 | INFO | Using classifier
+2024-11-03,15:56:29 | INFO | Finished zero-shot imagenet.
+2024-11-03,15:56:29 | INFO | Eval Epoch: 35 imagenet-zeroshot-val-top1: 0.0244	imagenet-zeroshot-val-top5: 0.0771
+2024-11-03,15:56:33 | INFO | Start epoch 35
+2024-11-03,15:56:37 | INFO | Train Epoch: 35 [  512/61440 (1%)] Data (t): 3.278 Batch (t): 3.664, 139.757/s, 139.757/s/gpu LR: 0.001680 Logit Scale: 14.250 Contrastive_loss: 3.1719 (3.1719) Loss: 3.1719 (3.1719)
+2024-11-03,15:58:03 | INFO | Train Epoch: 35 [51712/61440 (84%)] Data (t): 0.477 Batch (t): 0.858, 604.764/s, 604.764/s/gpu LR: 0.001720 Logit Scale: 14.250 Contrastive_loss: 2.4688 (2.8203) Loss: 2.4688 (2.8203)
+2024-11-03,15:58:19 | INFO | Train Epoch: 35 [61440/61440 (100%)] Data (t): 0.475 Batch (t): 0.854, 604.921/s, 604.921/s/gpu LR: 0.001728 Logit Scale: 14.250 Contrastive_loss: 2.3438 (2.6615) Loss: 2.3438 (2.6615)
+2024-11-03,15:58:19 | INFO | Starting zero-shot imagenet.
+2024-11-03,15:58:19 | INFO | Building zero-shot classifier
+2024-11-03,15:58:30 | INFO | Using classifier
+2024-11-03,15:59:16 | INFO | Finished zero-shot imagenet.
+2024-11-03,15:59:16 | INFO | Eval Epoch: 36 imagenet-zeroshot-val-top1: 0.0259	imagenet-zeroshot-val-top5: 0.0793
+2024-11-03,15:59:20 | INFO | Start epoch 36
+2024-11-03,15:59:23 | INFO | Train Epoch: 36 [  512/61440 (1%)] Data (t): 2.799 Batch (t): 3.190, 160.507/s, 160.507/s/gpu LR: 0.001728 Logit Scale: 14.250 Contrastive_loss: 2.5625 (2.5625) Loss: 2.5625 (2.5625)
+2024-11-03,16:00:49 | INFO | Train Epoch: 36 [51712/61440 (84%)] Data (t): 0.475 Batch (t): 0.854, 605.836/s, 605.836/s/gpu LR: 0.001768 Logit Scale: 14.250 Contrastive_loss: 2.1875 (2.3750) Loss: 2.1875 (2.3750)
+2024-11-03,16:01:05 | INFO | Train Epoch: 36 [61440/61440 (100%)] Data (t): 0.487 Batch (t): 0.870, 600.830/s, 600.830/s/gpu LR: 0.001776 Logit Scale: 14.250 Contrastive_loss: 2.0938 (2.2812) Loss: 2.0938 (2.2812)
+2024-11-03,16:01:06 | INFO | Starting zero-shot imagenet.
+2024-11-03,16:01:06 | INFO | Building zero-shot classifier
+2024-11-03,16:01:16 | INFO | Using classifier
+2024-11-03,16:02:04 | INFO | Finished zero-shot imagenet.
+2024-11-03,16:02:04 | INFO | Eval Epoch: 37 imagenet-zeroshot-val-top1: 0.0277	imagenet-zeroshot-val-top5: 0.0818
+2024-11-03,16:02:08 | INFO | Start epoch 37
+2024-11-03,16:02:11 | INFO | Train Epoch: 37 [  512/61440 (1%)] Data (t): 2.720 Batch (t): 3.122, 164.004/s, 164.004/s/gpu LR: 0.001776 Logit Scale: 14.250 Contrastive_loss: 2.6250 (2.6250) Loss: 2.6250 (2.6250)
+2024-11-03,16:03:37 | INFO | Train Epoch: 37 [51712/61440 (84%)] Data (t): 0.477 Batch (t): 0.858, 601.481/s, 601.481/s/gpu LR: 0.001816 Logit Scale: 14.250 Contrastive_loss: 2.0312 (2.3281) Loss: 2.0312 (2.3281)
+2024-11-03,16:03:53 | INFO | Train Epoch: 37 [61440/61440 (100%)] Data (t): 0.473 Batch (t): 0.853, 601.581/s, 601.581/s/gpu LR: 0.001824 Logit Scale: 14.250 Contrastive_loss: 2.0938 (2.2500) Loss: 2.0938 (2.2500)
+2024-11-03,16:03:53 | INFO | Starting zero-shot imagenet.
+2024-11-03,16:03:53 | INFO | Building zero-shot classifier
+2024-11-03,16:04:04 | INFO | Using classifier
+2024-11-03,16:04:49 | INFO | Finished zero-shot imagenet.
+2024-11-03,16:04:49 | INFO | Eval Epoch: 38 imagenet-zeroshot-val-top1: 0.0239	imagenet-zeroshot-val-top5: 0.0756
+2024-11-03,16:04:54 | INFO | Start epoch 38
+2024-11-03,16:04:58 | INFO | Train Epoch: 38 [  512/61440 (1%)] Data (t): 3.342 Batch (t): 3.731, 137.227/s, 137.227/s/gpu LR: 0.001824 Logit Scale: 14.250 Contrastive_loss: 2.6562 (2.6562) Loss: 2.6562 (2.6562)
+2024-11-03,16:06:24 | INFO | Train Epoch: 38 [51712/61440 (84%)] Data (t): 0.479 Batch (t): 0.859, 582.865/s, 582.865/s/gpu LR: 0.001864 Logit Scale: 14.250 Contrastive_loss: 2.3750 (2.5156) Loss: 2.3750 (2.5156)
+2024-11-03,16:06:41 | INFO | Train Epoch: 38 [61440/61440 (100%)] Data (t): 0.481 Batch (t): 0.862, 601.570/s, 601.570/s/gpu LR: 0.001872 Logit Scale: 14.250 Contrastive_loss: 2.0938 (2.3750) Loss: 2.0938 (2.3750)
+2024-11-03,16:06:41 | INFO | Starting zero-shot imagenet.
+2024-11-03,16:06:41 | INFO | Building zero-shot classifier
+2024-11-03,16:06:52 | INFO | Using classifier
+2024-11-03,16:07:37 | INFO | Finished zero-shot imagenet.
+2024-11-03,16:07:37 | INFO | Eval Epoch: 39 imagenet-zeroshot-val-top1: 0.0247	imagenet-zeroshot-val-top5: 0.0789
+2024-11-03,16:07:41 | INFO | Start epoch 39
+2024-11-03,16:07:45 | INFO | Train Epoch: 39 [  512/61440 (1%)] Data (t): 3.023 Batch (t): 3.408, 150.248/s, 150.248/s/gpu LR: 0.001872 Logit Scale: 14.250 Contrastive_loss: 2.6250 (2.6250) Loss: 2.6250 (2.6250)
+2024-11-03,16:09:11 | INFO | Train Epoch: 39 [51712/61440 (84%)] Data (t): 0.478 Batch (t): 0.858, 605.112/s, 605.112/s/gpu LR: 0.001912 Logit Scale: 14.250 Contrastive_loss: 2.1562 (2.3906) Loss: 2.1562 (2.3906)
+2024-11-03,16:09:27 | INFO | Train Epoch: 39 [61440/61440 (100%)] Data (t): 0.473 Batch (t): 0.853, 604.062/s, 604.062/s/gpu LR: 0.001920 Logit Scale: 14.250 Contrastive_loss: 2.0469 (2.2760) Loss: 2.0469 (2.2760)
+2024-11-03,16:09:27 | INFO | Starting zero-shot imagenet.
+2024-11-03,16:09:27 | INFO | Building zero-shot classifier
+2024-11-03,16:09:38 | INFO | Using classifier
+2024-11-03,16:10:24 | INFO | Finished zero-shot imagenet.
+2024-11-03,16:10:24 | INFO | Eval Epoch: 40 imagenet-zeroshot-val-top1: 0.0231	imagenet-zeroshot-val-top5: 0.0731
+2024-11-03,16:10:28 | INFO | Start epoch 40
+2024-11-03,16:10:32 | INFO | Train Epoch: 40 [  512/61440 (1%)] Data (t): 3.720 Batch (t): 4.108, 124.642/s, 124.642/s/gpu LR: 0.001920 Logit Scale: 14.250 Contrastive_loss: 3.4062 (3.4062) Loss: 3.4062 (3.4062)
+2024-11-03,16:11:59 | INFO | Train Epoch: 40 [51712/61440 (84%)] Data (t): 0.489 Batch (t): 0.871, 602.206/s, 602.206/s/gpu LR: 0.001960 Logit Scale: 14.250 Contrastive_loss: 2.2812 (2.8438) Loss: 2.2812 (2.8438)
+2024-11-03,16:12:16 | INFO | Train Epoch: 40 [61440/61440 (100%)] Data (t): 0.493 Batch (t): 0.874, 568.475/s, 568.475/s/gpu LR: 0.001968 Logit Scale: 14.250 Contrastive_loss: 2.3438 (2.6771) Loss: 2.3438 (2.6771)
+2024-11-03,16:12:16 | INFO | Starting zero-shot imagenet.
+2024-11-03,16:12:16 | INFO | Building zero-shot classifier
+2024-11-03,16:12:27 | INFO | Using classifier
+2024-11-03,16:13:12 | INFO | Finished zero-shot imagenet.
+2024-11-03,16:13:12 | INFO | Eval Epoch: 41 imagenet-zeroshot-val-top1: 0.0284	imagenet-zeroshot-val-top5: 0.0836
+2024-11-03,16:13:16 | INFO | Start epoch 41
+2024-11-03,16:13:20 | INFO | Train Epoch: 41 [  512/61440 (1%)] Data (t): 3.218 Batch (t): 3.604, 142.055/s, 142.055/s/gpu LR: 0.001968 Logit Scale: 14.250 Contrastive_loss: 2.7969 (2.7969) Loss: 2.7969 (2.7969)
+2024-11-03,16:14:45 | INFO | Train Epoch: 41 [51712/61440 (84%)] Data (t): 0.475 Batch (t): 0.856, 599.795/s, 599.795/s/gpu LR: 0.002000 Logit Scale: 14.250 Contrastive_loss: 2.1250 (2.4609) Loss: 2.1250 (2.4609)
+2024-11-03,16:15:02 | INFO | Train Epoch: 41 [61440/61440 (100%)] Data (t): 0.474 Batch (t): 0.855, 601.956/s, 601.956/s/gpu LR: 0.001998 Logit Scale: 14.250 Contrastive_loss: 2.3750 (2.4323) Loss: 2.3750 (2.4323)
+2024-11-03,16:15:02 | INFO | Starting zero-shot imagenet.
+2024-11-03,16:15:02 | INFO | Building zero-shot classifier
+2024-11-03,16:15:13 | INFO | Using classifier
+2024-11-03,16:15:58 | INFO | Finished zero-shot imagenet.
+2024-11-03,16:15:58 | INFO | Eval Epoch: 42 imagenet-zeroshot-val-top1: 0.0277	imagenet-zeroshot-val-top5: 0.0837
+2024-11-03,16:16:01 | INFO | Start epoch 42
+2024-11-03,16:16:05 | INFO | Train Epoch: 42 [  512/61440 (1%)] Data (t): 3.118 Batch (t): 3.514, 145.687/s, 145.687/s/gpu LR: 0.001998 Logit Scale: 14.250 Contrastive_loss: 3.1250 (3.1250) Loss: 3.1250 (3.1250)
+2024-11-03,16:17:31 | INFO | Train Epoch: 42 [51712/61440 (84%)] Data (t): 0.477 Batch (t): 0.857, 600.221/s, 600.221/s/gpu LR: 0.001980 Logit Scale: 14.250 Contrastive_loss: 2.4062 (2.7656) Loss: 2.4062 (2.7656)
+2024-11-03,16:17:47 | INFO | Train Epoch: 42 [61440/61440 (100%)] Data (t): 0.474 Batch (t): 0.854, 602.071/s, 602.071/s/gpu LR: 0.001974 Logit Scale: 14.250 Contrastive_loss: 2.0469 (2.5260) Loss: 2.0469 (2.5260)
+2024-11-03,16:17:48 | INFO | Starting zero-shot imagenet.
+2024-11-03,16:17:48 | INFO | Building zero-shot classifier
+2024-11-03,16:17:58 | INFO | Using classifier
+2024-11-03,16:18:45 | INFO | Finished zero-shot imagenet.
+2024-11-03,16:18:45 | INFO | Eval Epoch: 43 imagenet-zeroshot-val-top1: 0.0230	imagenet-zeroshot-val-top5: 0.0761
+2024-11-03,16:18:49 | INFO | Start epoch 43
+2024-11-03,16:18:52 | INFO | Train Epoch: 43 [  512/61440 (1%)] Data (t): 2.807 Batch (t): 3.211, 159.441/s, 159.441/s/gpu LR: 0.001974 Logit Scale: 14.250 Contrastive_loss: 3.0625 (3.0625) Loss: 3.0625 (3.0625)
+2024-11-03,16:20:19 | INFO | Train Epoch: 43 [51712/61440 (84%)] Data (t): 0.482 Batch (t): 0.865, 572.840/s, 572.840/s/gpu LR: 0.001932 Logit Scale: 14.250 Contrastive_loss: 2.6875 (2.8750) Loss: 2.6875 (2.8750)
+2024-11-03,16:20:36 | INFO | Train Epoch: 43 [61440/61440 (100%)] Data (t): 0.497 Batch (t): 0.880, 602.717/s, 602.717/s/gpu LR: 0.001922 Logit Scale: 14.250 Contrastive_loss: 2.4844 (2.7448) Loss: 2.4844 (2.7448)
+2024-11-03,16:20:36 | INFO | Starting zero-shot imagenet.
+2024-11-03,16:20:36 | INFO | Building zero-shot classifier
+2024-11-03,16:20:47 | INFO | Using classifier
+2024-11-03,16:21:35 | INFO | Finished zero-shot imagenet.
+2024-11-03,16:21:35 | INFO | Eval Epoch: 44 imagenet-zeroshot-val-top1: 0.0279	imagenet-zeroshot-val-top5: 0.0833
+2024-11-03,16:21:39 | INFO | Start epoch 44
+2024-11-03,16:21:43 | INFO | Train Epoch: 44 [  512/61440 (1%)] Data (t): 2.901 Batch (t): 3.322, 154.141/s, 154.141/s/gpu LR: 0.001921 Logit Scale: 14.250 Contrastive_loss: 2.7812 (2.7812) Loss: 2.7812 (2.7812)
+2024-11-03,16:23:09 | INFO | Train Epoch: 44 [51712/61440 (84%)] Data (t): 0.482 Batch (t): 0.864, 603.311/s, 603.311/s/gpu LR: 0.001856 Logit Scale: 14.250 Contrastive_loss: 2.4062 (2.5938) Loss: 2.4062 (2.5938)
+2024-11-03,16:23:25 | INFO | Train Epoch: 44 [61440/61440 (100%)] Data (t): 0.475 Batch (t): 0.855, 602.557/s, 602.557/s/gpu LR: 0.001842 Logit Scale: 14.250 Contrastive_loss: 2.3438 (2.5104) Loss: 2.3438 (2.5104)
+2024-11-03,16:23:25 | INFO | Starting zero-shot imagenet.
+2024-11-03,16:23:25 | INFO | Building zero-shot classifier
+2024-11-03,16:23:36 | INFO | Using classifier
+2024-11-03,16:24:22 | INFO | Finished zero-shot imagenet.
+2024-11-03,16:24:22 | INFO | Eval Epoch: 45 imagenet-zeroshot-val-top1: 0.0283	imagenet-zeroshot-val-top5: 0.0847
+2024-11-03,16:24:27 | INFO | Start epoch 45
+2024-11-03,16:24:31 | INFO | Train Epoch: 45 [  512/61440 (1%)] Data (t): 2.910 Batch (t): 3.311, 154.639/s, 154.639/s/gpu LR: 0.001841 Logit Scale: 14.250 Contrastive_loss: 2.7969 (2.7969) Loss: 2.7969 (2.7969)
+2024-11-03,16:25:56 | INFO | Train Epoch: 45 [51712/61440 (84%)] Data (t): 0.478 Batch (t): 0.858, 603.487/s, 603.487/s/gpu LR: 0.001756 Logit Scale: 14.250 Contrastive_loss: 2.0938 (2.4453) Loss: 2.0938 (2.4453)
+2024-11-03,16:26:13 | INFO | Train Epoch: 45 [61440/61440 (100%)] Data (t): 0.476 Batch (t): 0.855, 600.640/s, 600.640/s/gpu LR: 0.001738 Logit Scale: 14.250 Contrastive_loss: 2.3125 (2.4010) Loss: 2.3125 (2.4010)
+2024-11-03,16:26:13 | INFO | Starting zero-shot imagenet.
+2024-11-03,16:26:13 | INFO | Building zero-shot classifier
+2024-11-03,16:26:24 | INFO | Using classifier
+2024-11-03,16:27:11 | INFO | Finished zero-shot imagenet.
+2024-11-03,16:27:11 | INFO | Eval Epoch: 46 imagenet-zeroshot-val-top1: 0.0277	imagenet-zeroshot-val-top5: 0.0834
+2024-11-03,16:27:16 | INFO | Start epoch 46
+2024-11-03,16:27:20 | INFO | Train Epoch: 46 [  512/61440 (1%)] Data (t): 3.550 Batch (t): 3.949, 129.663/s, 129.663/s/gpu LR: 0.001737 Logit Scale: 14.250 Contrastive_loss: 3.2188 (3.2188) Loss: 3.2188 (3.2188)
+2024-11-03,16:28:46 | INFO | Train Epoch: 46 [51712/61440 (84%)] Data (t): 0.479 Batch (t): 0.860, 602.221/s, 602.221/s/gpu LR: 0.001633 Logit Scale: 14.250 Contrastive_loss: 2.0469 (2.6328) Loss: 2.0469 (2.6328)
+2024-11-03,16:29:03 | INFO | Train Epoch: 46 [61440/61440 (100%)] Data (t): 0.488 Batch (t): 0.869, 597.848/s, 597.848/s/gpu LR: 0.001612 Logit Scale: 14.250 Contrastive_loss: 2.3125 (2.5260) Loss: 2.3125 (2.5260)
+2024-11-03,16:29:03 | INFO | Starting zero-shot imagenet.
+2024-11-03,16:29:03 | INFO | Building zero-shot classifier
+2024-11-03,16:29:14 | INFO | Using classifier
+2024-11-03,16:30:00 | INFO | Finished zero-shot imagenet.
+2024-11-03,16:30:00 | INFO | Eval Epoch: 47 imagenet-zeroshot-val-top1: 0.0286	imagenet-zeroshot-val-top5: 0.0851
+2024-11-03,16:30:04 | INFO | Start epoch 47
+2024-11-03,16:30:07 | INFO | Train Epoch: 47 [  512/61440 (1%)] Data (t): 2.931 Batch (t): 3.333, 153.596/s, 153.596/s/gpu LR: 0.001611 Logit Scale: 14.250 Contrastive_loss: 2.8281 (2.8281) Loss: 2.8281 (2.8281)
+2024-11-03,16:31:34 | INFO | Train Epoch: 47 [51712/61440 (84%)] Data (t): 0.481 Batch (t): 0.862, 576.360/s, 576.360/s/gpu LR: 0.001492 Logit Scale: 14.250 Contrastive_loss: 2.0625 (2.4453) Loss: 2.0625 (2.4453)
+2024-11-03,16:31:50 | INFO | Train Epoch: 47 [61440/61440 (100%)] Data (t): 0.510 Batch (t): 0.892, 569.404/s, 569.404/s/gpu LR: 0.001468 Logit Scale: 14.250 Contrastive_loss: 1.8516 (2.2474) Loss: 1.8516 (2.2474)
+2024-11-03,16:31:51 | INFO | Starting zero-shot imagenet.
+2024-11-03,16:31:51 | INFO | Building zero-shot classifier
+2024-11-03,16:32:02 | INFO | Using classifier
+2024-11-03,16:32:49 | INFO | Finished zero-shot imagenet.
+2024-11-03,16:32:49 | INFO | Eval Epoch: 48 imagenet-zeroshot-val-top1: 0.0320	imagenet-zeroshot-val-top5: 0.0911
+2024-11-03,16:32:53 | INFO | Start epoch 48
+2024-11-03,16:32:57 | INFO | Train Epoch: 48 [  512/61440 (1%)] Data (t): 2.866 Batch (t): 3.293, 155.502/s, 155.502/s/gpu LR: 0.001467 Logit Scale: 14.250 Contrastive_loss: 2.8750 (2.8750) Loss: 2.8750 (2.8750)
+2024-11-03,16:34:23 | INFO | Train Epoch: 48 [51712/61440 (84%)] Data (t): 0.484 Batch (t): 0.866, 599.995/s, 599.995/s/gpu LR: 0.001336 Logit Scale: 14.250 Contrastive_loss: 2.3594 (2.6172) Loss: 2.3594 (2.6172)
+2024-11-03,16:34:40 | INFO | Train Epoch: 48 [61440/61440 (100%)] Data (t): 0.476 Batch (t): 0.856, 601.973/s, 601.973/s/gpu LR: 0.001310 Logit Scale: 14.250 Contrastive_loss: 2.0938 (2.4427) Loss: 2.0938 (2.4427)
+2024-11-03,16:34:40 | INFO | Starting zero-shot imagenet.
+2024-11-03,16:34:40 | INFO | Building zero-shot classifier
+2024-11-03,16:34:51 | INFO | Using classifier
+2024-11-03,16:35:36 | INFO | Finished zero-shot imagenet.
+2024-11-03,16:35:36 | INFO | Eval Epoch: 49 imagenet-zeroshot-val-top1: 0.0295	imagenet-zeroshot-val-top5: 0.0891
+2024-11-03,16:35:41 | INFO | Start epoch 49
+2024-11-03,16:35:46 | INFO | Train Epoch: 49 [  512/61440 (1%)] Data (t): 3.683 Batch (t): 4.092, 125.123/s, 125.123/s/gpu LR: 0.001309 Logit Scale: 14.250 Contrastive_loss: 2.2812 (2.2812) Loss: 2.2812 (2.2812)
+2024-11-03,16:37:12 | INFO | Train Epoch: 49 [51712/61440 (84%)] Data (t): 0.484 Batch (t): 0.866, 577.674/s, 577.674/s/gpu LR: 0.001171 Logit Scale: 14.250 Contrastive_loss: 2.0312 (2.1562) Loss: 2.0312 (2.1562)
+2024-11-03,16:37:29 | INFO | Train Epoch: 49 [61440/61440 (100%)] Data (t): 0.482 Batch (t): 0.863, 599.453/s, 599.453/s/gpu LR: 0.001144 Logit Scale: 14.250 Contrastive_loss: 2.1406 (2.1510) Loss: 2.1406 (2.1510)
+2024-11-03,16:37:29 | INFO | Starting zero-shot imagenet.
+2024-11-03,16:37:29 | INFO | Building zero-shot classifier
+2024-11-03,16:37:40 | INFO | Using classifier
+2024-11-03,16:38:28 | INFO | Finished zero-shot imagenet.
+2024-11-03,16:38:28 | INFO | Eval Epoch: 50 imagenet-zeroshot-val-top1: 0.0333	imagenet-zeroshot-val-top5: 0.0950
+2024-11-03,16:38:32 | INFO | Start epoch 50
+2024-11-03,16:38:36 | INFO | Train Epoch: 50 [  512/61440 (1%)] Data (t): 3.287 Batch (t): 3.676, 139.300/s, 139.300/s/gpu LR: 0.001142 Logit Scale: 14.250 Contrastive_loss: 2.9219 (2.9219) Loss: 2.9219 (2.9219)
+2024-11-03,16:40:03 | INFO | Train Epoch: 50 [51712/61440 (84%)] Data (t): 0.487 Batch (t): 0.869, 588.967/s, 588.967/s/gpu LR: 0.001000 Logit Scale: 14.250 Contrastive_loss: 1.6719 (2.2969) Loss: 1.6719 (2.2969)
+2024-11-03,16:40:20 | INFO | Train Epoch: 50 [61440/61440 (100%)] Data (t): 0.494 Batch (t): 0.878, 598.755/s, 598.755/s/gpu LR: 0.000973 Logit Scale: 14.250 Contrastive_loss: 1.8828 (2.1589) Loss: 1.8828 (2.1589)
+2024-11-03,16:40:20 | INFO | Starting zero-shot imagenet.
+2024-11-03,16:40:20 | INFO | Building zero-shot classifier
+2024-11-03,16:40:31 | INFO | Using classifier
+2024-11-03,16:41:17 | INFO | Finished zero-shot imagenet.
+2024-11-03,16:41:17 | INFO | Eval Epoch: 51 imagenet-zeroshot-val-top1: 0.0346	imagenet-zeroshot-val-top5: 0.0978
+2024-11-03,16:41:21 | INFO | Start epoch 51
+2024-11-03,16:41:25 | INFO | Train Epoch: 51 [  512/61440 (1%)] Data (t): 2.851 Batch (t): 3.250, 157.528/s, 157.528/s/gpu LR: 0.000971 Logit Scale: 14.250 Contrastive_loss: 2.5625 (2.5625) Loss: 2.5625 (2.5625)
+2024-11-03,16:42:52 | INFO | Train Epoch: 51 [51712/61440 (84%)] Data (t): 0.485 Batch (t): 0.868, 599.936/s, 599.936/s/gpu LR: 0.000829 Logit Scale: 14.250 Contrastive_loss: 1.6719 (2.1172) Loss: 1.6719 (2.1172)
+2024-11-03,16:43:08 | INFO | Train Epoch: 51 [61440/61440 (100%)] Data (t): 0.484 Batch (t): 0.864, 564.489/s, 564.489/s/gpu LR: 0.000803 Logit Scale: 14.250 Contrastive_loss: 1.7500 (1.9948) Loss: 1.7500 (1.9948)
+2024-11-03,16:43:08 | INFO | Starting zero-shot imagenet.
+2024-11-03,16:43:08 | INFO | Building zero-shot classifier
+2024-11-03,16:43:19 | INFO | Using classifier
+2024-11-03,16:44:06 | INFO | Finished zero-shot imagenet.
+2024-11-03,16:44:06 | INFO | Eval Epoch: 52 imagenet-zeroshot-val-top1: 0.0366	imagenet-zeroshot-val-top5: 0.1012
+2024-11-03,16:44:11 | INFO | Start epoch 52
+2024-11-03,16:44:14 | INFO | Train Epoch: 52 [  512/61440 (1%)] Data (t): 2.771 Batch (t): 3.172, 161.403/s, 161.403/s/gpu LR: 0.000801 Logit Scale: 14.250 Contrastive_loss: 2.3594 (2.3594) Loss: 2.3594 (2.3594)
+2024-11-03,16:45:41 | INFO | Train Epoch: 52 [51712/61440 (84%)] Data (t): 0.488 Batch (t): 0.870, 570.541/s, 570.541/s/gpu LR: 0.000664 Logit Scale: 14.250 Contrastive_loss: 1.7656 (2.0625) Loss: 1.7656 (2.0625)
+2024-11-03,16:45:58 | INFO | Train Epoch: 52 [61440/61440 (100%)] Data (t): 0.494 Batch (t): 0.877, 565.602/s, 565.602/s/gpu LR: 0.000639 Logit Scale: 14.250 Contrastive_loss: 1.7500 (1.9583) Loss: 1.7500 (1.9583)
+2024-11-03,16:45:58 | INFO | Starting zero-shot imagenet.
+2024-11-03,16:45:58 | INFO | Building zero-shot classifier
+2024-11-03,16:46:09 | INFO | Using classifier
+2024-11-03,16:46:56 | INFO | Finished zero-shot imagenet.
+2024-11-03,16:46:56 | INFO | Eval Epoch: 53 imagenet-zeroshot-val-top1: 0.0374	imagenet-zeroshot-val-top5: 0.1048
+2024-11-03,16:47:00 | INFO | Start epoch 53
+2024-11-03,16:47:04 | INFO | Train Epoch: 53 [  512/61440 (1%)] Data (t): 2.970 Batch (t): 3.370, 151.907/s, 151.907/s/gpu LR: 0.000637 Logit Scale: 14.250 Contrastive_loss: 2.2656 (2.2656) Loss: 2.2656 (2.2656)
+2024-11-03,16:48:30 | INFO | Train Epoch: 53 [51712/61440 (84%)] Data (t): 0.482 Batch (t): 0.864, 602.269/s, 602.269/s/gpu LR: 0.000508 Logit Scale: 14.250 Contrastive_loss: 1.7109 (1.9883) Loss: 1.7109 (1.9883)
+2024-11-03,16:48:46 | INFO | Train Epoch: 53 [61440/61440 (100%)] Data (t): 0.474 Batch (t): 0.854, 601.638/s, 601.638/s/gpu LR: 0.000485 Logit Scale: 14.250 Contrastive_loss: 1.4688 (1.8151) Loss: 1.4688 (1.8151)
+2024-11-03,16:48:46 | INFO | Starting zero-shot imagenet.
+2024-11-03,16:48:46 | INFO | Building zero-shot classifier
+2024-11-03,16:48:57 | INFO | Using classifier
+2024-11-03,16:49:42 | INFO | Finished zero-shot imagenet.
+2024-11-03,16:49:42 | INFO | Eval Epoch: 54 imagenet-zeroshot-val-top1: 0.0364	imagenet-zeroshot-val-top5: 0.1036
+2024-11-03,16:49:46 | INFO | Start epoch 54
+2024-11-03,16:49:49 | INFO | Train Epoch: 54 [  512/61440 (1%)] Data (t): 2.869 Batch (t): 3.253, 157.370/s, 157.370/s/gpu LR: 0.000484 Logit Scale: 14.250 Contrastive_loss: 2.0312 (2.0312) Loss: 2.0312 (2.0312)
+2024-11-03,16:51:16 | INFO | Train Epoch: 54 [51712/61440 (84%)] Data (t): 0.483 Batch (t): 0.865, 603.523/s, 603.523/s/gpu LR: 0.000367 Logit Scale: 14.250 Contrastive_loss: 1.7656 (1.8984) Loss: 1.7656 (1.8984)
+2024-11-03,16:51:32 | INFO | Train Epoch: 54 [61440/61440 (100%)] Data (t): 0.477 Batch (t): 0.857, 601.313/s, 601.313/s/gpu LR: 0.000346 Logit Scale: 14.250 Contrastive_loss: 1.6797 (1.8255) Loss: 1.6797 (1.8255)
+2024-11-03,16:51:32 | INFO | Starting zero-shot imagenet.
+2024-11-03,16:51:32 | INFO | Building zero-shot classifier
+2024-11-03,16:51:43 | INFO | Using classifier
+2024-11-03,16:52:28 | INFO | Finished zero-shot imagenet.
+2024-11-03,16:52:28 | INFO | Eval Epoch: 55 imagenet-zeroshot-val-top1: 0.0375	imagenet-zeroshot-val-top5: 0.1048
+2024-11-03,16:52:33 | INFO | Start epoch 55
+2024-11-03,16:52:36 | INFO | Train Epoch: 55 [  512/61440 (1%)] Data (t): 3.004 Batch (t): 3.407, 150.277/s, 150.277/s/gpu LR: 0.000345 Logit Scale: 14.250 Contrastive_loss: 2.0156 (2.0156) Loss: 2.0156 (2.0156)
+2024-11-03,16:54:03 | INFO | Train Epoch: 55 [51712/61440 (84%)] Data (t): 0.485 Batch (t): 0.867, 602.473/s, 602.473/s/gpu LR: 0.000244 Logit Scale: 14.250 Contrastive_loss: 1.5391 (1.7773) Loss: 1.5391 (1.7773)
+2024-11-03,16:54:19 | INFO | Train Epoch: 55 [61440/61440 (100%)] Data (t): 0.476 Batch (t): 0.857, 594.504/s, 594.504/s/gpu LR: 0.000227 Logit Scale: 14.250 Contrastive_loss: 1.6875 (1.7474) Loss: 1.6875 (1.7474)
+2024-11-03,16:54:19 | INFO | Starting zero-shot imagenet.
+2024-11-03,16:54:19 | INFO | Building zero-shot classifier
+2024-11-03,16:54:30 | INFO | Using classifier
+2024-11-03,16:55:18 | INFO | Finished zero-shot imagenet.
+2024-11-03,16:55:18 | INFO | Eval Epoch: 56 imagenet-zeroshot-val-top1: 0.0366	imagenet-zeroshot-val-top5: 0.1059
+2024-11-03,16:55:22 | INFO | Start epoch 56
+2024-11-03,16:55:27 | INFO | Train Epoch: 56 [  512/61440 (1%)] Data (t): 3.536 Batch (t): 3.927, 130.395/s, 130.395/s/gpu LR: 0.000226 Logit Scale: 14.250 Contrastive_loss: 1.8672 (1.8672) Loss: 1.8672 (1.8672)
+2024-11-03,16:56:53 | INFO | Train Epoch: 56 [51712/61440 (84%)] Data (t): 0.485 Batch (t): 0.868, 600.973/s, 600.973/s/gpu LR: 0.000144 Logit Scale: 14.250 Contrastive_loss: 1.5156 (1.6914) Loss: 1.5156 (1.6914)
+2024-11-03,16:57:10 | INFO | Train Epoch: 56 [61440/61440 (100%)] Data (t): 0.477 Batch (t): 0.858, 604.465/s, 604.465/s/gpu LR: 0.000130 Logit Scale: 14.250 Contrastive_loss: 1.3281 (1.5703) Loss: 1.3281 (1.5703)
+2024-11-03,16:57:10 | INFO | Starting zero-shot imagenet.
+2024-11-03,16:57:10 | INFO | Building zero-shot classifier
+2024-11-03,16:57:21 | INFO | Using classifier
+2024-11-03,16:58:08 | INFO | Finished zero-shot imagenet.
+2024-11-03,16:58:08 | INFO | Eval Epoch: 57 imagenet-zeroshot-val-top1: 0.0371	imagenet-zeroshot-val-top5: 0.1065
+2024-11-03,16:58:13 | INFO | Start epoch 57
+2024-11-03,16:58:17 | INFO | Train Epoch: 57 [  512/61440 (1%)] Data (t): 3.005 Batch (t): 3.408, 150.233/s, 150.233/s/gpu LR: 0.000129 Logit Scale: 14.250 Contrastive_loss: 2.0938 (2.0938) Loss: 2.0938 (2.0938)
+2024-11-03,16:59:43 | INFO | Train Epoch: 57 [51712/61440 (84%)] Data (t): 0.482 Batch (t): 0.865, 601.517/s, 601.517/s/gpu LR: 0.000068 Logit Scale: 14.250 Contrastive_loss: 1.3516 (1.7227) Loss: 1.3516 (1.7227)
+2024-11-03,17:00:00 | INFO | Train Epoch: 57 [61440/61440 (100%)] Data (t): 0.476 Batch (t): 0.855, 602.242/s, 602.242/s/gpu LR: 0.000059 Logit Scale: 14.250 Contrastive_loss: 1.4062 (1.6172) Loss: 1.4062 (1.6172)
+2024-11-03,17:00:00 | INFO | Starting zero-shot imagenet.
+2024-11-03,17:00:00 | INFO | Building zero-shot classifier
+2024-11-03,17:00:10 | INFO | Using classifier
+2024-11-03,17:00:57 | INFO | Finished zero-shot imagenet.
+2024-11-03,17:00:57 | INFO | Eval Epoch: 58 imagenet-zeroshot-val-top1: 0.0374	imagenet-zeroshot-val-top5: 0.1059
+2024-11-03,17:01:00 | INFO | Start epoch 58
+2024-11-03,17:01:04 | INFO | Train Epoch: 58 [  512/61440 (1%)] Data (t): 3.180 Batch (t): 3.569, 143.458/s, 143.458/s/gpu LR: 0.000058 Logit Scale: 14.250 Contrastive_loss: 2.1250 (2.1250) Loss: 2.1250 (2.1250)
+2024-11-03,17:02:30 | INFO | Train Epoch: 58 [51712/61440 (84%)] Data (t): 0.475 Batch (t): 0.854, 604.150/s, 604.150/s/gpu LR: 0.000020 Logit Scale: 14.250 Contrastive_loss: 1.6094 (1.8672) Loss: 1.6094 (1.8672)
+2024-11-03,17:02:46 | INFO | Train Epoch: 58 [61440/61440 (100%)] Data (t): 0.474 Batch (t): 0.853, 605.486/s, 605.486/s/gpu LR: 0.000015 Logit Scale: 14.250 Contrastive_loss: 1.4062 (1.7135) Loss: 1.4062 (1.7135)
+2024-11-03,17:02:46 | INFO | Starting zero-shot imagenet.
+2024-11-03,17:02:46 | INFO | Building zero-shot classifier
+2024-11-03,17:02:57 | INFO | Using classifier
+2024-11-03,17:03:44 | INFO | Finished zero-shot imagenet.
+2024-11-03,17:03:44 | INFO | Eval Epoch: 59 imagenet-zeroshot-val-top1: 0.0372	imagenet-zeroshot-val-top5: 0.1058
+2024-11-03,17:03:48 | INFO | Start epoch 59
+2024-11-03,17:03:52 | INFO | Train Epoch: 59 [  512/61440 (1%)] Data (t): 2.975 Batch (t): 3.364, 152.209/s, 152.209/s/gpu LR: 0.000015 Logit Scale: 14.250 Contrastive_loss: 1.7812 (1.7812) Loss: 1.7812 (1.7812)
+2024-11-03,17:05:19 | INFO | Train Epoch: 59 [51712/61440 (84%)] Data (t): 0.486 Batch (t): 0.867, 586.022/s, 586.022/s/gpu LR: 0.000000 Logit Scale: 14.250 Contrastive_loss: 1.5625 (1.6719) Loss: 1.5625 (1.6719)
+2024-11-03,17:05:35 | INFO | Train Epoch: 59 [61440/61440 (100%)] Data (t): 0.505 Batch (t): 0.888, 574.031/s, 574.031/s/gpu LR: 0.000000 Logit Scale: 14.250 Contrastive_loss: 1.9062 (1.7500) Loss: 1.9062 (1.7500)
+2024-11-03,17:05:36 | INFO | Starting zero-shot imagenet.
+2024-11-03,17:05:36 | INFO | Building zero-shot classifier
+2024-11-03,17:05:46 | INFO | Using classifier
+2024-11-03,17:06:32 | INFO | Finished zero-shot imagenet.
+2024-11-03,17:06:32 | INFO | Eval Epoch: 60 imagenet-zeroshot-val-top1: 0.0375	imagenet-zeroshot-val-top5: 0.1056
